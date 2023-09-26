@@ -5,6 +5,12 @@
   --secondary-surfaces: #ddd;
 }
 
+@font-face {
+  font-family: "PP Neue Machina";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/assets/fonts/PPNeueMachina/PPNeueMachina-InktrapRegular.woff2") format("woff2");
+}
 body,
 html {
   margin: 0;
@@ -149,6 +155,7 @@ footer > .footer-grid > .internal li a, footer > .footer-grid > .external li a {
   height: 100%;
   text-decoration: none;
   font-family: "PP Neue Machina";
+  font-weight: 400;
   font-size: 32px;
   line-height: 1.5;
   cursor: pointer;
@@ -157,6 +164,7 @@ footer > .footer-grid > .internal li a, footer > .footer-grid > .external li a {
 footer > .footer-grid > .contact {
   text-align: right;
   font-family: "PP Neue Machina";
+  font-weight: 400;
   font-size: 20px;
   line-height: 1.5;
   color: #000;
@@ -178,6 +186,7 @@ footer > .footer-grid > .contact a {
 }
 #trusted-by > p {
   font-family: "PP Neue Machina";
+  font-weight: 400;
   font-size: 20px;
   line-height: 1.5;
   color: var(--main-text);
@@ -220,6 +229,7 @@ main {
 }
 main > h1 {
   font-family: "PP Neue Machina";
+  font-weight: 400;
   line-height: 1.15;
   font-size: 90px;
   color: var(--main-text);
@@ -234,6 +244,7 @@ main > h1 {
 }
 #our-work > h2 {
   font-family: "PP Neue Machina";
+  font-weight: 400;
   font-size: 64px;
   line-height: 1.5;
   color: var(--main-text);
@@ -280,6 +291,7 @@ main > h1 {
 #our-work > article > .content h3 {
   text-align: left;
   font-family: "PP Neue Machina";
+  font-weight: 400;
   font-size: 48px;
   line-height: 1.5;
   color: var(--main-text);
@@ -289,6 +301,7 @@ main > h1 {
 #our-work > article > .content p {
   text-align: left;
   font-family: "PP Neue Machina";
+  font-weight: 400;
   font-size: 32px;
   line-height: 1.5;
   color: var(--main-text);
@@ -316,6 +329,7 @@ main > h1 {
   position: relative;
   border-left: 1px solid var(--main-text);
   font-family: "PP Neue Machina";
+  font-weight: 400;
   font-size: 20px;
   line-height: 1.5;
   color: var(--main-text);

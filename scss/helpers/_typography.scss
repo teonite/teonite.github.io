@@ -1,5 +1,6 @@
 @mixin typography($value) {
   font-family: "PP Neue Machina";
+  font-weight: 400;
 
   @if $value == "main-header" {
     line-height: 1.15;
