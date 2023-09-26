@@ -1,0 +1,70 @@
+@use "../helpers/" as *;
+
+footer {
+  box-sizing: border-box;
+  padding: 128px 64px 192px 64px;
+  background-color: var(--secondary-surfaces);
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  & > .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 202px) 320px;
+    gap: 10px;
+    justify-content: space-between;
+    max-width: calc(1920px - 64px * 2);
+    width: 100%;
+
+    a {
+      cursor: pointer;
+    }
+
+    & > .logo {
+      grid-row: 1;
+      grid-column: 1 / 2;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+
+    & > .internal,
+    & > .external {
+      display: flex;
+      flex-flow: column;
+      width: 100%;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 10px;
+
+      li {
+        width: 100%;
+        height: 48px;
+
+        a {
+          height: 100%;
+          text-decoration: none;
+          @include typography(paragraph);
+          cursor: pointer;
+
+          color: #000;
+        }
+      }
+    }
+
+    & > .contact {
+      text-align: right;
+      @include typography(label);
+      color: #000;
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+}

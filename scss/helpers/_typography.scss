@@ -1,0 +1,32 @@
+@mixin typography($value) {
+  font-family: "PP Neue Machina";
+
+  @if $value == "main-header" {
+    line-height: 1.15;
+    font-size: 90px;
+  }
+  @if $value == "sub-header" {
+    font-size: 48px;
+    line-height: 1.5;
+  }
+  @if $value == "section-title" {
+    font-size: 64px;
+    line-height: 1.5;
+  }
+  @if $value == "paragraph" {
+    font-size: 32px;
+    line-height: 1.5;
+  }
+  @if $value == "label" {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  @if $value == "mobile-label" {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  @if $value == "mobile-main-header" {
+    font-size: 72px;
+    line-height: 1.15;
+  }
+}

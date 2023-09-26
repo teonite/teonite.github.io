@@ -1,0 +1,13 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  serve:
+    cmds:
+      - browser-sync start --no-open --config ./bs-config.js
+  scss:
+    cmds:
+      - sass --watch ./scss:./src/assets/css
+  default:
+    deps: [scss, serve]

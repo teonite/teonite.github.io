@@ -1,0 +1,55 @@
+@use "./variables";
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin-top: 128px;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 64px;
+  background-color: var(--secondary-surfaces);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#main-background {
+  position: absolute;
+  top: 0;
+  left: 64px;
+  width: calc(100% - 64px * 2);
+  height: 100%;
+  background-color: var(--main-background);
+  z-index: 0;
+  content: " ";
+  display: block;
+}
+
+#main-wrapper {
+  max-width: 1920px;
+  position: relative;
+  background-color: transparent;
+  z-index: 1;
+}

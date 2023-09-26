@@ -1,0 +1,35 @@
+@use "../helpers" as *;
+
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  inset: 0;
+  height: 128px;
+  width: 100%;
+  background-color: var(--secondary-surfaces);
+  z-index: 10;
+
+  #nav-logo {
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    margin-left: 64px;
+  }
+
+  #nav-hamburger {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    overflow: none;
+    height: 100%;
+    margin-left: auto;
+    margin-right: 64px;
+    border: 0 solid transparent;
+    background-color: transparent;
+    padding: 0;
+  }
+}
