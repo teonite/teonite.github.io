@@ -1,74 +1,17 @@
-@charset "UTF-8";
-:root {
-  --main-text: #fff;
-  --main-background: #000;
-  --secondary-surfaces: #ddd;
-}
-
-@font-face {
-  font-family: "PP Neue Machina";
-  font-weight: 400;
-  font-style: normal;
-  src: url("../../fonts/PPNeueMachina/PPNeueMachina-InktrapRegular.woff2") format("woff2");
-}
-body,
-html {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  margin-top: 128px;
-  position: relative;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding: 0;
-  margin: 0;
-}
-
-#root {
-  position: relative;
-  box-sizing: border-box;
-  padding: 0 64px;
-  background-color: var(--secondary-surfaces);
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-#main-background {
-  position: absolute;
-  top: 0;
-  left: 64px;
-  width: calc(100% - 128px);
-  height: 100%;
-  background-color: var(--main-background);
-  z-index: 0;
-  content: " ";
+.divider {
   display: block;
-}
-
-#main-wrapper {
   width: 100%;
-  max-width: 1920px;
-  position: relative;
-  background-color: transparent;
-  z-index: 1;
+  height: 1px;
+  padding: 0;
+  margin: 64px 0;
+  user-select: none;
+  background-color: var(--main-text);
 }
-
-main {
-  box-sizing: border-box;
-  width: 100%;
+.divider.vertical {
+  width: 1px;
+  height: 100%;
+  background-color: var(--main-text);
+  margin: 0 30px;
 }
 
 nav {
@@ -101,22 +44,6 @@ nav #nav-hamburger {
   border: 0 solid transparent;
   background-color: transparent;
   padding: 0;
-}
-
-.divider {
-  display: block;
-  width: 100%;
-  height: 1px;
-  padding: 0;
-  margin: 64px 0;
-  user-select: none;
-  background-color: var(--main-text);
-}
-.divider.vertical {
-  width: 1px;
-  height: 100%;
-  background-color: var(--main-text);
-  margin: 0 30px;
 }
 
 footer {
@@ -235,6 +162,78 @@ footer > .footer-grid > .contact a {
   user-select: none;
 }
 
+:root {
+  --main-text: #fff;
+  --main-background: #000;
+  --secondary-surfaces: #ddd;
+}
+
+@font-face {
+  font-family: "PP Neue Machina";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../../fonts/PPNeueMachina/PPNeueMachina-InktrapRegular.woff2") format("woff2");
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin-top: 128px;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 64px;
+  background-color: var(--secondary-surfaces);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#main-background {
+  position: absolute;
+  top: 0;
+  left: 64px;
+  width: calc(100% - 128px);
+  height: 100%;
+  background-color: var(--main-background);
+  z-index: 0;
+  content: " ";
+  display: block;
+}
+
+#main-wrapper {
+  width: 100%;
+  max-width: 1920px;
+  position: relative;
+  background-color: transparent;
+  z-index: 1;
+}
+
+main {
+  box-sizing: border-box;
+  width: 100%;
+}
+
 main {
   box-sizing: border-box;
   padding: 480px 146px 370px 146px;
@@ -248,129 +247,71 @@ main > h1 {
   letter-spacing: 9px;
 }
 
-#our-work {
-  display: flex;
-  flex-flow: column;
-  box-sizing: border-box;
-  row-gap: 64px;
+#products {
+  padding-top: 128px;
 }
-#our-work > h2 {
+#products h2 {
   font-family: "PP Neue Machina";
   font-weight: 400;
   font-size: 64px;
   line-height: 1.5;
   color: var(--main-text);
+  width: 100%;
+  padding-bottom: 64px;
   text-transform: uppercase;
-  letter-spacing: 6.4px;
 }
-#our-work > article {
+#products > .products-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-auto-flow: dense;
+  row-gap: 48px;
+  column-gap: 20px;
+}
+#products > .products-grid > .grid-item {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  row-gap: 8px;
+}
+#products > .products-grid > .grid-item > .cover {
+  display: block;
   width: 100%;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 20px;
-}
-#our-work > article > .cover {
-  grid-row: 1;
-  grid-column: 1/2;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-#our-work > article > .cover img {
-  position: absolute;
-}
-#our-work > article > .cover img:nth-child(1) {
-  left: -210px;
-  top: 0;
-  width: calc(100% + 210px);
-  height: auto;
-  max-height: 720px;
-}
-#our-work > article > .cover img:nth-child(2) {
-  display: none;
-}
-#our-work > article > .content {
-  grid-row: 1;
-  grid-column: 2/3;
-  display: flex;
-  flex-flow: column;
-  row-gap: 32px;
-  width: 100%;
-}
-#our-work > article > .content h3 {
-  text-align: left;
-  font-family: "PP Neue Machina";
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 1.5;
-  color: var(--main-text);
-  letter-spacing: 4.8px;
-  order: 1;
-}
-#our-work > article > .content p {
-  text-align: left;
-  font-family: "PP Neue Machina";
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 1.5;
-  color: var(--main-text);
-  letter-spacing: 3.2px;
-  order: 2;
-}
-#our-work > article > .content .actions {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: 72px;
-  order: 3;
-}
-#our-work > article > .content .actions a {
-  display: block;
-  margin-left: auto;
-  height: 100%;
-  width: auto;
-  box-sizing: border-box;
-  padding: 21px 55px 21px 19px;
-  user-select: none;
   cursor: pointer;
-  position: relative;
-  border-left: 1px solid var(--main-text);
+}
+#products > .products-grid > .grid-item > .cover img {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+#products > .products-grid > .grid-item > .description {
+  width: 100%;
+  height: 60px;
+  display: grid;
+  grid-template-rows: 60px;
+  grid-template-columns: 1fr 60px 92px;
+  align-items: center;
+}
+#products > .products-grid > .grid-item > .description > p {
   font-family: "PP Neue Machina";
   font-weight: 400;
   font-size: 20px;
   line-height: 1.5;
   color: var(--main-text);
 }
-#our-work > article > .content .actions a::after {
-  content: "→";
-  color: var(--main-text);
-  font-size: 48px;
-  position: absolute;
-  top: 50%;
-  right: 5px;
-  transform: translateY(-50%) rotate(-45deg);
+#products > .products-grid > .grid-item > .description > .divider {
+  margin-left: auto;
 }
-#our-work > article.odd > .content {
-  grid-column: 1/2;
-}
-#our-work > article.odd > .content h3 {
-  order: 2;
-}
-#our-work > article.odd > .content p {
-  order: 1;
-}
-#our-work > article.odd > .cover {
-  grid-column: 2/3;
-}
-#our-work > article.odd > .cover img:nth-child(1) {
-  top: 0;
-  left: unset;
-  right: -210px;
+#products > .products-grid > .grid-item > .description > .logo {
+  width: 92px;
+  height: auto;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=products.css.map */

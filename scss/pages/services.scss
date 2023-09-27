@@ -1,0 +1,88 @@
+@use "../base";
+@use "../helpers/" as *;
+@use "../components/nav";
+@use "../components/divider";
+@use "../components/footer";
+@use "../components/trustedby";
+
+main {
+  padding: 480px 146px 600px 146px;
+
+  & > h1 {
+    @include typography(main-header);
+    color: var(--main-text);
+    line-height: 1.15;
+  }
+}
+
+#services {
+  display: flex;
+  flex-flow: column;
+  row-gap: 64px;
+  padding-top: 128px;
+
+  & > h2 {
+    @include typography(section-title);
+    color: var(--main-text);
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+
+  .service-wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    row-gap: 48px;
+
+    & > .service {
+      display: grid;
+      width: 100%;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 10px;
+      align-items: start;
+      justify-content: start;
+      & > h3 {
+        grid-row: 1;
+        grid-column: 1 / 2;
+        @include typography(sub-header);
+        color: var(--main-text);
+      }
+      & > .service-description {
+        grid-row: 1;
+        grid-column: 2 / 3;
+        display: flex;
+        flex-flow: column;
+        row-gap: 20px;
+        cursor: pointer;
+
+        p {
+          @include typography(paragraph);
+          color: var(--main-text);
+          line-height: 1.5;
+        }
+
+        & > .bottom {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: flex-end;
+          width: 100%;
+          user-select: none;
+
+          & > span {
+            display: block;
+            @include typography(paragraph);
+            font-size: 48px;
+            color: var(--main-text);
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+
+    & > .divider {
+      width: calc(100% + 80px);
+    }
+  }
+}

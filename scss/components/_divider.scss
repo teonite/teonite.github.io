@@ -6,4 +6,11 @@
   margin: 64px 0;
   user-select: none;
   background-color: var(--main-text);
+
+  &.vertical {
+    width: 1px;
+    height: 100%;
+    background-color: var(--main-text);
+    margin: 0 30px;
+  }
 }

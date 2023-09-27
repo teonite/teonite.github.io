@@ -49,8 +49,14 @@ h6 {
 }
 
 #main-wrapper {
+  width: 100%;
   max-width: 1920px;
   position: relative;
   background-color: transparent;
   z-index: 1;
+}
+
+main {
+  box-sizing: border-box;
+  width: 100%;
 }
