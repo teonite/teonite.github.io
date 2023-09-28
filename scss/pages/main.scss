@@ -19,7 +19,7 @@ main {
   row-gap: 64px;
   padding-top: 100px;
 
-  h2 {
+  & > h2 {
     @include typography(section-title);
     color: var(--main-text);
     text-transform: uppercase;
@@ -58,18 +58,32 @@ main {
   }
 }
 
+section {
+  & > header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    & > h2 {
+      @include typography(section-title);
+      color: var(--main-text);
+      text-transform: uppercase;
+      letter-spacing: 6.4px;
+    }
+
+    & > a {
+      margin-left: auto;
+    }
+  }
+}
+
 #our-work {
   display: flex;
   flex-flow: column;
   box-sizing: border-box;
   row-gap: 64px;
-
-  & > h2 {
-    @include typography(section-title);
-    color: var(--main-text);
-    text-transform: uppercase;
-    letter-spacing: 6.4px;
-  }
+  padding-top: 64px;
 
   & > article {
     width: 100%;
