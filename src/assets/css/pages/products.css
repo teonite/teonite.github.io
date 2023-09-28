@@ -140,7 +140,7 @@ a.page-link {
   position: relative;
   margin-left: auto;
   height: 100%;
-  width: auto;
+  width: 280px;
   box-sizing: border-box;
   padding: 21px 55px 21px 19px;
   user-select: none;
@@ -162,7 +162,7 @@ a.page-link::before {
   background-color: var(--main-text);
   user-select: none;
   transition-property: width;
-  transition-duration: 100ms;
+  transition-duration: 250ms;
   transition-timing-function: ease-in-out;
 }
 a.page-link::after {
@@ -172,18 +172,18 @@ a.page-link::after {
   font-size: 48px;
   position: absolute;
   top: 50%;
-  right: 5px;
+  right: -5px;
   transform: translateY(-50%) rotate(-45deg);
   transition-property: transform, right;
-  transition-duration: 100ms;
+  transition-duration: 250ms;
   transition-timing-function: ease-in-out;
 }
 a.page-link:hover::before {
-  width: 2px;
+  width: 4px;
 }
 a.page-link:hover::after {
   transform: translateY(-50%) rotate(0deg);
-  right: -10px;
+  right: 10px;
 }
 
 #trusted-by {

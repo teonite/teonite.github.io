@@ -218,7 +218,7 @@ a.page-link {
   position: relative;
   margin-left: auto;
   height: 100%;
-  width: auto;
+  width: 280px;
   box-sizing: border-box;
   padding: 21px 55px 21px 19px;
   user-select: none;
@@ -240,7 +240,7 @@ a.page-link::before {
   background-color: var(--main-text);
   user-select: none;
   transition-property: width;
-  transition-duration: 100ms;
+  transition-duration: 250ms;
   transition-timing-function: ease-in-out;
 }
 a.page-link::after {
@@ -250,18 +250,18 @@ a.page-link::after {
   font-size: 48px;
   position: absolute;
   top: 50%;
-  right: 5px;
+  right: -5px;
   transform: translateY(-50%) rotate(-45deg);
   transition-property: transform, right;
-  transition-duration: 100ms;
+  transition-duration: 250ms;
   transition-timing-function: ease-in-out;
 }
 a.page-link:hover::before {
-  width: 2px;
+  width: 4px;
 }
 a.page-link:hover::after {
   transform: translateY(-50%) rotate(0deg);
-  right: -10px;
+  right: 10px;
 }
 
 #trusted-by {
@@ -324,6 +324,54 @@ main > h1 {
   font-size: 90px;
   color: var(--main-text);
   letter-spacing: 9px;
+}
+
+#our-services {
+  display: flex;
+  flex-flow: column;
+  row-gap: 64px;
+  padding-top: 100px;
+}
+#our-services h2 {
+  font-family: "PP Neue Machina";
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1.5;
+  color: var(--main-text);
+  text-transform: uppercase;
+  letter-spacing: 6.4px;
+}
+#our-services h3 {
+  font-family: "PP Neue Machina";
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.5;
+  color: var(--main-text);
+}
+#our-services p {
+  font-family: "PP Neue Machina";
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.5;
+  color: var(--main-text);
+}
+#our-services > .items-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-auto-flow: dense;
+  gap: 64px;
+}
+#our-services > .items-grid > .grid-item {
+  display: flex;
+  flex-flow: column;
+  row-gap: 20px;
+}
+#our-services > .items-grid > .grid-item > .actions {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 #our-work {

@@ -13,6 +13,51 @@ main {
   }
 }
 
+#our-services {
+  display: flex;
+  flex-flow: column;
+  row-gap: 64px;
+  padding-top: 100px;
+
+  h2 {
+    @include typography(section-title);
+    color: var(--main-text);
+    text-transform: uppercase;
+    letter-spacing: 6.4px;
+  }
+
+  h3 {
+    @include typography(sub-header);
+    color: var(--main-text);
+  }
+
+  p {
+    @include typography(paragraph);
+    color: var(--main-text);
+  }
+
+  & > .items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-flow: dense;
+    gap: 64px;
+
+    & > .grid-item {
+      display: flex;
+      flex-flow: column;
+      row-gap: 20px;
+
+      & > .actions {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
 #our-work {
   display: flex;
   flex-flow: column;
