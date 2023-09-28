@@ -1,7 +1,6 @@
 @use "../components/essentials";
 @use "../components/trustedby";
 @use "../base";
-@use "../fonts";
 @use "../helpers/" as *;
 
 main {
@@ -52,6 +51,7 @@ main {
           width: 100%;
           height: auto;
           aspect-ratio: 16 / 9;
+          object-fit: cover;
         }
       }
 

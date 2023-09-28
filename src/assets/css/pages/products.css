@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .divider {
   display: block;
   width: 100%;
@@ -100,6 +101,23 @@ footer > .footer-grid > .internal li a, footer > .footer-grid > .external li a {
   cursor: pointer;
   color: #000;
 }
+footer > .footer-grid > .internal li a:hover, footer > .footer-grid > .external li a:hover {
+  text-decoration: underline;
+  text-decoration-color: #000;
+  text-underline-offset: 8px;
+}
+footer > .footer-grid > .external a {
+  position: relative;
+}
+footer > .footer-grid > .external a::after {
+  position: absolute;
+  display: block;
+  content: "→";
+  top: -20px;
+  right: -25px;
+  user-select: none;
+  transform: scale(0.6) rotate(-45deg);
+}
 footer > .footer-grid > .contact {
   text-align: right;
   font-family: "PP Neue Machina";
@@ -111,6 +129,61 @@ footer > .footer-grid > .contact {
 footer > .footer-grid > .contact a {
   text-decoration: none;
   color: #000;
+}
+footer > .footer-grid > .contact a:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+a.page-link {
+  display: block;
+  position: relative;
+  margin-left: auto;
+  height: 100%;
+  width: auto;
+  box-sizing: border-box;
+  padding: 21px 55px 21px 19px;
+  user-select: none;
+  cursor: pointer;
+  border-left: 1px solid var(--main-text);
+  font-family: "PP Neue Machina";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--main-text);
+}
+a.page-link::before {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  width: 1px;
+  background-color: var(--main-text);
+  user-select: none;
+  transition-property: width;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+}
+a.page-link::after {
+  user-select: none;
+  content: "→";
+  color: var(--main-text);
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%) rotate(-45deg);
+  transition-property: transform, right;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+}
+a.page-link:hover::before {
+  width: 2px;
+}
+a.page-link:hover::after {
+  transform: translateY(-50%) rotate(0deg);
+  right: -10px;
 }
 
 #trusted-by {
@@ -162,10 +235,16 @@ footer > .footer-grid > .contact a {
   user-select: none;
 }
 
-:root {
+html[data-theme=dark] {
   --main-text: #fff;
   --main-background: #000;
   --secondary-surfaces: #ddd;
+}
+
+html[data-theme=gray] {
+  --main-text: #000;
+  --main-background: #ddd;
+  --secondary-surfaces: #fff;
 }
 
 @font-face {
@@ -290,6 +369,7 @@ main > h1 {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
+  object-fit: cover;
 }
 #products > .products-grid > .grid-item > .description {
   width: 100%;

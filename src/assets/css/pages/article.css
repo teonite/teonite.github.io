@@ -1,82 +1,4 @@
 @charset "UTF-8";
-html[data-theme=dark] {
-  --main-text: #fff;
-  --main-background: #000;
-  --secondary-surfaces: #ddd;
-}
-
-html[data-theme=gray] {
-  --main-text: #000;
-  --main-background: #ddd;
-  --secondary-surfaces: #fff;
-}
-
-@font-face {
-  font-family: "PP Neue Machina";
-  font-weight: 400;
-  font-style: normal;
-  src: url("../../fonts/PPNeueMachina/PPNeueMachina-InktrapRegular.woff2") format("woff2");
-}
-body,
-html {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  margin-top: 128px;
-  position: relative;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding: 0;
-  margin: 0;
-}
-
-#root {
-  position: relative;
-  box-sizing: border-box;
-  padding: 0 64px;
-  background-color: var(--secondary-surfaces);
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-#main-background {
-  position: absolute;
-  top: 0;
-  left: 64px;
-  width: calc(100% - 128px);
-  height: 100%;
-  background-color: var(--main-background);
-  z-index: 0;
-  content: " ";
-  display: block;
-}
-
-#main-wrapper {
-  width: 100%;
-  max-width: 1920px;
-  position: relative;
-  background-color: transparent;
-  z-index: 1;
-}
-
-main {
-  box-sizing: border-box;
-  width: 100%;
-}
-
 .divider {
   display: block;
   width: 100%;
@@ -264,165 +186,182 @@ a.page-link:hover::after {
   right: -10px;
 }
 
-#trusted-by {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: 30px;
-  overflow: hidden;
-  padding: 64px 0;
+html[data-theme=dark] {
+  --main-text: #fff;
+  --main-background: #000;
+  --secondary-surfaces: #ddd;
 }
-#trusted-by > p {
+
+html[data-theme=gray] {
+  --main-text: #000;
+  --main-background: #ddd;
+  --secondary-surfaces: #fff;
+}
+
+@font-face {
   font-family: "PP Neue Machina";
   font-weight: 400;
-  font-size: 20px;
-  line-height: 1.5;
-  color: var(--main-text);
-  padding-right: 10px;
+  font-style: normal;
+  src: url("../../fonts/PPNeueMachina/PPNeueMachina-InktrapRegular.woff2") format("woff2");
 }
-#trusted-by > ul {
-  display: flex;
-  flex-flow: row nowrap;
-  list-style: none;
-  column-gap: 50px;
+body,
+html {
   margin: 0;
   padding: 0;
-  height: 100%;
 }
-#trusted-by > ul > li {
-  display: block;
-  height: 100%;
-  width: 90px;
-  overflow: hidden;
+
+body {
+  margin-top: 128px;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-#trusted-by > ul > li > a {
-  cursor: pointer;
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 64px;
+  background-color: var(--secondary-surfaces);
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
+  justify-content: flex-start;
 }
-#trusted-by > ul > li > a img {
-  height: auto;
-  max-height: 100%;
-  width: 90px;
-  user-select: none;
+
+#main-background {
+  position: absolute;
+  top: 0;
+  left: 64px;
+  width: calc(100% - 128px);
+  height: 100%;
+  background-color: var(--main-background);
+  z-index: 0;
+  content: " ";
+  display: block;
+}
+
+#main-wrapper {
+  width: 100%;
+  max-width: 1920px;
+  position: relative;
+  background-color: transparent;
+  z-index: 1;
 }
 
 main {
   box-sizing: border-box;
-  padding: 480px 146px 370px 146px;
+  width: 100%;
 }
-main > h1 {
+
+main {
+  background-color: var(--main-background);
+}
+main > .cover-wrapper {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+main > .cover-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+main > article {
+  display: flex;
+  flex-flow: column;
+  row-gap: 32px;
+  background-color: var(--main-background);
+  box-sizing: border-box;
+  padding: 64px 146px 120px 146px;
+}
+main > article div {
+  width: 100%;
+}
+main > article > header p {
+  font-family: "PP Neue Machina";
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.5;
+  color: var(--main-text);
+}
+main > article h1 {
   font-family: "PP Neue Machina";
   font-weight: 400;
   line-height: 1.15;
   font-size: 90px;
   color: var(--main-text);
-  letter-spacing: 9px;
+  padding-bottom: 32px;
 }
-
-#our-work {
-  display: flex;
-  flex-flow: column;
-  box-sizing: border-box;
-  row-gap: 64px;
-}
-#our-work > h2 {
+main > article h2 {
   font-family: "PP Neue Machina";
   font-weight: 400;
   font-size: 64px;
   line-height: 1.5;
   color: var(--main-text);
   text-transform: uppercase;
-  letter-spacing: 6.4px;
 }
-#our-work > article {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 20px;
-}
-#our-work > article > .cover {
-  grid-row: 1;
-  grid-column: 1/2;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-#our-work > article > .cover img {
-  position: absolute;
-}
-#our-work > article > .cover img:nth-child(1) {
-  left: -210px;
-  top: 0;
-  width: calc(100% + 210px);
-  height: auto;
-  max-height: 720px;
-}
-#our-work > article > .cover img:nth-child(2) {
-  display: none;
-}
-#our-work > article > .content {
-  grid-row: 1;
-  grid-column: 2/3;
-  display: flex;
-  flex-flow: column;
-  row-gap: 32px;
-  width: 100%;
-}
-#our-work > article > .content h3 {
-  text-align: left;
+main > article h3 {
   font-family: "PP Neue Machina";
   font-weight: 400;
   font-size: 48px;
   line-height: 1.5;
   color: var(--main-text);
-  letter-spacing: 4.8px;
-  order: 1;
 }
-#our-work > article > .content p {
-  text-align: left;
+main > article p {
   font-family: "PP Neue Machina";
   font-weight: 400;
   font-size: 32px;
   line-height: 1.5;
   color: var(--main-text);
-  letter-spacing: 3.2px;
-  order: 2;
 }
-#our-work > article > .content .actions {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: 72px;
-  order: 3;
+main > article a {
+  text-decoration: underline;
+  text-underline-offset: 8px;
 }
-#our-work > article.odd > .content {
-  grid-column: 1/2;
+main > article ul {
+  margin-top: 20px;
+  padding: 0;
+  padding-left: 40px;
+  list-style: none;
 }
-#our-work > article.odd > .content h3 {
-  order: 2;
+main > article ul li {
+  position: relative;
+  font-family: "PP Neue Machina";
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.5;
+  color: var(--main-text);
 }
-#our-work > article.odd > .content p {
-  order: 1;
-}
-#our-work > article.odd > .cover {
-  grid-column: 2/3;
-}
-#our-work > article.odd > .cover img:nth-child(1) {
+main > article ul li::before {
+  user-select: none;
+  position: absolute;
   top: 0;
-  left: unset;
-  right: -210px;
+  left: -40px;
+  content: "•";
+  color: var(--main-text);
+}
+main > article img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+main > article .img-wrapper {
+  width: 100%;
+}
+main > article .img-wrapper img {
+  object-fit: cover;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=article.css.map */

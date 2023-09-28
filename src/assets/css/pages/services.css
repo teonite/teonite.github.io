@@ -1,7 +1,14 @@
-:root {
+@charset "UTF-8";
+html[data-theme=dark] {
   --main-text: #fff;
   --main-background: #000;
   --secondary-surfaces: #ddd;
+}
+
+html[data-theme=gray] {
+  --main-text: #000;
+  --main-background: #ddd;
+  --secondary-surfaces: #fff;
 }
 
 @font-face {
@@ -172,6 +179,23 @@ footer > .footer-grid > .internal li a, footer > .footer-grid > .external li a {
   cursor: pointer;
   color: #000;
 }
+footer > .footer-grid > .internal li a:hover, footer > .footer-grid > .external li a:hover {
+  text-decoration: underline;
+  text-decoration-color: #000;
+  text-underline-offset: 8px;
+}
+footer > .footer-grid > .external a {
+  position: relative;
+}
+footer > .footer-grid > .external a::after {
+  position: absolute;
+  display: block;
+  content: "→";
+  top: -20px;
+  right: -25px;
+  user-select: none;
+  transform: scale(0.6) rotate(-45deg);
+}
 footer > .footer-grid > .contact {
   text-align: right;
   font-family: "PP Neue Machina";
@@ -183,6 +207,10 @@ footer > .footer-grid > .contact {
 footer > .footer-grid > .contact a {
   text-decoration: none;
   color: #000;
+}
+footer > .footer-grid > .contact a:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 
 #trusted-by {

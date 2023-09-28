@@ -53,6 +53,27 @@ footer {
           cursor: pointer;
 
           color: #000;
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: #000;
+            text-underline-offset: 8px;
+          }
+        }
+      }
+    }
+
+    & > .external {
+      a {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          display: block;
+          content: "→";
+          top: -20px;
+          right: -25px;
+          user-select: none;
+          transform: scale(0.6) rotate(-45deg);
         }
       }
     }
@@ -64,6 +85,11 @@ footer {
       a {
         text-decoration: none;
         color: #000;
+
+        &:hover {
+          text-decoration: underline;
+          text-underline-offset: 6px;
+        }
       }
     }
   }
