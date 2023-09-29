@@ -150,12 +150,6 @@ section {
     &.odd {
       & > .content {
         grid-column: 1/2;
-        h3 {
-          order: 2;
-        }
-        p {
-          order: 1;
-        }
       }
       & > .cover {
         grid-column: 2/3;

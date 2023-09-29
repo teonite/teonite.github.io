@@ -4,7 +4,7 @@
     <title>Teonite</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../assets/css/pages/products.css" rel="stylesheet" />
+    <link href="../../assets/css/pages/products.css" rel="stylesheet" />
   </head>
   <body>
     <div id="root">
@@ -16,16 +16,20 @@
             <p>Trusted by:</p>
             <ul>
               <li>
-                <a><img src="../assets/logos/esa.png" alt="esa-logo" /></a>
+                <a><img src="../../assets/logos/esa.png" alt="esa-logo" /></a>
               </li>
               <li>
                 <a
-                  ><img src="../assets/logos/t-mobile.png" alt="t-mobile-logo"
+                  ><img
+                    src="../../assets/logos/t-mobile.png"
+                    alt="t-mobile-logo"
                 /></a>
               </li>
               <li>
                 <a
-                  ><img src="../assets/logos/uv1.png" alt="ultra-violet-logo"
+                  ><img
+                    src="../../assets/logos/uv1.png"
+                    alt="ultra-violet-logo"
                 /></a>
               </li>
             </ul>
@@ -37,7 +41,7 @@
               <div class="grid-item">
                 <a class="cover">
                   <img
-                    src="../assets/covers/t-mobile-cover.jpg"
+                    src="../../assets/covers/t-mobile-cover.jpg"
                     alt="t-mobile-cover"
                   />
                 </a>
@@ -46,14 +50,17 @@
                   <div class="divider vertical"></div>
                   <img
                     class="logo"
-                    src="../assets/logos/t-mobile.png"
+                    src="../../assets/logos/t-mobile.png"
                     alt="t-mobile-logo"
                   />
                 </div>
               </div>
               <div class="grid-item">
                 <a class="cover">
-                  <img src="../assets/covers/esa-cover.jpg" alt="esa-cover" />
+                  <img
+                    src="../../assets/covers/esa-cover.jpg"
+                    alt="esa-cover"
+                  />
                 </a>
                 <div class="description">
                   <p>
@@ -63,21 +70,21 @@
                   <div class="divider vertical"></div>
                   <img
                     class="logo"
-                    src="../assets/logos/esa.png"
+                    src="../../assets/logos/esa.png"
                     alt="esa-logo"
                   />
                 </div>
               </div>
               <div class="grid-item">
                 <a class="cover">
-                  <img src="../assets/covers/uv-cover.jpg" alt="uv-cover" />
+                  <img src="../../assets/covers/uv-cover.jpg" alt="uv-cover" />
                 </a>
                 <div class="description">
                   <p>A cloud–based digital rights storage system.</p>
                   <div class="divider vertical"></div>
                   <img
                     class="logo"
-                    src="../assets/logos/uv1.png"
+                    src="../../assets/logos/uv1.png"
                     alt="uv-logo"
                   />
                 </div>
@@ -85,7 +92,7 @@
               <div class="grid-item">
                 <a class="cover">
                   <img
-                    src="../assets/covers/deep-image-cover.jpg"
+                    src="../../assets/covers/deep-image-cover.jpg"
                     alt="deep-image-cover"
                   />
                 </a>
@@ -94,7 +101,7 @@
                   <div class="divider vertical"></div>
                   <img
                     class="logo"
-                    src="../assets/logos/deep-image-logo.png"
+                    src="../../assets/logos/deep-image-logo.png"
                     alt="deep-image-logo"
                   />
                 </div>
@@ -102,7 +109,7 @@
               <div class="grid-item">
                 <a class="cover">
                   <img
-                    src="../assets/covers/defguard-cover.jpg"
+                    src="../../assets/covers/defguard-cover.jpg"
                     alt="defguard-cover"
                   />
                 </a>
@@ -114,7 +121,7 @@
                   <div class="divider vertical"></div>
                   <img
                     class="logo"
-                    src="../assets/logos/defguard-logo.png"
+                    src="../../assets/logos/defguard-logo.png"
                     alt="defguard-logo"
                   />
                 </div>
@@ -122,7 +129,7 @@
               <div class="grid-item">
                 <a class="cover">
                   <img
-                    src="../assets/covers/arastradero-cover.jpg"
+                    src="../../assets/covers/arastradero-cover.jpg"
                     alt="arastradero-cover"
                   />
                 </a>
@@ -131,7 +138,7 @@
                   <div class="divider vertical"></div>
                   <img
                     class="logo"
-                    src="../assets/logos/arastradero-logo.png"
+                    src="../../assets/logos/arastradero-logo.png"
                     alt="arastradero-logo"
                   />
                 </div>
@@ -145,7 +152,7 @@
       <div class="footer-grid">
         <div class="logo">
           <a>
-            <img src="../assets/svg/tntLogo.svg" alt="teonite-logo" />
+            <img src="../../assets/svg/tntLogo.svg" alt="teonite-logo" />
           </a>
         </div>
         <ul class="internal">
@@ -177,13 +184,38 @@
         </p>
       </div>
     </footer>
-    <nav>
-      <a id="nav-logo" href="https://teonite.com/">
-        <img src="../assets/svg/tntLogo.svg" alt="tnt" />
-      </a>
-      <button id="nav-hamburger">
-        <img src="../assets/svg/burger-menu.svg" alt="menu" />
-      </button>
+    <nav id="nav-main">
+      <div class="nav-wrapper">
+        <a href="https://teonite.com/" id="logo-main">
+          <img src="../../assets/svg/tntLogo.svg" alt="tnt" />
+        </a>
+        <ul>
+          <li><a href="/">home</a></li>
+          <li><a href="./">out work</a></li>
+          <li><a href="../work/">services</a></li>
+          <li><a href="../contact.html">contact</a></li>
+        </ul>
+        <button id="mobile-nav-trigger">
+          <img src="../../assets/svg/burger-menu.svg" alt="menu" />
+        </button>
+      </div>
     </nav>
+    <dialog id="mobile-nav">
+      <div class="top">
+        <a href="https://teonite.com/" class="logo">
+          <img src="../../assets/svg/tntLogo.svg" alt="tnt" />
+        </a>
+        <button id="close-mobile-nav">
+          <img src="../../assets/svg/icon-x.svg" alt="close-icon" />
+        </button>
+      </div>
+      <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="./">out work</a></li>
+        <li><a href="../work/">services</a></li>
+        <li><a href="../contact.html">contact</a></li>
+      </ul>
+    </dialog>
+    <script src="../../assets/scripts/nav.js"></script>
   </body>
 </html>

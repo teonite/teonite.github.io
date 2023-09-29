@@ -53,6 +53,11 @@ footer {
           cursor: pointer;
 
           color: #000;
+
+          &:visited {
+            color: #000;
+          }
+
           &:hover {
             text-decoration: underline;
             text-decoration-color: #000;
@@ -85,6 +90,10 @@ footer {
       a {
         text-decoration: none;
         color: #000;
+
+        &:visited {
+          color: #000;
+        }
 
         &:hover {
           text-decoration: underline;

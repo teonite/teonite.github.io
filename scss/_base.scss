@@ -5,10 +5,11 @@ body,
 html {
   margin: 0;
   padding: 0;
+  background-color: var(--secondary-surfaces);
 }
 
 body {
-  margin-top: 128px;
+  padding-top: 128px;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
@@ -59,4 +60,14 @@ h6 {
 main {
   box-sizing: border-box;
   width: 100%;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    text-decoration: none;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
 }

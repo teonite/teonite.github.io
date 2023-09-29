@@ -147,13 +147,38 @@
         </p>
       </div>
     </footer>
-    <nav>
-      <a id="nav-logo" href="https://teonite.com/">
-        <img src="../../assets/svg/tntLogo.svg" alt="tnt" />
-      </a>
-      <button id="nav-hamburger">
-        <img src="../../assets/svg/burger-menu.svg" alt="menu" />
-      </button>
+    <nav id="nav-main">
+      <div class="nav-wrapper">
+        <a href="https://teonite.com/" id="logo-main">
+          <img src="../../assets/svg/tntLogo.svg" alt="tnt" />
+        </a>
+        <ul>
+          <li><a href="/">home</a></li>
+          <li><a href="../work/">out work</a></li>
+          <li><a href="./">services</a></li>
+          <li><a href="../contact.html">contact</a></li>
+        </ul>
+        <button id="mobile-nav-trigger">
+          <img src="../../assets/svg/burger-menu.svg" alt="menu" />
+        </button>
+      </div>
     </nav>
+    <dialog id="mobile-nav">
+      <div class="top">
+        <a href="https://teonite.com/" class="logo">
+          <img src="../../assets/svg/tntLogo.svg" alt="tnt" />
+        </a>
+        <button id="close-mobile-nav">
+          <img src="../../assets/svg/icon-x.svg" alt="close-icon" />
+        </button>
+      </div>
+      <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="../work/">out work</a></li>
+        <li><a href="./">services</a></li>
+        <li><a href="../contact.html">contact</a></li>
+      </ul>
+    </dialog>
+    <script src="../../assets/scripts/nav.js"></script>
   </body>
 </html>

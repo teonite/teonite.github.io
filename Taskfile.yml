@@ -9,5 +9,8 @@ tasks:
   scss:
     cmds:
       - sass --watch ./scss:./src/assets/css
+  script-nav:
+    cmds:
+      - bun build --minify --target=browser --watch --outdir=./src/assets/scripts/ ./scripts/nav/nav.ts
   default:
-    deps: [scss, serve]
+    deps: [scss, script-nav, serve]
