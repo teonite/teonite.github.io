@@ -1,26 +1,55 @@
+@use "./bootstrap/" as *;
+
 @mixin typography($value) {
   font-family: "PP Neue Machina";
   font-weight: 400;
 
   @if $value == "main-header" {
+    font-size: clamp(5vw, 10vw, 48px);
     line-height: 1.15;
-    font-size: 90px;
+    @include media-breakpoint-up(lg) {
+      font-size: 72px;
+      line-height: 1.15;
+    }
+    @include media-breakpoint-up(xl) {
+      line-height: 1.15;
+      font-size: 90px;
+    }
   }
+
   @if $value == "sub-header" {
-    font-size: 48px;
     line-height: 1.5;
+    font-size: clamp(4vw, 6vw, 32px);
+    @include media-breakpoint-up(lg) {
+      font-size: 48px;
+    }
   }
+
   @if $value == "section-title" {
-    font-size: 64px;
+    font-size: clamp(4vw, 8vw, 48px);
     line-height: 1.5;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 64px;
+      line-height: 1.5;
+    }
   }
+
   @if $value == "paragraph" {
-    font-size: 32px;
     line-height: 1.5;
+    font-size: clamp(4vw, 4vw, 24px);
+    @include media-breakpoint-up(lg) {
+      font-size: 32px;
+    }
   }
+
   @if $value == "label" {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.5;
+    @include media-breakpoint-up(lg) {
+      font-size: 20px;
+      line-height: 1.5;
+    }
   }
   @if $value == "mobile-label" {
     font-size: 16px;

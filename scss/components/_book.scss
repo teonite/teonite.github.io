@@ -9,8 +9,9 @@ a {
     border: 1px solid var(--main-text);
     outline: solid 0px var(--main-text);
     background-color: transparent;
-    padding: 32px 64px;
+    padding: var(--spacing-m) var(--spacing-xl);
     user-select: none;
+    width: max-content;
 
     @include typography(paragraph);
 

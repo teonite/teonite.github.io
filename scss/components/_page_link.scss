@@ -2,16 +2,23 @@
 
 a {
   &.page-link {
-    display: block;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
     position: relative;
     margin-left: auto;
     height: 100%;
-    width: 280px;
     box-sizing: border-box;
     padding: 21px 55px 21px 19px;
     user-select: none;
     cursor: pointer;
     border-left: 1px solid var(--main-text);
+    width: 220px;
+
+    @include media-breakpoint-up(lg) {
+      width: 280px;
+    }
 
     @include typography(label);
     color: var(--main-text);
@@ -38,7 +45,7 @@ a {
       position: absolute;
       top: 50%;
       right: -5px;
-      transform: translateY(-50%) rotate(-45deg);
+      transform: translateY(-60%) rotate(-45deg);
       transition-property: transform, right;
       transition-duration: 250ms;
       transition-timing-function: ease-in-out;

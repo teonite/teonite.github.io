@@ -8,13 +8,17 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  height: 128px;
   width: 100%;
   background-color: var(--secondary-surfaces);
   z-index: 10;
   transition-property: top;
   transition-timing-function: ease-in-out;
   transition-delay: 150ms;
+  height: 64px;
+
+  @include media-breakpoint-up(lg) {
+    height: 128px;
+  }
 
   & > .nav-wrapper {
     width: 100%;
@@ -25,7 +29,7 @@ nav {
     align-self: center;
     justify-content: flex-start;
     box-sizing: border-box;
-    padding: 0 64px;
+    padding: 0 var(--spacing-xl);
 
     & > ul {
       display: none;

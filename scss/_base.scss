@@ -1,3 +1,4 @@
+@use "./helpers/" as *;
 @use "./variables";
 @use "./fonts";
 
@@ -9,10 +10,14 @@ html {
 }
 
 body {
-  padding-top: 128px;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
+  padding-top: 64px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 128px;
+  }
 }
 
 p,
@@ -29,7 +34,7 @@ h6 {
 #root {
   position: relative;
   box-sizing: border-box;
-  padding: 0 64px;
+  padding: 0 var(--spacing-xl);
   background-color: var(--secondary-surfaces);
   display: flex;
   flex-flow: column;
@@ -40,8 +45,8 @@ h6 {
 #main-background {
   position: absolute;
   top: 0;
-  left: 64px;
-  width: calc(100% - 64px * 2);
+  left: var(--spacing-xl);
+  width: calc(100% - var(--spacing-xl) * 2);
   height: 100%;
   background-color: var(--main-background);
   z-index: 0;

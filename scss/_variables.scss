@@ -1,3 +1,5 @@
+@use "./helpers/" as *;
+
 $primary-black: #000;
 $primary-tntOrange: #ff6400;
 $primary-white: #fff;
@@ -17,4 +19,23 @@ html[data-theme="gray"] {
   --main-text: #{$primary-black};
   --main-background: #{$secondary-tntGrey};
   --secondary-surfaces: #{$primary-white};
+}
+
+// shared
+html {
+  --spacing-xs: 4px;
+  --spacing-s: 10px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+
+  @include media-breakpoint-up(lg) {
+    --spacing-xs: 8px;
+    --spacing-s: 20px;
+    --spacing-m: 32px;
+    --spacing-l: 48px;
+    --spacing-xl: 64px;
+    --spacing-xxl: 128px;
+  }
 }
