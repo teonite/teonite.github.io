@@ -12,5 +12,8 @@ tasks:
   script-nav:
     cmds:
       - bun build --minify --target=browser --watch --outdir=./src/assets/scripts/ ./scripts/nav/nav.ts
+  script-dots:
+    cmds:
+      - bun build --minify --target=browser --watch --outdir=./src/assets/scripts/ ./scripts/dots/dots.ts
   default:
-    deps: [scss, script-nav, serve]
+    deps: [scss, script-nav, script-dots, serve]

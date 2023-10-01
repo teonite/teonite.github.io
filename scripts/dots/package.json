@@ -1,0 +1,15 @@
+{
+  "name": "dots",
+  "module": "dots.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/three": "^0.156.0",
+    "three": "^0.157.0"
+  }
+}

@@ -1,6 +1,7 @@
 @use "./helpers/" as *;
 @use "./variables";
 @use "./fonts";
+@use "./components/dots";
 
 body,
 html {
@@ -40,18 +41,6 @@ h6 {
   flex-flow: column;
   align-items: center;
   justify-content: flex-start;
-}
-
-#main-background {
-  position: absolute;
-  top: 0;
-  left: var(--spacing-xl);
-  width: calc(100% - var(--spacing-xl) * 2);
-  height: 100%;
-  background-color: var(--main-background);
-  z-index: 0;
-  content: " ";
-  display: block;
 }
 
 #main-wrapper {

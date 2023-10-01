@@ -592,6 +592,39 @@ html {
   font-style: normal;
   src: url("../../fonts/PPNeueMachina/PPNeueMachina-InktrapRegular.woff2") format("woff2");
 }
+#main-background {
+  position: absolute;
+  top: 0;
+  left: var(--spacing-xl);
+  width: calc(100% - var(--spacing-xl) * 2);
+  height: 100%;
+  background-color: var(--main-background);
+  z-index: 0;
+  content: " ";
+  display: block;
+}
+
+#canvas-track {
+  position: absolute;
+  top: 0;
+  left: var(--spacing-xl);
+  width: calc(100% - var(--spacing-xl) * 2);
+  height: 150vh;
+  z-index: 0;
+  display: block;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#canvas-wrapper {
+  width: 100%;
+  max-width: calc(1920px + 10%);
+  height: 150vh;
+}
+
 body,
 html {
   margin: 0;
@@ -631,18 +664,6 @@ h6 {
   flex-flow: column;
   align-items: center;
   justify-content: flex-start;
-}
-
-#main-background {
-  position: absolute;
-  top: 0;
-  left: var(--spacing-xl);
-  width: calc(100% - var(--spacing-xl) * 2);
-  height: 100%;
-  background-color: var(--main-background);
-  z-index: 0;
-  content: " ";
-  display: block;
 }
 
 #main-wrapper {
