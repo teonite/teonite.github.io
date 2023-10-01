@@ -155,7 +155,7 @@ section {
       grid-column: 1 / 2;
       display: flex;
       flex-flow: column;
-      row-gap: 32px;
+      row-gap: var(--spacing-m);
       width: 100%;
 
       @include media-breakpoint-up(lg) {

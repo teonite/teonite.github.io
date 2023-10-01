@@ -12,8 +12,13 @@ main {
 
     img {
       width: 100%;
-      height: auto;
+      height: 60vh;
       object-fit: cover;
+
+      @include media-breakpoint-up(lg) {
+        width: 100%;
+        height: auto;
+      }
     }
   }
   & > article {
@@ -22,7 +27,12 @@ main {
     row-gap: 32px;
     background-color: var(--main-background);
     box-sizing: border-box;
-    padding: 64px 146px 120px 146px;
+
+    padding: var(--spacing-l) 5px;
+
+    @include media-breakpoint-up(lg) {
+      padding: 64px 146px 120px 146px;
+    }
 
     div {
       width: 100%;
@@ -64,6 +74,11 @@ main {
       padding-left: 40px;
       list-style: none;
 
+      @include media-breakpoint-down(lg) {
+        margin-left: 10px;
+        padding-left: 20px;
+      }
+
       li {
         position: relative;
         @include typography(paragraph);
@@ -76,6 +91,10 @@ main {
           left: -40px;
           content: "\2022";
           color: var(--main-text);
+
+          @include media-breakpoint-down(lg) {
+            left: -20px;
+          }
         }
       }
     }

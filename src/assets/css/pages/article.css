@@ -615,8 +615,14 @@ main > .cover-wrapper {
 }
 main > .cover-wrapper img {
   width: 100%;
-  height: auto;
+  height: 60vh;
   object-fit: cover;
+}
+@media (min-width: 992px) {
+  main > .cover-wrapper img {
+    width: 100%;
+    height: auto;
+  }
 }
 main > article {
   display: flex;
@@ -624,7 +630,12 @@ main > article {
   row-gap: 32px;
   background-color: var(--main-background);
   box-sizing: border-box;
-  padding: 64px 146px 120px 146px;
+  padding: var(--spacing-l) 5px;
+}
+@media (min-width: 992px) {
+  main > article {
+    padding: 64px 146px 120px 146px;
+  }
 }
 main > article div {
   width: 100%;
@@ -709,6 +720,12 @@ main > article ul {
   padding-left: 40px;
   list-style: none;
 }
+@media (max-width: 991.98px) {
+  main > article ul {
+    margin-left: 10px;
+    padding-left: 20px;
+  }
+}
 main > article ul li {
   position: relative;
   font-family: "PP Neue Machina";
@@ -729,6 +746,11 @@ main > article ul li::before {
   left: -40px;
   content: "•";
   color: var(--main-text);
+}
+@media (max-width: 991.98px) {
+  main > article ul li::before {
+    left: -20px;
+  }
 }
 main > article img {
   width: 100%;
