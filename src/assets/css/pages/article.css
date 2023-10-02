@@ -292,6 +292,7 @@ footer > .footer-grid > .logo {
 footer > .footer-grid > .internal, footer > .footer-grid > .external {
   display: flex;
   flex-flow: column;
+  justify-content: flex-end;
   width: 100%;
   list-style: none;
   padding: 0;
@@ -648,7 +649,7 @@ main > .cover-wrapper img {
 main > article {
   display: flex;
   flex-flow: column;
-  row-gap: 32px;
+  row-gap: var(--spacing-l);
   background-color: var(--main-background);
   box-sizing: border-box;
   padding: var(--spacing-l) 5px;
@@ -658,8 +659,20 @@ main > article {
     padding: 64px 146px 120px 146px;
   }
 }
+main > article section {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  row-gap: var(--spacing-m);
+}
 main > article div {
   width: 100%;
+}
+main > article > header {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  row-gap: var(--spacing-m);
 }
 main > article > header p {
   font-family: "PP Neue Machina";
@@ -673,13 +686,18 @@ main > article > header p {
     font-size: 48px;
   }
 }
+main > article .actions {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-end;
+}
 main > article h1 {
   font-family: "PP Neue Machina";
   font-weight: 400;
   font-size: clamp(5vw, 10vw, 48px);
   line-height: 1.15;
   color: var(--main-text);
-  padding-bottom: 32px;
 }
 @media (min-width: 992px) {
   main > article h1 {
@@ -735,19 +753,14 @@ main > article a {
   text-decoration: underline;
   text-underline-offset: 8px;
 }
-main > article ul {
+main > article ul,
+main > article ol {
   margin-top: 20px;
   padding: 0;
   padding-left: 40px;
-  list-style: none;
 }
-@media (max-width: 991.98px) {
-  main > article ul {
-    margin-left: 10px;
-    padding-left: 20px;
-  }
-}
-main > article ul li {
+main > article ul li,
+main > article ol li {
   position: relative;
   font-family: "PP Neue Machina";
   font-weight: 400;
@@ -756,8 +769,18 @@ main > article ul li {
   color: var(--main-text);
 }
 @media (min-width: 992px) {
-  main > article ul li {
+  main > article ul li,
+  main > article ol li {
     font-size: 32px;
+  }
+}
+main > article ul {
+  list-style: none;
+}
+@media (max-width: 991.98px) {
+  main > article ul {
+    margin-left: 10px;
+    padding-left: 20px;
   }
 }
 main > article ul li::before {

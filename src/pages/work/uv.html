@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" data-theme="gray">
+  <head>
+    <title>teonite — deep tech studio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../../assets/css/pages/article.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="main-wrapper">
+        <main>
+          <div class="cover-wrapper">
+            <img src="../../assets/images/products/uv.jpg" alt="cover" />
+          </div>
+          <article>
+            <header>
+              <h1>Open Source SDR mobile app for decoding satellite images</h1>
+            </header>
+            <div class="divider"></div>
+            <section>
+              <h2>Introduction:</h2>
+              <p>
+                teonite has partnered up with Libre Space Foundation for SDR
+                Makerspace project, funded by European Space Agency.
+              </p>
+              <p>
+                This initiative brings together makers, open-source hackers,
+                radio amateurs and researchers from all over Greece and provide
+                funding, resources, and a passionate community tackling together
+                challenges in using Software Defined Radio for space
+                communications.
+              </p>
+              <ul>
+                <li>Client: Libre Space Foundation, European Space Agency</li>
+                <li>
+                  Services: satellite communication, open source, mobile app
+                  development
+                </li>
+                <li>Technology: kotlin, sdr, NOAA decoder, HackRF</li>
+                <li>Sector: Space</li>
+              </ul>
+            </section>
+            <section>
+              <h2>The problem:</h2>
+              <p>
+                Nowadays mobile phones are equipped with truly powerful
+                processors, which allow for signal processing in combination
+                with SDR. What’s surprising, nobody has used them to decode
+                satellite signals yet.
+              </p>
+              <p>
+                The goal of the cooperation between SDR Makerspace and TEONITE
+                is to implement a proof-of-concept, mobile phone based system
+                capable of receiving, decoding and displaying satellite data on
+                a mobile device.
+              </p>
+              <p>What’s more, this solution should be fully Open Source.</p>
+            </section>
+            <section>
+              <h2>The Solution:</h2>
+              <p>
+                SDR Mobile allows the users to download, decode and display data
+                from a NOAA satellite on a mobile phone.
+              </p>
+              <p>
+                We have decided to work with a NOAA satellite network (weather
+                satellites) due to signal strength and well-known encoding
+                standards. Satellite pictures are sent on radio frequencies
+                ranging between 137-138 MHz, which can be received using some
+                amateur radio equipment.
+              </p>
+              <p>
+                Android was our target mobile platform because of its
+                popularity, Open Source nature and number of available software
+                libraries. Like most new Android mobile applications, SDR Mobile
+                is written in Kotlin programming language. All DSP components,
+                like FIR filters, FM and AM demodulators etc., have been
+                implemented from scratch and are available as Open Source.
+              </p>
+            </section>
+          </article>
+        </main>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-grid">
+        <div class="logo">
+          <a>
+            <img src="../../assets/svg/tntLogo.svg" alt="teonite-logo" />
+          </a>
+        </div>
+        <ul class="internal">
+          <li>
+            <a>home</a>
+          </li>
+          <li>
+            <a>products</a>
+          </li>
+          <li>
+            <a>contact us</a>
+          </li>
+          <li>
+            <a>blog</a>
+          </li>
+        </ul>
+        <ul class="external">
+          <li><a>linkedin</a></li>
+          <li><a>X</a></li>
+          <li><a>facebook</a></li>
+          <li><a>matrix</a></li>
+        </ul>
+        <p class="contact">
+          <a href="mailto:hello@teonite.com">hello@teonite.com</a>
+          <br /><br />
+          teonite services sp. z o.o.<br /> ul. Cyfrowa 6/317<br /> 71-441
+          Szczecin, Poland<br /><br />KRS: 0000883109<br />
+           NIP: 8513256619
+        </p>
+      </div>
+    </footer>
+    <nav id="nav-main">
+      <div class="nav-wrapper">
+        <a href="https://teonite.com/" id="logo-main">
+          <img src="../../assets/svg/tntLogo.svg" alt="tnt" />
+        </a>
+        <ul>
+          <li><a href="/">home</a></li>
+          <li><a href="../work/">out work</a></li>
+          <li><a href="./">services</a></li>
+          <li><a href="../contact.html">contact</a></li>
+        </ul>
+        <button id="mobile-nav-trigger">
+          <img src="../../assets/svg/burger-menu.svg" alt="menu" />
+        </button>
+      </div>
+    </nav>
+    <dialog id="mobile-nav">
+      <div class="top">
+        <a href="https://teonite.com/" class="logo">
+          <img src="../../assets/svg/tntLogo.svg" alt="tnt" />
+        </a>
+        <button id="close-mobile-nav">
+          <img src="../../assets/svg/icon-x.svg" alt="close-icon" />
+        </button>
+      </div>
+      <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="../work/">out work</a></li>
+        <li><a href="./">services</a></li>
+        <li><a href="../contact.html">contact</a></li>
+      </ul>
+    </dialog>
+    <script src="../../assets/scripts/nav.js"></script>
+  </body>
+</html>

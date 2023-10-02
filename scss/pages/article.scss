@@ -21,10 +21,11 @@ main {
       }
     }
   }
+
   & > article {
     display: flex;
     flex-flow: column;
-    row-gap: 32px;
+    row-gap: var(--spacing-l);
     background-color: var(--main-background);
     box-sizing: border-box;
 
@@ -34,20 +35,36 @@ main {
       padding: 64px 146px 120px 146px;
     }
 
+    section {
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+      row-gap: var(--spacing-m);
+    }
+
     div {
       width: 100%;
     }
 
     & > header {
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+      row-gap: var(--spacing-m);
       p {
         @include typography(sub-header);
         color: var(--main-text);
       }
     }
+    .actions {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: flex-end;
+    }
     h1 {
       @include typography(main-header);
       color: var(--main-text);
-      padding-bottom: 32px;
     }
     h2 {
       @include typography(section-title);
@@ -68,10 +85,19 @@ main {
       text-underline-offset: 8px;
     }
 
-    ul {
+    ul,
+    ol {
       margin-top: 20px;
       padding: 0;
       padding-left: 40px;
+      li {
+        position: relative;
+        @include typography(paragraph);
+        color: var(--main-text);
+      }
+    }
+
+    ul {
       list-style: none;
 
       @include media-breakpoint-down(lg) {
@@ -80,10 +106,6 @@ main {
       }
 
       li {
-        position: relative;
-        @include typography(paragraph);
-        color: var(--main-text);
-
         &::before {
           user-select: none;
           position: absolute;

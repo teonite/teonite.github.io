@@ -426,6 +426,7 @@ footer > .footer-grid > .logo {
 footer > .footer-grid > .internal, footer > .footer-grid > .external {
   display: flex;
   flex-flow: column;
+  justify-content: flex-end;
   width: 100%;
   list-style: none;
   padding: 0;

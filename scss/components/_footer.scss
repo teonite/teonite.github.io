@@ -67,6 +67,7 @@ footer {
     & > .external {
       display: flex;
       flex-flow: column;
+      justify-content: flex-end;
       width: 100%;
       list-style: none;
       padding: 0;
