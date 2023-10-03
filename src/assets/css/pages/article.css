@@ -629,6 +629,14 @@ a:hover {
 main {
   background-color: var(--main-background);
 }
+main a {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  color: var(--main-text);
+}
+main a:visited {
+  color: var(main-text);
+}
 main > .cover-wrapper {
   width: 100%;
   padding: 0;

@@ -2,8 +2,47 @@
 <html lang="en" data-theme="gray">
   <head>
     <title>teonite — deep tech studio</title>
+    <meta
+      name="description"
+      content="Deep tech studio crafting mission-critical software"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/meta/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/meta/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/assets/meta/favicon/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/meta/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/assets/meta/favicon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/assets/meta/favicon/android-chrome-512x512.png"
+    />
     <link href="../../assets/css/pages/article.css" rel="stylesheet" />
   </head>
   <body>
@@ -15,68 +54,109 @@
           </div>
           <article>
             <header>
-              <h1>Open Source SDR mobile app for decoding satellite images</h1>
+              <h1>UltraViolet — a cloud-based digital rights storage system</h1>
+              <p>
+                We’re very happy to announce that our cooperation with
+                <a href="http://castlabs.com/company/about/" target="_blank"
+                  >castLabs</a
+                >
+                in the development of backend systems for the UltraViolet
+                ecosystem, has completed and can be considered successful. Below
+                we outline the project’s objectives and the project’s importance
+                for the usability of UltraViolet.
+              </p>
             </header>
             <div class="divider"></div>
             <section>
-              <h2>Introduction:</h2>
+              <h2>What is UltraViolet?</h2>
               <p>
-                teonite has partnered up with Libre Space Foundation for SDR
-                Makerspace project, funded by European Space Agency.
+                In short, UltraViolet is a cloud-based digital rights storage
+                system, enabling consumers to access their purchased content
+                across all devices using many different services. UltraViolet
+                was first announced in 2010 by DECE (Digital Entertainment
+                Content Ecosystem), a huge consortium composed of major film
+                studios, e.g. Universal Studios, Sony Entertainment Pictures,
+                Warner Bros. Entertainment, Internet-based companies and ISPs,
+                retailers, cable TV companies, network hosting vendors and many
+                more.
               </p>
-              <p>
-                This initiative brings together makers, open-source hackers,
-                radio amateurs and researchers from all over Greece and provide
-                funding, resources, and a passionate community tackling together
-                challenges in using Software Defined Radio for space
-                communications.
-              </p>
-              <ul>
-                <li>Client: Libre Space Foundation, European Space Agency</li>
-                <li>
-                  Services: satellite communication, open source, mobile app
-                  development
-                </li>
-                <li>Technology: kotlin, sdr, NOAA decoder, HackRF</li>
-                <li>Sector: Space</li>
-              </ul>
             </section>
             <section>
-              <h2>The problem:</h2>
+              <h2>UltraViolet from user perspective</h2>
               <p>
-                Nowadays mobile phones are equipped with truly powerful
-                processors, which allow for signal processing in combination
-                with SDR. What’s surprising, nobody has used them to decode
-                satellite signals yet.
+                Every time you get a copy of a DVD or Blue-ray Disc
+                distributed/produced by one of the DECE partners and labeled
+                with the UltraViolet mark you can easily add your new title to
+                your UltraViolet Library by redeeming a code that comes with
+                each copy. This gives you unlimited access to your movies
+                throughout different devices and platforms. Pretty neat. You can
+                also directly buy digital versions of movies and TV shows from
+                UltraViolet participating services.
               </p>
-              <p>
-                The goal of the cooperation between SDR Makerspace and TEONITE
-                is to implement a proof-of-concept, mobile phone based system
-                capable of receiving, decoding and displaying satellite data on
-                a mobile device.
-              </p>
-              <p>What’s more, this solution should be fully Open Source.</p>
             </section>
             <section>
-              <h2>The Solution:</h2>
+              <h2>What was the project all about</h2>
               <p>
-                SDR Mobile allows the users to download, decode and display data
-                from a NOAA satellite on a mobile phone.
+                We took an active role working with castLabs development team
+                **in building a totally new version of DECE’s UltraViolet
+                Coordinator service** — the cloud-based servers, databases, and
+                web services API - ensuring fast and error-free communication
+                between UltraViolet ecosystem and various retailers and content
+                publishers.
+              </p>
+            </section>
+            <section>
+              <h2>Results</h2>
+              <p>
+                The service ran smoothly during December holiday peak and no
+                major issues were reported which, considering the sheer numbers
+                involved, makes it a great success. UltraViolet has over 28
+                million users with over 250 million movies and TV shows in 13
+                countries. During holidays (24th/25th) the number of API calls
+                peaked at 1M per hour, and **on New Year’s Eve it rose up to
+                1,7M transactions per hour.** And everything worked just fine.
+                If that’s not a success, I don’t know what is.
+              </p>
+            </section>
+            <section>
+              <h2>Aftermath</h2>
+              <p>
+                The project has ended successfully. We like to treat the sheer
+                scale of this undertaking as a good proof of our capabilities
+                and high skill level, but we’ll happily accept even more
+                challenging project anytime.
               </p>
               <p>
-                We have decided to work with a NOAA satellite network (weather
-                satellites) due to signal strength and well-known encoding
-                standards. Satellite pictures are sent on radio frequencies
-                ranging between 137-138 MHz, which can be received using some
-                amateur radio equipment.
+                A good thing that comes from such joint projects is the
+                possibility to work in a new environment and with new developers
+                which is very motivating, especially when you see they know what
+                they’re doing. All in all, we certainly hope for further
+                cooperation with castLabs.
               </p>
               <p>
-                Android was our target mobile platform because of its
-                popularity, Open Source nature and number of available software
-                libraries. Like most new Android mobile applications, SDR Mobile
-                is written in Kotlin programming language. All DSP components,
-                like FIR filters, FM and AM demodulators etc., have been
-                implemented from scratch and are available as Open Source.
+                “teonite really did their part. They exhibited high skill in
+                all-round programming, while sticking to the development
+                requirements and deadlines. With their contribution of expertise
+                and cooperative spirit we made swift and solid progress.”<br />
+                — Piotr Buliński, castLabs Development Lead
+              </p>
+            </section>
+            <section>
+              <h2>About castLabs</h2>
+              <p>
+                <a href="http://castlabs.com/" target="_blank">CastLabs</a>
+                pioneers software and cloud services for digital video markets
+                worldwide. The company provides solutions to easily enable the
+                secure distribution of premium movie, TV, and audio assets for
+                high-quality video experiences. Their range of applications and
+                services are designed to help businesses deliver DRM-protected
+                content over a large selection of consumer devices and
+                platforms. castLabs is based in Los Angeles, California, and
+                Berlin, Germany. To learn more about castLabs products and
+                services, please visit
+                <a href="https://castlabs.com" target="_blank">
+                  castlabs.com
+                </a>
               </p>
             </section>
           </article>

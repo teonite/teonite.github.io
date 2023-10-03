@@ -4,6 +4,17 @@
 
 main {
   background-color: var(--main-background);
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    color: var(--main-text);
+
+    &:visited {
+      color: var(main-text);
+    }
+  }
+
   & > .cover-wrapper {
     width: 100%;
     padding: 0;

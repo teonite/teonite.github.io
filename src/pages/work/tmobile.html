@@ -2,8 +2,47 @@
 <html lang="en" data-theme="gray">
   <head>
     <title>teonite — deep tech studio</title>
+    <meta
+      name="description"
+      content="Deep tech studio crafting mission-critical software"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/meta/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/meta/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/assets/meta/favicon/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/meta/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/assets/meta/favicon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/assets/meta/favicon/android-chrome-512x512.png"
+    />
     <link href="../../assets/css/pages/article.css" rel="stylesheet" />
   </head>
   <body>
@@ -15,68 +54,127 @@
           </div>
           <article>
             <header>
-              <h1>Open Source SDR mobile app for decoding satellite images</h1>
+              <h1>T-Mobile Poland (Case Study)</h1>
+              <p>
+                Application of Data Science and Machine Learning in Business
+                Process Optimization and Predictive Modeling
+              </p>
             </header>
             <div class="divider"></div>
             <section>
-              <h2>Introduction:</h2>
+              <h2>Client Challange</h2>
               <p>
-                teonite has partnered up with Libre Space Foundation for SDR
-                Makerspace project, funded by European Space Agency.
+                As one of the largest mobile network operators in Poland with
+                over 10 million customers, T-Mobile Poland possesses a
+                substantial volume of data often referred to as 'Big Data.' What
+                sets T-Mobile apart is its conscious approach to the value of
+                this data, which prompted our collaborative project. T-Mobile
+                actively sought ways to leverage this data to optimize business
+                processes, particularly in the realm of product and service
+                sales.
               </p>
-              <p>
-                This initiative brings together makers, open-source hackers,
-                radio amateurs and researchers from all over Greece and provide
-                funding, resources, and a passionate community tackling together
-                challenges in using Software Defined Radio for space
-                communications.
-              </p>
-              <ul>
-                <li>Client: Libre Space Foundation, European Space Agency</li>
-                <li>
-                  Services: satellite communication, open source, mobile app
-                  development
-                </li>
-                <li>Technology: kotlin, sdr, NOAA decoder, HackRF</li>
-                <li>Sector: Space</li>
-              </ul>
             </section>
             <section>
-              <h2>The problem:</h2>
+              <h2>Solution</h2>
               <p>
-                Nowadays mobile phones are equipped with truly powerful
-                processors, which allow for signal processing in combination
-                with SDR. What’s surprising, nobody has used them to decode
-                satellite signals yet.
+                To address this challenge, we proposed a data analysis and
+                predictive modeling system based on Machine Learning. The
+                analytical system consisted of several key components:
               </p>
+              <h2>Security</h2>
               <p>
-                The goal of the cooperation between SDR Makerspace and TEONITE
-                is to implement a proof-of-concept, mobile phone based system
-                capable of receiving, decoding and displaying satellite data on
-                a mobile device.
+                The first crucial step involved establishing a secure
+                environment for working with sensitive data. Our DevOps team
+                created a solution based on VPN tunnels and multiple layers of
+                authorization, enabling remote work with sensitive data from
+                T-Mobile's data warehouse.
               </p>
-              <p>What’s more, this solution should be fully Open Source.</p>
+              <h2>Data Preparation (Data Engineering)</h2>
+              <p>
+                The next step involved the preparation and analysis of the
+                accessible data. The data stored in the Hadoop system required
+                proper aggregation and preselection based on relevant attributes
+                pertinent to the problem. This process involved collaboration
+                between T-Mobile's Big Data team and teonite’s Data Science
+                team.
+              </p>
+              <h2>Data Analysis / Feature Selection</h2>
+              <p>
+                With the prepared data, we conducted analyses that included the
+                visualization of attributes, correlation analysis, determination
+                of quality and resolution, and metric development. This phase
+                allowed us to identify issues related to data quality and
+                modeling assumptions. One such challenge was the excessive depth
+                of aggregation, resulting in numerous missing values. Through
+                experimentation, we found an appropriate level of aggregation to
+                create a dataset suitable for machine learning modeling.
+              </p>
+              <h2>Predictive Modeling</h2>
+              <p>
+                We implemented and tested various versions of the model,
+                utilizing Jupyter Notebook within the TMPL infrastructure.
+                Regression algorithms, including Lasso, ElasticNet, Ridge
+                Regression, and Gradient Boosting, were tested. The final model
+                implementation employed the XGBoost algorithm in Python, known
+                for its "boosting" approach using a tree ensemble.
+              </p>
+              <h2>Presentation of Results</h2>
+              <p>
+                The final and vital aspect of the project was presenting the
+                research findings in a business-friendly format. We employed
+                various tools for this purpose, including interactive model
+                deployment (Jupyter Notebooks), visualization using interactive
+                maps with integrated information (Google Maps), and an
+                interactive environment for result analysis (Orange Data
+                Studio).
+              </p>
             </section>
             <section>
-              <h2>The Solution:</h2>
+              <h2>Challenges</h2>
+              <h2>Legal and Regulatory Considerations</h2>
               <p>
-                SDR Mobile allows the users to download, decode and display data
-                from a NOAA satellite on a mobile phone.
+                Adherence to data privacy regulations and anonymization of
+                personal data were imperative due to legal restrictions
+                governing data use.
+              </p>
+              <h2>Data Quality</h2>
+              <p>
+                Ensuring the quality of data related to subscriber counts and
+                traffic intensity in specific areas required selecting
+                representative measurement points and data transformation.
+              </p>
+              <h2>Feature Engineering</h2>
+              <p>
+                Addressing the lack of strong correlations between the target
+                variable (new contracts signed in stores) and explanatory
+                variables, along with limitations affecting the model's ability
+                to differentiate predicted locations, was a key challenge.
+              </p>
+            </section>
+            <section>
+              <h2>Results</h2>
+              <p>The project delivered two key outcomes:</p>
+              <h2>Research Report</h2>
+              <p>
+                This report documented the research findings, insights,
+                visualizations, and explanations of the designed model.
+              </p>
+              <h2>Analytical Framework</h2>
+              <p>
+                The entire data processing workflow, along with the trained
+                Machine Learning model capable of generating predictions.
               </p>
               <p>
-                We have decided to work with a NOAA satellite network (weather
-                satellites) due to signal strength and well-known encoding
-                standards. Satellite pictures are sent on radio frequencies
-                ranging between 137-138 MHz, which can be received using some
-                amateur radio equipment.
+                “The project conducted by teonite provided valuable insights
+                into T-Mobile's data assets. Our agile approach combined with
+                extensive knowledge in Data Science ensured the success of the
+                entire endeavor.”<br />
+                —Michał Krauze, Head Of New Business and Innovation at T-Mobile
+                Poland*
               </p>
               <p>
-                Android was our target mobile platform because of its
-                popularity, Open Source nature and number of available software
-                libraries. Like most new Android mobile applications, SDR Mobile
-                is written in Kotlin programming language. All DSP components,
-                like FIR filters, FM and AM demodulators etc., have been
-                implemented from scratch and are available as Open Source.
+                We are ready for more Machine Learning challenges! Contact us
+                for further information.
               </p>
             </section>
           </article>
