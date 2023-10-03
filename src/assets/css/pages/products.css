@@ -302,6 +302,10 @@ footer > .footer-grid > .internal, footer > .footer-grid > .external {
   gap: 10px;
 }
 footer > .footer-grid > .internal li, footer > .footer-grid > .external li {
+  display: flex;
+  flex-flow: row;
+  align-items: flex-end;
+  justify-content: flex-start;
   width: 100%;
   height: 48px;
 }
@@ -313,6 +317,8 @@ footer > .footer-grid > .internal li a, footer > .footer-grid > .external li a {
   font-size: calc(16px * var(--fonts-scale));
   line-height: 1.5;
   cursor: pointer;
+  position: relative;
+  height: auto;
   color: #000;
 }
 @media (min-width: 992px) {
@@ -371,6 +377,8 @@ footer > .footer-grid > .external a::after {
   transform: scale(0.6) rotate(-45deg);
 }
 footer > .footer-grid > .contact {
+  grid-row: 2/3;
+  grid-column: 2/3;
   text-align: right;
   font-family: "PP Neue Machina";
   font-weight: 400;
@@ -378,10 +386,18 @@ footer > .footer-grid > .contact {
   line-height: 1.5;
   color: #000;
 }
-@media (max-width: 991.98px) {
+@media (min-width: 992px) {
   footer > .footer-grid > .contact {
-    grid-row: 2/4;
-    grid-column: 2/3;
+    grid-row: 1/3;
+    grid-column: 3/4;
+    align-self: center;
+  }
+}
+@media (min-width: 1200px) {
+  footer > .footer-grid > .contact {
+    grid-row: 1;
+    grid-column: 4/5;
+    align-self: end;
   }
 }
 @media (min-width: 992px) {
