@@ -29,7 +29,11 @@ nav {
     align-self: center;
     justify-content: flex-start;
     box-sizing: border-box;
-    padding: 0 var(--spacing-xl);
+    padding: 0 16px;
+
+    @include media-breakpoint-up(lg) {
+      padding: 0 var(--spacing-xl);
+    }
 
     & > ul {
       display: none;

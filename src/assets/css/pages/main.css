@@ -210,7 +210,12 @@ nav > .nav-wrapper {
   align-self: center;
   justify-content: flex-start;
   box-sizing: border-box;
-  padding: 0 var(--spacing-xl);
+  padding: 0 16px;
+}
+@media (min-width: 992px) {
+  nav > .nav-wrapper {
+    padding: 0 var(--spacing-xl);
+  }
 }
 nav > .nav-wrapper > ul {
   display: none;
@@ -460,29 +465,53 @@ footer > .footer-grid > .internal, footer > .footer-grid > .external {
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 10px;
+  row-gap: 12px;
+}
+@media (min-width: 992px) {
+  footer > .footer-grid > .internal, footer > .footer-grid > .external {
+    gap: 10px;
+  }
 }
 footer > .footer-grid > .internal li, footer > .footer-grid > .external li {
   display: flex;
   flex-flow: row;
-  align-items: flex-end;
-  justify-content: flex-start;
   width: 100%;
-  height: 48px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+@media (min-width: 992px) {
+  footer > .footer-grid > .internal li, footer > .footer-grid > .external li {
+    height: 48px;
+    align-items: flex-end;
+  }
 }
 footer > .footer-grid > .internal li a, footer > .footer-grid > .external li a {
-  height: 100%;
   text-decoration: none;
-  font-family: "PP Neue Machina";
-  font-weight: 400;
-  font-size: calc(16px * var(--fonts-scale));
-  line-height: 1.5;
   cursor: pointer;
   position: relative;
   height: auto;
   color: #000;
+  font-family: "PP Neue Machina";
+  font-weight: 400;
+  font-size: calc(16px * var(--fonts-scale));
+  line-height: 1.5;
+  font-size: 18px;
 }
 @media (min-width: 992px) {
+  footer > .footer-grid > .internal li a, footer > .footer-grid > .external li a {
+    font-size: calc(32px * var(--fonts-scale));
+  }
+}
+@media (min-width: 992px) {
+  footer > .footer-grid > .internal li a, footer > .footer-grid > .external li a {
+    height: 100%;
+    font-family: "PP Neue Machina";
+    font-weight: 400;
+    font-size: calc(16px * var(--fonts-scale));
+    line-height: 1.5;
+  }
+}
+@media (min-width: 992px) and (min-width: 992px) {
   footer > .footer-grid > .internal li a, footer > .footer-grid > .external li a {
     font-size: calc(32px * var(--fonts-scale));
   }
@@ -495,6 +524,9 @@ footer > .footer-grid > .internal li a:hover, footer > .footer-grid > .external 
   text-decoration-color: #000;
   text-underline-offset: 8px;
 }
+footer > .footer-grid > .internal {
+  padding-bottom: 12px;
+}
 @media (max-width: 991.98px) {
   footer > .footer-grid > .internal {
     grid-row: 2;
@@ -503,6 +535,7 @@ footer > .footer-grid > .internal li a:hover, footer > .footer-grid > .external 
 }
 @media (min-width: 992px) {
   footer > .footer-grid > .internal {
+    padding: 0;
     grid-row: 1;
     grid-column: 2/3;
   }
@@ -528,14 +561,24 @@ footer > .footer-grid > .internal li a:hover, footer > .footer-grid > .external 
 footer > .footer-grid > .external a {
   position: relative;
 }
+@media (max-width: 991.98px) {
+  footer > .footer-grid > .external a {
+    padding-right: 20px;
+  }
+}
 footer > .footer-grid > .external a::after {
   position: absolute;
   display: block;
   content: "→";
-  top: -20px;
-  right: -25px;
+  top: -5px;
+  right: -5px;
   user-select: none;
-  transform: scale(0.6) rotate(-45deg);
+  transform: rotate(-45deg);
+}
+@media (min-width: 992px) {
+  footer > .footer-grid > .external a::after {
+    right: -25px;
+  }
 }
 footer > .footer-grid > .contact {
   grid-row: 2/3;
@@ -806,7 +849,7 @@ main > h1 {
 }
 @media (min-width: 992px) {
   main {
-    padding: 480px 146px 370px 146px;
+    padding: 170px var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
   }
 }
 
