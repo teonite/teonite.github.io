@@ -13,7 +13,7 @@ main {
   padding: 25vh 16px var(--spacing-xxl) 16px;
 
   @include media-breakpoint-up(lg) {
-    padding: 170px var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
+    padding: 35vh var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
   }
 
   h1 {

@@ -13,7 +13,7 @@ main {
   }
 
   @include media-breakpoint-up(lg) {
-    padding: 170px var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
+    padding: 35vh var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
   }
 }
 

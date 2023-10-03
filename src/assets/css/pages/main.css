@@ -849,7 +849,7 @@ main > h1 {
 }
 @media (min-width: 992px) {
   main {
-    padding: 170px var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
+    padding: 35vh var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
   }
 }
 
