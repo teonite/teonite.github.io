@@ -175,7 +175,7 @@ nav {
     flex-flow: column;
     align-items: flex-start;
     justify-content: flex-start;
-    row-gap: 32px;
+    row-gap: var(--spacing-xl);
     width: 100%;
     height: 100%;
 
@@ -183,6 +183,7 @@ nav {
     a {
       display: block;
       @include typography(paragraph);
+      font-size: 8vh;
       cursor: pointer;
       color: #000;
     }

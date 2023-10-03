@@ -3,6 +3,10 @@
 @use "./fonts";
 @use "./components/dots";
 
+.hide-scroll {
+  overflow: hidden;
+}
+
 body,
 html {
   margin: 0;
