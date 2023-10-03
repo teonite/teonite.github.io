@@ -683,7 +683,7 @@ main > article {
   row-gap: var(--spacing-l);
   background-color: var(--main-background);
   box-sizing: border-box;
-  padding: var(--spacing-l) 5px;
+  padding: var(--spacing-l);
 }
 @media (min-width: 992px) {
   main > article {

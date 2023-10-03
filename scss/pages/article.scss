@@ -41,7 +41,7 @@ main {
     background-color: var(--main-background);
     box-sizing: border-box;
 
-    padding: var(--spacing-l) 5px;
+    padding: var(--spacing-l);
 
     @include media-breakpoint-up(lg) {
       padding: 64px 146px 120px 146px;
