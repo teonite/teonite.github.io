@@ -674,6 +674,7 @@ main > .cover-wrapper img {
   main > .cover-wrapper img {
     width: 100%;
     height: auto;
+    max-height: 70vh;
   }
 }
 main > article {
