@@ -9,6 +9,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "es-cookie": "^1.4.0",
     "motion": "^10.16.4"
   }
 }

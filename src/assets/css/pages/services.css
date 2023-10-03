@@ -648,6 +648,61 @@ a.book:hover {
   outline: solid 2px var(--main-text);
 }
 
+#cookies {
+  box-sizing: border-box;
+  padding: 20px 10px;
+  background-color: #000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--spacing-m);
+  z-index: 9;
+}
+#cookies.show {
+  display: flex;
+}
+#cookies p,
+#cookies a,
+#cookies button {
+  font-family: "PP Neue Machina";
+  font-weight: 400;
+  font-size: calc(12px * var(--fonts-scale));
+  line-height: 1.5;
+  color: #fff;
+}
+@media (min-width: 992px) {
+  #cookies p,
+  #cookies a,
+  #cookies button {
+    font-size: calc(20px * var(--fonts-scale));
+  }
+}
+#cookies a {
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  text-underline-offset: 5px;
+}
+#cookies button {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 5px var(--spacing-s);
+  border: 1px solid #fff;
+  outline-color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+}
+#cookies button:hover {
+  outline-width: 3px;
+}
+
 main {
   padding: 25vh var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
 }

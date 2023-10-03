@@ -29,7 +29,6 @@ const initDots = (targetElement: HTMLElement) => {
 	const cubeSize = 3;
 	const pointSpacing = 0.08;
 	const pointsPerAxis = Math.floor(cubeSize / pointSpacing);
-	const pointCount = pointsPerAxis ** 3;
 	const pointsArray = [];
 
 	for (let x = 0; x < pointsPerAxis; x++) {
@@ -88,7 +87,6 @@ const initDots = (targetElement: HTMLElement) => {
 		points.rotation.z = minimalRotationSpeed;
 	};
 
-	console.log(pointCount);
 	animate();
 }
 

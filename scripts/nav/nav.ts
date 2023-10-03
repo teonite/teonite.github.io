@@ -1,6 +1,7 @@
 /// <reference lib="dom" />
 /// <reference lib="dom.iterable" />
 import { animate } from "motion";
+import * as Cookies from "es-cookie";
 
 var prevScrollPos = window.scrollY;
 var navAnimationInProgress = false;
@@ -90,4 +91,37 @@ if(mobileNavDialog && mobileNavTrigger && mobileNavDismissal) {
 
   mobileNavTrigger.addEventListener("click", handleOpenNav);
   mobileNavDismissal.addEventListener("click", closeMobileNav);
+}
+
+// cookies
+
+const cookieName = "teonite-accept-cookies";
+
+type TeoniteCookie = {
+  accepted: boolean;
+}
+
+const accepted = (): boolean => {
+  const content = Cookies.get(cookieName);
+  if(content) {
+    const parsed = JSON.parse(content) as TeoniteCookie;
+    return parsed.accepted;
+  }
+  return false;
+}
+
+if(!accepted()) {
+  const cookieElement = document.getElementById("cookies");
+  const acceptCookieElement = document.getElementById("accept-cookies");
+  if(cookieElement && acceptCookieElement) {
+    cookieElement.classList.add("show");
+
+    acceptCookieElement.addEventListener("click", () => {
+      const cookie: TeoniteCookie = {
+        accepted: true
+      };
+      Cookies.set(cookieName, JSON.stringify(cookie));
+      cookieElement.classList.remove("show");
+    });
+  }
 }

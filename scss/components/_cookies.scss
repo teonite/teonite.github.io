@@ -1,0 +1,51 @@
+@use "../helpers/" as *;
+
+#cookies {
+  box-sizing: border-box;
+  padding: 20px 10px;
+  background-color: #000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--spacing-m);
+  z-index: 9;
+
+  &.show {
+    display: flex;
+  }
+
+  p,
+  a,
+  button {
+    @include typography(label);
+    color: #fff;
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    text-underline-offset: 5px;
+  }
+
+  button {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 5px var(--spacing-s);
+    border: 1px solid #fff;
+    outline-color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      outline-width: 3px;
+    }
+  }
+}
