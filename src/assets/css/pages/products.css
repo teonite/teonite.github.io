@@ -668,20 +668,26 @@ html {
 #main-background {
   position: absolute;
   top: 0;
-  left: var(--spacing-xl);
-  width: calc(100% - var(--spacing-xl) * 2);
+  left: 16px;
+  width: calc(100% - 32px);
   height: 100%;
   background-color: var(--main-background);
   z-index: 0;
   content: " ";
   display: block;
 }
+@media (min-width: 992px) {
+  #main-background {
+    left: var(--spacing-xl);
+    width: calc(100% - var(--spacing-xl) * 2);
+  }
+}
 
 #canvas-track {
   position: absolute;
   top: 0;
-  left: var(--spacing-xl);
-  width: calc(100% - var(--spacing-xl) * 2);
+  left: 16px;
+  width: calc(100% - 32px);
   height: 150vh;
   z-index: 0;
   display: block;
@@ -691,11 +697,21 @@ html {
   align-items: center;
   justify-content: flex-start;
 }
+@media (min-width: 992px) {
+  #canvas-track {
+    left: var(--spacing-xl);
+    width: calc(100% - var(--spacing-xl) * 2);
+  }
+}
 
 #canvas-wrapper {
   width: 100%;
   max-width: calc(1920px + 10%);
   height: 150vh;
+}
+
+#main-wrapper {
+  min-height: 150vh;
 }
 
 .hide-scroll {
@@ -735,12 +751,17 @@ h6 {
 #root {
   position: relative;
   box-sizing: border-box;
-  padding: 0 var(--spacing-xl);
+  padding: 0 var(--spacing-m);
   background-color: var(--secondary-surfaces);
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: flex-start;
+}
+@media (min-width: 992px) {
+  #root {
+    padding: 0 var(--spacing-xl);
+  }
 }
 
 #main-wrapper {
@@ -749,6 +770,10 @@ h6 {
   position: relative;
   background-color: transparent;
   z-index: 1;
+}
+
+footer {
+  padding: 32px 16px !important;
 }
 
 main {
@@ -768,7 +793,7 @@ a:hover {
 
 main {
   box-sizing: border-box;
-  padding: 25vh var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
+  padding: 50vh 16px 32px 16px;
 }
 @media (min-width: 992px) {
   main {

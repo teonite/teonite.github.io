@@ -5,7 +5,7 @@
 
 main {
   box-sizing: border-box;
-  padding: 180px 32px 64px 32px;
+  padding: 50vh 16px 32px 16px;
   & > h1 {
     @include typography(main-header);
     color: var(--main-text);

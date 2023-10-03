@@ -3,7 +3,7 @@
 @use "../components/essentials";
 
 main {
-  padding: 25vh var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
+  padding: 50vh 16px 32px 16px;
 
   @include media-breakpoint-up(lg) {
     padding: 170px var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);

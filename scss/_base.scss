@@ -39,12 +39,16 @@ h6 {
 #root {
   position: relative;
   box-sizing: border-box;
-  padding: 0 var(--spacing-xl);
+  padding: 0 var(--spacing-m);
   background-color: var(--secondary-surfaces);
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: flex-start;
+
+  @include media-breakpoint-up(lg) {
+    padding: 0 var(--spacing-xl);
+  }
 }
 
 #main-wrapper {
@@ -53,6 +57,10 @@ h6 {
   position: relative;
   background-color: transparent;
   z-index: 1;
+}
+
+footer {
+  padding: 32px 16px !important;
 }
 
 main {
