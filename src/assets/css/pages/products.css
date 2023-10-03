@@ -540,8 +540,8 @@ a.book:hover {
   width: 90px;
   overflow: hidden;
 }
-#trusted-by > ul > li > a {
-  cursor: pointer;
+#trusted-by > ul > li > .img-wrapper {
+  user-select: none;
   display: flex;
   flex-flow: row;
   align-items: center;
@@ -549,7 +549,7 @@ a.book:hover {
   height: 100%;
   width: 100%;
 }
-#trusted-by > ul > li > a img {
+#trusted-by > ul > li > .img-wrapper img {
   height: auto;
   max-height: 100%;
   width: 90px;
@@ -692,31 +692,50 @@ a:hover {
 
 main {
   box-sizing: border-box;
-  padding: 50vh var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
+  padding: 25vh var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
 }
 @media (min-width: 992px) {
   main {
-    padding: 480px 146px 370px 146px;
+    padding: 170px var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
   }
 }
-main > h1 {
+main h1 {
   font-family: "PP Neue Machina";
   font-weight: 400;
   font-size: clamp(5vw, 10vw, 48px);
   line-height: 1.15;
   color: var(--main-text);
-  letter-spacing: 9px;
+  line-height: 1.15;
 }
 @media (min-width: 992px) {
-  main > h1 {
+  main h1 {
     font-size: 72px;
     line-height: 1.15;
   }
 }
 @media (min-width: 1200px) {
-  main > h1 {
+  main h1 {
     line-height: 1.15;
     font-size: 90px;
+  }
+}
+main > header {
+  display: flex;
+  flex-flow: column;
+  gap: var(--spacing-m);
+  padding-top: var(--spacing-xl);
+}
+@media (min-width: 1200px) {
+  main > header {
+    flex-flow: row wrap;
+  }
+}
+main > header > a {
+  display: block;
+}
+@media (min-width: 1200px) {
+  main > header > a {
+    margin-left: auto;
   }
 }
 

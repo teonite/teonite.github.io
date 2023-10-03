@@ -627,11 +627,11 @@ a.book:hover {
 }
 
 main {
-  padding: 50vh var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
+  padding: 25vh var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
 }
 @media (min-width: 992px) {
   main {
-    padding: 230px 146px 146px 146px;
+    padding: 170px var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
   }
 }
 main h1 {
@@ -658,6 +658,7 @@ main > header {
   display: flex;
   flex-flow: column;
   gap: var(--spacing-m);
+  padding-top: var(--spacing-xl);
 }
 @media (min-width: 1200px) {
   main > header {
@@ -764,7 +765,7 @@ main > header > a {
 #services .service-wrapper > .service > .right {
   display: flex;
   flex-flow: column;
-  row-gap: var(spacing-s);
+  row-gap: var(--spacing-s);
   grid-row: 2;
   grid-column: 1/2;
 }

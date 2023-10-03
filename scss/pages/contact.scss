@@ -1,8 +1,6 @@
 @use "../helpers/" as *;
 @use "../base";
-@use "../components/nav";
-@use "../components/footer";
-@use "../components/divider";
+@use "../components/essentials";
 
 main {
   display: flex;
@@ -12,16 +10,35 @@ main {
   row-gap: var(--spacing-xl);
   box-sizing: border-box;
 
-  padding: 50vh var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
+  padding: 25vh var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
 
   @include media-breakpoint-up(lg) {
-    padding: 432px var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
+    padding: 170px var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
   }
 
   h1 {
-    @include typography(mobile-main-header);
-
+    @include typography(main-header);
     color: var(--main-text);
+    line-height: 1.15;
+  }
+
+  & > header {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    gap: var(--spacing-m);
+    padding-top: var(--spacing-xl);
+
+    @include media-breakpoint-up(xl) {
+      flex-flow: row wrap;
+    }
+
+    & > a {
+      display: block;
+      @include media-breakpoint-up(xl) {
+        margin-left: auto;
+      }
+    }
   }
 
   & > .divider.contact {

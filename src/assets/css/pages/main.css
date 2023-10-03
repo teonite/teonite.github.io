@@ -674,8 +674,8 @@ a.book:hover {
   width: 90px;
   overflow: hidden;
 }
-#trusted-by > ul > li > a {
-  cursor: pointer;
+#trusted-by > ul > li > .img-wrapper {
+  user-select: none;
   display: flex;
   flex-flow: row;
   align-items: center;
@@ -683,7 +683,7 @@ a.book:hover {
   height: 100%;
   width: 100%;
 }
-#trusted-by > ul > li > a img {
+#trusted-by > ul > li > .img-wrapper img {
   height: auto;
   max-height: 100%;
   width: 90px;

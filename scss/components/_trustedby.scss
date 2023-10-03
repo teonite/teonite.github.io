@@ -39,8 +39,8 @@
       height: 100%;
       width: 90px;
       overflow: hidden;
-      & > a {
-        cursor: pointer;
+      & > .img-wrapper {
+        user-select: none;
         display: flex;
         flex-flow: row;
         align-items: center;
