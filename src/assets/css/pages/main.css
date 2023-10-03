@@ -859,7 +859,7 @@ section > header > a {
   #our-work > article {
     grid-template-columns: 1fr 1fr;
     row-gap: unset;
-    min-height: 650px;
+    min-height: 700px;
   }
 }
 #our-work > article > .cover {
