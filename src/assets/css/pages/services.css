@@ -827,8 +827,5 @@ main > header > a {
   width: 100%;
   user-select: none;
 }
-#services .service-wrapper > .divider {
-  width: calc(100% + 80px);
-}
 
 /*# sourceMappingURL=services.css.map */
