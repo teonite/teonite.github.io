@@ -233,7 +233,7 @@ footer {
   width: 100%;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-xl);
+  padding: 32px 16px;
 }
 @media (min-width: 992px) {
   footer {
@@ -770,10 +770,6 @@ h6 {
   position: relative;
   background-color: transparent;
   z-index: 1;
-}
-
-footer {
-  padding: 32px 16px !important;
 }
 
 main {
