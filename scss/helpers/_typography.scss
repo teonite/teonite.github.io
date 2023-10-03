@@ -5,58 +5,42 @@
   font-weight: 400;
 
   @if $value == "main-header" {
-    font-size: clamp(5vw, 10vw, 48px);
+    font-size: calc(32px * var(--fonts-scale));
     line-height: 1.15;
     @include media-breakpoint-up(lg) {
-      font-size: 72px;
-      line-height: 1.15;
-    }
-    @include media-breakpoint-up(xl) {
-      line-height: 1.15;
-      font-size: 90px;
+      font-size: calc(90px * var(--fonts-scale));
     }
   }
 
   @if $value == "sub-header" {
+    font-size: calc(20px * var(--fonts-scale));
     line-height: 1.5;
-    font-size: clamp(4vw, 6vw, 32px);
     @include media-breakpoint-up(lg) {
-      font-size: 48px;
+      font-size: calc(48px * var(--fonts-scale));
     }
   }
 
   @if $value == "section-title" {
-    font-size: clamp(4vw, 8vw, 48px);
+    font-size: calc(24px * var(--fonts-scale));
     line-height: 1.5;
-
     @include media-breakpoint-up(lg) {
-      font-size: 64px;
-      line-height: 1.5;
+      font-size: calc(64px * var(--fonts-scale));
     }
   }
 
   @if $value == "paragraph" {
+    font-size: calc(16px * var(--fonts-scale));
     line-height: 1.5;
-    font-size: clamp(4vw, 4vw, 24px);
     @include media-breakpoint-up(lg) {
-      font-size: 32px;
+      font-size: calc(32px * var(--fonts-scale));
     }
   }
 
   @if $value == "label" {
-    font-size: 16px;
+    font-size: calc(12px * var(--fonts-scale));
     line-height: 1.5;
     @include media-breakpoint-up(lg) {
-      font-size: 20px;
-      line-height: 1.5;
+      font-size: calc(20px * var(--fonts-scale));
     }
-  }
-  @if $value == "mobile-label" {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  @if $value == "mobile-main-header" {
-    font-size: 72px;
-    line-height: 1.15;
   }
 }

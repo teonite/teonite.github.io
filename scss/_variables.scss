@@ -23,6 +23,9 @@ html[data-theme="gray"] {
 
 // shared
 html {
+  // font scaling factor
+  --fonts-scale: 1.0;
+  //spacings
   --spacing-xs: 4px;
   --spacing-s: 10px;
   --spacing-m: 16px;

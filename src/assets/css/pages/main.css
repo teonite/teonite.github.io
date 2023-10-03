@@ -12,6 +12,7 @@ html[data-theme=gray] {
 }
 
 html {
+  --fonts-scale: 1.0;
   --spacing-xs: 4px;
   --spacing-s: 10px;
   --spacing-m: 16px;
@@ -204,8 +205,8 @@ nav > .nav-wrapper > ul li,
 nav > .nav-wrapper > ul a {
   font-family: "PP Neue Machina";
   font-weight: 400;
+  font-size: calc(16px * var(--fonts-scale));
   line-height: 1.5;
-  font-size: clamp(4vw, 4vw, 24px);
   color: #000;
   user-select: none;
   cursor: pointer;
@@ -213,7 +214,7 @@ nav > .nav-wrapper > ul a {
 @media (min-width: 992px) {
   nav > .nav-wrapper > ul li,
   nav > .nav-wrapper > ul a {
-    font-size: 32px;
+    font-size: calc(32px * var(--fonts-scale));
   }
 }
 nav > .nav-wrapper > ul a:visited {
@@ -336,15 +337,15 @@ nav #mobile-nav-trigger {
   display: block;
   font-family: "PP Neue Machina";
   font-weight: 400;
+  font-size: calc(16px * var(--fonts-scale));
   line-height: 1.5;
-  font-size: clamp(4vw, 4vw, 24px);
   cursor: pointer;
   color: #000;
 }
 @media (min-width: 992px) {
   #mobile-nav > ul li,
   #mobile-nav > ul a {
-    font-size: 32px;
+    font-size: calc(32px * var(--fonts-scale));
   }
 }
 #mobile-nav > ul li {
@@ -442,14 +443,14 @@ footer > .footer-grid > .internal li a, footer > .footer-grid > .external li a {
   text-decoration: none;
   font-family: "PP Neue Machina";
   font-weight: 400;
+  font-size: calc(16px * var(--fonts-scale));
   line-height: 1.5;
-  font-size: clamp(4vw, 4vw, 24px);
   cursor: pointer;
   color: #000;
 }
 @media (min-width: 992px) {
   footer > .footer-grid > .internal li a, footer > .footer-grid > .external li a {
-    font-size: 32px;
+    font-size: calc(32px * var(--fonts-scale));
   }
 }
 footer > .footer-grid > .internal li a:visited, footer > .footer-grid > .external li a:visited {
@@ -506,7 +507,7 @@ footer > .footer-grid > .contact {
   text-align: right;
   font-family: "PP Neue Machina";
   font-weight: 400;
-  font-size: 16px;
+  font-size: calc(12px * var(--fonts-scale));
   line-height: 1.5;
   color: #000;
 }
@@ -518,8 +519,7 @@ footer > .footer-grid > .contact {
 }
 @media (min-width: 992px) {
   footer > .footer-grid > .contact {
-    font-size: 20px;
-    line-height: 1.5;
+    font-size: calc(20px * var(--fonts-scale));
   }
 }
 footer > .footer-grid > .contact a {
@@ -550,7 +550,7 @@ a.page-link {
   width: 220px;
   font-family: "PP Neue Machina";
   font-weight: 400;
-  font-size: 16px;
+  font-size: calc(12px * var(--fonts-scale));
   line-height: 1.5;
   color: var(--main-text);
 }
@@ -561,8 +561,7 @@ a.page-link {
 }
 @media (min-width: 992px) {
   a.page-link {
-    font-size: 20px;
-    line-height: 1.5;
+    font-size: calc(20px * var(--fonts-scale));
   }
 }
 a.page-link::before {
@@ -612,12 +611,12 @@ a.book {
   width: max-content;
   font-family: "PP Neue Machina";
   font-weight: 400;
+  font-size: calc(16px * var(--fonts-scale));
   line-height: 1.5;
-  font-size: clamp(4vw, 4vw, 24px);
 }
 @media (min-width: 992px) {
   a.book {
-    font-size: 32px;
+    font-size: calc(32px * var(--fonts-scale));
   }
 }
 a.book:hover {
@@ -640,15 +639,14 @@ a.book:hover {
 #trusted-by > p {
   font-family: "PP Neue Machina";
   font-weight: 400;
-  font-size: 16px;
+  font-size: calc(12px * var(--fonts-scale));
   line-height: 1.5;
   color: var(--main-text);
   padding-right: 10px;
 }
 @media (min-width: 992px) {
   #trusted-by > p {
-    font-size: 20px;
-    line-height: 1.5;
+    font-size: calc(20px * var(--fonts-scale));
   }
 }
 #trusted-by > ul {
@@ -697,21 +695,14 @@ main {
 main > h1 {
   font-family: "PP Neue Machina";
   font-weight: 400;
-  font-size: clamp(5vw, 10vw, 48px);
+  font-size: calc(32px * var(--fonts-scale));
   line-height: 1.15;
   color: var(--main-text);
   letter-spacing: 9px;
 }
 @media (min-width: 992px) {
   main > h1 {
-    font-size: 72px;
-    line-height: 1.15;
-  }
-}
-@media (min-width: 1200px) {
-  main > h1 {
-    line-height: 1.15;
-    font-size: 90px;
+    font-size: calc(90px * var(--fonts-scale));
   }
 }
 @media (min-width: 992px) {
@@ -729,7 +720,7 @@ main > h1 {
 #our-services > h2 {
   font-family: "PP Neue Machina";
   font-weight: 400;
-  font-size: clamp(4vw, 8vw, 48px);
+  font-size: calc(24px * var(--fonts-scale));
   line-height: 1.5;
   color: var(--main-text);
   text-transform: uppercase;
@@ -737,32 +728,31 @@ main > h1 {
 }
 @media (min-width: 992px) {
   #our-services > h2 {
-    font-size: 64px;
-    line-height: 1.5;
+    font-size: calc(64px * var(--fonts-scale));
   }
 }
 #our-services h3 {
   font-family: "PP Neue Machina";
   font-weight: 400;
+  font-size: calc(20px * var(--fonts-scale));
   line-height: 1.5;
-  font-size: clamp(4vw, 6vw, 32px);
   color: var(--main-text);
 }
 @media (min-width: 992px) {
   #our-services h3 {
-    font-size: 48px;
+    font-size: calc(48px * var(--fonts-scale));
   }
 }
 #our-services p {
   font-family: "PP Neue Machina";
   font-weight: 400;
+  font-size: calc(16px * var(--fonts-scale));
   line-height: 1.5;
-  font-size: clamp(4vw, 4vw, 24px);
   color: var(--main-text);
 }
 @media (min-width: 992px) {
   #our-services p {
-    font-size: 32px;
+    font-size: calc(32px * var(--fonts-scale));
   }
 }
 #our-services > .items-grid {
@@ -808,7 +798,7 @@ section > header > h2 {
   grid-column: 1/2;
   font-family: "PP Neue Machina";
   font-weight: 400;
-  font-size: clamp(4vw, 8vw, 48px);
+  font-size: calc(24px * var(--fonts-scale));
   line-height: 1.5;
   color: var(--main-text);
   text-transform: uppercase;
@@ -816,8 +806,7 @@ section > header > h2 {
 }
 @media (min-width: 992px) {
   section > header > h2 {
-    font-size: 64px;
-    line-height: 1.5;
+    font-size: calc(64px * var(--fonts-scale));
   }
 }
 section > header > a {
@@ -900,28 +889,28 @@ section > header > a {
   text-align: left;
   font-family: "PP Neue Machina";
   font-weight: 400;
+  font-size: calc(20px * var(--fonts-scale));
   line-height: 1.5;
-  font-size: clamp(4vw, 6vw, 32px);
   color: var(--main-text);
   letter-spacing: 4.8px;
 }
 @media (min-width: 992px) {
   #our-work > article > .content h3 {
-    font-size: 48px;
+    font-size: calc(48px * var(--fonts-scale));
   }
 }
 #our-work > article > .content p {
   text-align: left;
   font-family: "PP Neue Machina";
   font-weight: 400;
+  font-size: calc(16px * var(--fonts-scale));
   line-height: 1.5;
-  font-size: clamp(4vw, 4vw, 24px);
   color: var(--main-text);
   letter-spacing: 3.2px;
 }
 @media (min-width: 992px) {
   #our-work > article > .content p {
-    font-size: 32px;
+    font-size: calc(32px * var(--fonts-scale));
   }
 }
 #our-work > article > .content .actions {
