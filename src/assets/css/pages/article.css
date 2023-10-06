@@ -295,6 +295,7 @@ footer > .footer-grid > .logo {
     align-items: flex-start;
     justify-content: flex-end;
     padding: 0;
+    padding-bottom: 20px;
   }
 }
 footer > .footer-grid > .internal, footer > .footer-grid > .external {
@@ -442,6 +443,7 @@ footer > .footer-grid > .contact {
     grid-row: 1;
     grid-column: 4/5;
     align-self: end;
+    padding-bottom: 15px;
   }
 }
 @media (min-width: 992px) {
