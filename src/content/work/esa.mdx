@@ -1,0 +1,35 @@
+---
+title: Open Source SDR mobile app for decoding satellite images
+subtitle: "teonite has partnered up with Libre Space Foundation for SDR Makerspace project, funded by the European Space Agency."
+cover: '/images/products/esa.jpg'
+---
+This initiative brings together makers, open-source hackers, radio amateurs and researchers from all over Greece and provides funding, resources, and a passionate community tackling challenges in using Software Defined Radio for space communications.
+
+- Client: Libre Space Foundation, European Space Agency
+- Services: satellite communication, open source, mobile app development
+- Technology: kotlin, sdr, NOAA decoder, HackRF
+- Sector: Space
+
+<section>
+
+## The problem
+
+Nowadays mobile phones are equipped with truly powerful processors, which allow for signal processing in combination with SDR. What’s surprising, nobody has used them to decode satellite signals yet.
+
+The goal of the cooperation between SDR Makerspace and TEONITE is to implement a proof-of-concept, mobile phone based system capable of receiving, decoding and displaying satellite data on a mobile device.
+
+What’s more, this solution should be fully Open Source.
+
+</section>
+
+<section>
+
+## The Solution
+
+SDR Mobile allows the users to download, decode and display data from a NOAA satellite on a mobile phone.
+
+We have decided to work with a NOAA satellite network (weather satellites) due to signal strength and well-known encoding standards. Satellite pictures are sent on radio frequencies ranging between 137-138 MHz, which can be received using some amateur radio equipment.
+
+Android was our target mobile platform because of its popularity, Open Source nature and number of available software libraries. Like most new Android mobile applications, SDR Mobile is written in Kotlin programming language. All DSP components, like FIR filters, FM and AM demodulators etc., have been implemented from scratch and are available as Open Source.
+
+</section>

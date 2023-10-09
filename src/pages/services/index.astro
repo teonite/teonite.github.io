@@ -1,0 +1,349 @@
+---
+import Book from "../../components/Book.astro";
+import Divider from "../../components/Divider.astro";
+import PageLink from "../../components/PageLink.astro";
+import DarkLayout from "../../layouts/DarkLayout.astro";
+import "../../styles/base.scss";
+---
+
+<DarkLayout>
+  <header>
+    <h1>Our Services</h1>
+    <Book />
+  </header>
+  <Divider />
+  <section id="services">
+    <div class="service-wrapper" id="designdiscovery">
+      <h3>Design &amp; Discovery</h3>
+      <div class="service">
+        <div class="left">
+          <p>
+            Stakeholder expectations desitilled it into project objectives, specification,
+            technological architecture and risks analysis.
+          </p>
+        </div>
+        <div class="right">
+          <p>
+            Workshops, interviews and refinements that will provide the project brief and
+            detailed technical documentation.
+          </p>
+          <div class="bottom">
+            <PageLink href="/services/discovery" />
+          </div>
+        </div>
+      </div>
+      <Divider />
+    </div>
+    <div class="service-wrapper" id="softwareengineering">
+      <h3>Software Engineering</h3>
+      <div class="service">
+        <div class="left">
+          <p>
+            We deliver high-end products on time and budget. We specialize in delivering
+            mission-critical systems requiring high security standards.
+          </p>
+        </div>
+        <div class="right">
+          <p>What do you get from it?</p>
+          <ul>
+            <li>
+              Cutting-edge software — serving your needs, deployed to a production
+              environment.
+            </li>
+            <li>
+              Quality reports — (after functional, stress and security tests) proving the
+              result is top—notch.
+            </li>
+            <li>
+              Documentation — (use cases, architecture, data flows, algorithms,
+              deployment) to allow everyone to understand how the solution was built.
+            </li>
+            <li>
+              Experienced maintenance team — to assist you in operating the system after
+              it reaches end users.
+            </li>
+          </ul>
+          <div class="bottom">
+            <PageLink href="/services/engineering/" />
+          </div>
+        </div>
+      </div>
+      <Divider />
+    </div>
+    <div class="service-wrapper" id="duediligence">
+      <h3>Due Diligence</h3>
+      <div class="service">
+        <div class="left">
+          <p>
+            Tailored technological due diligence services to maximize the value of your
+            investments with informed decisions based on thorough assessments.
+          </p>
+        </div>
+        <div class="right">
+          <p>
+            Our expertise in conducting thorough assessments will help you make informed
+            decisions and maximize the value of your technological investments.
+          </p>
+          <ul>
+            <li>Business</li>
+            <li>Team</li>
+            <li>Processes</li>
+            <li>Technology</li>
+          </ul>
+          <div class="bottom">
+            <PageLink href="/services/diligence/" />
+          </div>
+        </div>
+      </div>
+      <Divider />
+    </div>
+    <div class="service-wrapper" id="rd">
+      <h3>Research &amp; Development</h3>
+      <div class="service">
+        <div class="left">
+          <p>
+            Innovative projects that challenge the status quo require a unique and
+            flexible process that encourages exploration and effectively manages risks.
+          </p>
+        </div>
+        <div class="right">
+          <p>
+            Innovative projects are often based on invalidated assumptions and hypotheses.
+            Once solved they bring a lot of value. But they also pose a lot of
+            technological risks.
+          </p>
+          <p>
+            We help you execute R&amp;D projects with our custom process focused on
+            exploration, risk management and prototyping.
+          </p>
+          <div class="bottom">
+            <PageLink href="/services/rd/" />
+          </div>
+        </div>
+      </div>
+      <Divider />
+    </div>
+    <div class="service-wrapper" id="uiux">
+      <h3>UI/UX & Branding</h3>
+      <div class="service">
+        <div class="left">
+          <p>
+            Combining UI/UX and artistic expertise we craft bespoke experiences that
+            enhance brand identity through compelling visuals. We specialize in creating
+            user-centric solutions that elevate your brand's impact.
+          </p>
+        </div>
+        <div class="right">
+          <p>
+            We are dedicated to craft intuitive and visually stunning user experiences. We
+            have successfully served clients across various industries, ranging from
+            start—ups to Fortune 500 companies.
+          </p>
+          <p>
+            We deliver any possible scope of design challenges. From mock—ups and UI
+            design to extensive branding of your product. Our design process incorporates
+            five essential components:
+          </p>
+          <ul>
+            <li>Comprehensive Analysis</li>
+            <li>User—Centric Design Approach</li>
+            <li>Engaging Visual Design</li>
+            <li>Prototyping and Testing</li>
+            <li>Seamless Handoff</li>
+          </ul>
+          <div class="bottom">
+            <PageLink href="/services/uiux/" />
+          </div>
+        </div>
+      </div>
+      <Divider />
+    </div>
+    <div class="service-wrapper" id="venture">
+      <h3>Venture Building</h3>
+      <div class="service">
+        <div class="left">
+          <p>
+            We invest in deep-tech products in pre-seed and seed stages with cash & equity
+            model.
+          </p>
+        </div>
+        <div class="right">
+          <p>
+            With nearly 15 years of experience working with founders and building over 10
+            product companies, we have gained valuable insights into the critical
+            processes of bootstrapping businesses in their early stages.
+          </p>
+          <p>
+            We have also gained key insights into team and product development. Using this
+            experience and our verified and well-established processes, we invest in
+            deep-tech products on pre-seed and seed stage.
+          </p>
+          <div class="bottom">
+            <PageLink href="/services/venture/" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DarkLayout>
+
+<style lang="scss" is:global>
+  @use "@/styles/helpers" as *;
+
+  main {
+    h1 {
+      @include typography(main-header);
+      color: var(--main-text);
+      line-height: 1.15;
+    }
+
+    header {
+      display: flex;
+      flex-flow: column;
+      gap: var(--spacing-m);
+      padding-top: var(--spacing-xl);
+
+      @include media-breakpoint-up(xl) {
+        flex-flow: row wrap;
+      }
+
+      & > a {
+        display: block;
+        @include media-breakpoint-up(xl) {
+          margin-left: auto;
+        }
+      }
+    }
+    & > header {
+      display: flex;
+      flex-flow: column;
+      gap: var(--spacing-m);
+      padding-top: var(--spacing-xl);
+
+      @include media-breakpoint-up(xl) {
+        flex-flow: row wrap;
+      }
+
+      & > a {
+        display: block;
+        @include media-breakpoint-up(xl) {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  #services {
+    display: flex;
+    flex-flow: column;
+    row-gap: var(--spacing-xl);
+    padding-top: var(--spacing-xll);
+
+    & > h2 {
+      @include typography(section-title);
+      color: var(--main-text);
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    .service-wrapper {
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+      row-gap: 48px;
+
+      & > h3 {
+        grid-row: 1;
+        grid-column: 1 / 2;
+        @include typography(sub-header);
+        color: var(--main-text);
+      }
+
+      & > .service {
+        display: grid;
+        width: 100%;
+        column-gap: 30px;
+        align-items: start;
+        justify-content: start;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+
+        @include media-breakpoint-down(lg) {
+          row-gap: var(--spacing-xl);
+        }
+
+        @include media-breakpoint-up(lg) {
+          grid-template-rows: auto;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        & > .left {
+          grid-row: 1;
+          grid-column: 1 / 2;
+          @include media-breakpoint-up(lg) {
+            grid-row: 1;
+            grid-column: 1 / 2;
+          }
+
+          p {
+            @include typography(paragraph);
+            color: var(--main-text);
+          }
+
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+        }
+
+        & > .right {
+          display: flex;
+          flex-flow: column;
+          row-gap: var(--spacing-s);
+
+          grid-row: 2;
+          grid-column: 1 / 2;
+
+          @include media-breakpoint-up(lg) {
+            grid-row: 1;
+            grid-column: 2 / 3;
+          }
+
+          p,
+          li {
+            @include typography(label);
+            color: var(--main-text);
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            padding-left: 20px;
+
+            li {
+              position: relative;
+              &::before {
+                content: "\2022";
+                display: block;
+                position: absolute;
+                left: -20px;
+                top: 0;
+              }
+            }
+          }
+
+          & > .bottom {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            user-select: none;
+          }
+        }
+      }
+    }
+  }
+</style>

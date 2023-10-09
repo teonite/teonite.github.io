@@ -1,7 +1,31 @@
-## Deploymnet
+# teontie Website
 
-install go-task
+Powered by: [Astro](https://astro.build/)
 
-then:
+## Install deps
 
-go-task deploy
+Make sure you have recommended version of Node.js -> [.nvmrc](.nvmrc)
+
+Install dependencies with [pnpm](https://pnpm.io/)
+
+```bash
+nvm install
+nvm use
+npm i -g pnpm
+```
+
+```bash
+pnpm install
+```
+
+## Launch dev server
+
+```bash
+pnpm dev
+```
+
+## Build
+
+```bash
+pnpm build
+```
