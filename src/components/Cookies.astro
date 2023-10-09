@@ -1,0 +1,94 @@
+<div id="cookies">
+  <p>
+    We use cookies to improve this website - learn more about our
+    <a href="/documents/PrivacyPolicy.pdf" target="_blank">privacy policy</a>.
+  </p>
+  <button id="accept-cookies">I agree</button>
+</div>
+
+<script>
+  import * as Cookies from "es-cookie";
+  const cookieName = "teonite-accept-cookies";
+
+  type TeoniteCookie = {
+    accepted: boolean;
+  };
+
+  const accepted = (): boolean => {
+    const content = Cookies.get(cookieName);
+    if (content) {
+      const parsed = JSON.parse(content) as TeoniteCookie;
+      return parsed.accepted;
+    }
+    return false;
+  };
+
+  if (!accepted()) {
+    const cookieElement = document.getElementById("cookies");
+    const acceptCookieElement = document.getElementById("accept-cookies");
+    if (cookieElement && acceptCookieElement) {
+      cookieElement.classList.add("show");
+
+      acceptCookieElement.addEventListener("click", () => {
+        const cookie: TeoniteCookie = {
+          accepted: true,
+        };
+        Cookies.set(cookieName, JSON.stringify(cookie));
+        cookieElement.classList.remove("show");
+      });
+    }
+  }
+</script>
+
+<style lang="scss">
+  @use "@/styles/helpers" as *;
+  #cookies {
+    box-sizing: border-box;
+    padding: 20px 10px;
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: var(--spacing-m);
+    z-index: 9;
+
+    &.show {
+      display: flex;
+    }
+
+    p,
+    a,
+    button {
+      @include typography(label);
+      color: #fff;
+    }
+
+    a {
+      text-decoration: underline;
+      text-decoration-color: #fff;
+      text-underline-offset: 5px;
+    }
+
+    button {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 5px var(--spacing-s);
+      border: 1px solid #fff;
+      outline-color: #fff;
+      background-color: transparent;
+      cursor: pointer;
+
+      &:hover {
+        outline-width: 3px;
+      }
+    }
+  }
+</style>

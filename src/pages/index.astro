@@ -1,0 +1,422 @@
+---
+import Book from "../components/Book.astro";
+import Divider from "../components/Divider.astro";
+import PageLink from "../components/PageLink.astro";
+import Layout from "../layouts/DarkLayout.astro";
+import "../styles/base.scss";
+---
+
+<Layout>
+  <h1>Deep tech studio crafting mission-critical software.</h1>
+  <div id="trusted-by">
+    <p>Trusted by:</p>
+    <ul>
+      <li>
+        <div class="img-wrapper">
+          <img src="/images/logos/esa.png" alt="esa-logo" />
+        </div>
+      </li>
+      <li>
+        <div class="img-wrapper">
+          <img src="/images/logos/tmobile.png" alt="t-mobile-logo" />
+        </div>
+      </li>
+      <li>
+        <div class="img-wrapper">
+          <img src="/images/logos/uv.png" alt="ultra-violet-logo" />
+        </div>
+      </li>
+    </ul>
+  </div>
+  <Divider />
+  <section id="our-work">
+    <header>
+      <h2>Our Work</h2>
+      <Book />
+    </header>
+    <article>
+      <div class="cover">
+        <img src="/images/products/tmobile.jpg" alt="t-mobile-article-cover" />
+      </div>
+      <div class="content">
+        <h3>Predict T-Mobile stores location revenue.</h3>
+        <p>
+          Delivering advanced predictive modeling solutions through machine learning and
+          AI.
+        </p>
+        <div class="actions">
+          <PageLink href="/work/tmobile/" />
+        </div>
+      </div>
+    </article>
+    <Divider />
+    <article class="odd">
+      <div class="cover">
+        <img src="/images/products/esa.jpg" alt="esa-cover" />
+      </div>
+      <div class="content">
+        <h3>Satellite communication system for European Space Agency.</h3>
+        <p>
+          Implementing NOAA satellite data decoding and visualisaton on mobile devices
+          using open standards. Released as Open Source.
+        </p>
+        <div class="actions">
+          <PageLink href="/work/esa/" />
+        </div>
+      </div>
+    </article>
+    <Divider />
+    <article>
+      <div class="cover">
+        <img src="/images/products/uv.jpg" alt="uv-cover" />
+      </div>
+      <div class="content">
+        <h3>
+          Cloud-based digital rights locker used by Sony Pictures, Universal Studios,
+          Warner Bros, Fox, HBO, BBC
+        </h3>
+        <p>
+          Implementing coordinator service enabling consumers to access their purchased
+          content. UltraViolet has over 28 million users with over 250 million movies and
+          TV shows in 13 countries.
+        </p>
+        <div class="actions">
+          <PageLink href="/work/uv/" />
+        </div>
+      </div>
+    </article>
+  </section>
+  <section id="our-services">
+    <header>
+      <h2>Our services</h2>
+      <Book />
+    </header>
+    <Divider />
+    <div class="items-grid">
+      <div class="grid-item">
+        <h3>Discovery & Design</h3>
+        <p>
+          Stakeholder expectations desitilled it into project objectives, specification,
+          technological architecture and risks analysis.
+        </p>
+        <div class="actions">
+          <PageLink href="/services/discovery/" />
+        </div>
+        <div class="divider"></div>
+      </div>
+      <div class="grid-item">
+        <h3>Software Engineering</h3>
+        <p>
+          We deliver high-end products on time and budget. We specialize in delivering
+          mission-critical systems requiring high security standards.
+        </p>
+        <div class="actions">
+          <PageLink href="/services/engineering/" />
+        </div>
+        <div class="divider"></div>
+      </div>
+      <div class="grid-item">
+        <h3>Due Diligence</h3>
+        <p>
+          Tailored technological due diligence services to maximize the value of your
+          investments with informed decisions based on thorough assessments.
+        </p>
+        <div class="actions">
+          <PageLink href="/services/diligence/" />
+        </div>
+        <div class="divider"></div>
+      </div>
+      <div class="grid-item">
+        <h3>UI/UX & Branding</h3>
+        <p>
+          Combining UI/UX and artistic expertise we craft bespoke experiences that enhance
+          brand identity through compelling visuals. We specialize in creating
+          user-centric solutions that elevate your brand's impact.
+        </p>
+        <div class="actions">
+          <PageLink href="/services/uiux/" />
+        </div>
+        <div class="divider"></div>
+      </div>
+      <div class="grid-item">
+        <h3>Research & Development</h3>
+        <p>
+          Innovative projects that challenge the status quo require a unique and flexible
+          process that encourages exploration and effectively manages risks.
+        </p>
+        <div class="actions">
+          <PageLink href="/services/rd/" />
+        </div>
+        <div class="divider"></div>
+      </div>
+      <div class="grid-item">
+        <h3>Venture Building</h3>
+        <p>
+          We invest in deep-tech products in pre-seed and seed stages with cash & equity
+          model.
+        </p>
+        <div class="actions">
+          <PageLink href="/services/venture/" />
+        </div>
+        <div class="divider"></div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style lang="scss">
+  @use "@/styles/helpers" as *;
+
+  h1 {
+    @include typography(main-header);
+    color: var(--main-text);
+    letter-spacing: 8px;
+  }
+
+  #trusted-by {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: var(--spacing-xl) 0;
+    row-gap: 15px;
+
+    & > p {
+      @include typography(label);
+      color: var(--main-text);
+      padding-right: 10px;
+    }
+
+    & > ul {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      list-style: none;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+
+      row-gap: 15px;
+      column-gap: 20px;
+
+      @include media-breakpoint-up(xl) {
+        column-gap: 50px;
+      }
+
+      & > li {
+        display: block;
+        height: 100%;
+        width: 90px;
+        overflow: hidden;
+        & > .img-wrapper {
+          user-select: none;
+          display: flex;
+          flex-flow: row;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          width: 100%;
+          img {
+            height: auto;
+            max-height: 100%;
+            width: 90px;
+            user-select: none;
+          }
+        }
+      }
+    }
+  }
+
+  #our-services {
+    display: flex;
+    flex-flow: column;
+    row-gap: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+
+    & > h2 {
+      @include typography(section-title);
+      color: var(--main-text);
+      text-transform: uppercase;
+      letter-spacing: 6.4px;
+    }
+
+    h3 {
+      @include typography(sub-header);
+      color: var(--main-text);
+    }
+
+    p {
+      @include typography(paragraph);
+      color: var(--main-text);
+    }
+
+    & > .items-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-auto-flow: dense;
+      gap: var(--spacing-xl);
+
+      @include media-breakpoint-up(xl) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      & > .grid-item {
+        display: flex;
+        flex-flow: column;
+        row-gap: 20px;
+
+        & > .actions {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+
+  section {
+    & > header {
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr;
+      row-gap: var(--spacing-xl);
+      align-items: center;
+
+      @include media-breakpoint-up(xl) {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr auto;
+        column-gap: var(--spacing-m);
+      }
+
+      & > h2 {
+        grid-row: 1;
+        grid-column: 1 / 2;
+        @include typography(section-title);
+        color: var(--main-text);
+        text-transform: uppercase;
+        letter-spacing: 6.4px;
+      }
+
+      & > a {
+        grid-row: 2;
+        grid-column: 1 / 2;
+
+        @include media-breakpoint-up(xl) {
+          grid-row: 1;
+          grid-column: 2 /3;
+        }
+      }
+    }
+  }
+
+  #our-work {
+    display: flex;
+    flex-flow: column;
+    box-sizing: border-box;
+    row-gap: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+
+    & > article {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      column-gap: 20px;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      row-gap: 20px;
+
+      @include media-breakpoint-up(xl) {
+        grid-template-columns: 1fr 1fr;
+        row-gap: unset;
+        min-height: 700px;
+      }
+
+      & > .cover {
+        grid-row: 1;
+        grid-column: 1/2;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          @include media-breakpoint-up(xl) {
+            position: absolute;
+            &:nth-child(1) {
+              left: -210px;
+              top: 0;
+              width: calc(100% + 210px);
+              height: auto;
+              max-height: 720px;
+            }
+          }
+
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+      }
+
+      & > .content {
+        grid-row: 2;
+        grid-column: 1 / 2;
+        display: flex;
+        flex-flow: column;
+        row-gap: var(--spacing-m);
+        width: 100%;
+
+        @include media-breakpoint-up(xl) {
+          grid-row: 1;
+          grid-column: 2/3;
+        }
+
+        h3 {
+          text-align: left;
+          @include typography(sub-header);
+          color: var(--main-text);
+          letter-spacing: 4.8px;
+        }
+        p {
+          text-align: left;
+          @include typography(paragraph);
+          color: var(--main-text);
+          letter-spacing: 3.2px;
+        }
+        .actions {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: flex-start;
+          width: 100%;
+          height: 72px;
+        }
+      }
+
+      &.odd {
+        @include media-breakpoint-up(xl) {
+          & > .content {
+            grid-column: 1/2;
+          }
+          & > .cover {
+            grid-column: 2/3;
+            img {
+              &:nth-child(1) {
+                top: 0;
+                left: unset;
+                right: -210px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+</style>

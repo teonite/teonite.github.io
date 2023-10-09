@@ -1,0 +1,32 @@
+---
+interface Props {
+  vertical?: boolean;
+}
+const { vertical } = Astro.props;
+---
+
+<div class:list={["divider", { vertical }]}></div>
+
+<style lang="scss">
+  @use "@/styles/helpers" as *;
+
+  .divider {
+    display: block;
+    width: 100%;
+    height: 1px;
+    padding: 0;
+    margin: var(--spacing-xl) 0;
+    user-select: none;
+    background-color: var(--main-text);
+
+    &.vertical {
+      width: 1px;
+      height: 100%;
+      background-color: var(--main-text);
+      margin: 0 8px;
+      @include media-breakpoint-up(lg) {
+        margin: 0 30px;
+      }
+    }
+  }
+</style>

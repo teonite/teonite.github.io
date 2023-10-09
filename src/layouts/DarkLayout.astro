@@ -1,0 +1,27 @@
+---
+import Dots from "../components/Dots.astro";
+import Root from "../components/Root.astro";
+---
+
+<Root theme="dark">
+  <div id="main-background"></div>
+  <Dots />
+  <div id="main-wrapper">
+    <main>
+      <slot />
+    </main>
+  </div>
+</Root>
+
+<style lang="scss">
+  @use "@/styles/helpers" as *;
+
+  main {
+    box-sizing: border-box;
+    padding: 49vh 16px 32px 16px;
+
+    @include media-breakpoint-up(lg) {
+      padding: 34vh var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
+    }
+  }
+</style>

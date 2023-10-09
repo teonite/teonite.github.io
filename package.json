@@ -1,0 +1,29 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^1.1.1",
+    "@rollup/plugin-yaml": "^4.1.2",
+    "@types/three": "^0.156.0",
+    "astro": "^3.2.3",
+    "es-cookie": "^1.4.0",
+    "motion": "^10.16.4",
+    "sass": "^1.69.0",
+    "three": "^0.157.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^6.7.4",
+    "eslint": "^8.51.0",
+    "eslint-plugin-astro": "^0.29.1",
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0"
+  }
+}
