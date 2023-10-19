@@ -5,7 +5,7 @@
   font-weight: 400;
 
   @if $value == "main-header" {
-    font-size: calc(32px * var(--fonts-scale));
+    font-size: calc(38px * var(--fonts-scale));
     line-height: 1.15;
     @include media-breakpoint-up(lg) {
       font-size: calc(90px * var(--fonts-scale));
@@ -13,15 +13,15 @@
   }
 
   @if $value == "sub-header" {
-    font-size: calc(20px * var(--fonts-scale));
-    line-height: 1.5;
+    font-size: calc(24px * var(--fonts-scale));
+    line-height: 1.25;
     @include media-breakpoint-up(lg) {
       font-size: calc(48px * var(--fonts-scale));
     }
   }
 
   @if $value == "section-title" {
-    font-size: calc(24px * var(--fonts-scale));
+    font-size: calc(28px * var(--fonts-scale));
     line-height: 1.5;
     @include media-breakpoint-up(lg) {
       font-size: calc(64px * var(--fonts-scale));
@@ -29,7 +29,7 @@
   }
 
   @if $value == "paragraph" {
-    font-size: calc(16px * var(--fonts-scale));
+    font-size: calc(18px * var(--fonts-scale));
     line-height: 1.5;
     @include media-breakpoint-up(lg) {
       font-size: calc(32px * var(--fonts-scale));
@@ -37,7 +37,7 @@
   }
 
   @if $value == "label" {
-    font-size: calc(12px * var(--fonts-scale));
+    font-size: calc(18px * var(--fonts-scale));
     line-height: 1.5;
     @include media-breakpoint-up(lg) {
       font-size: calc(20px * var(--fonts-scale));
