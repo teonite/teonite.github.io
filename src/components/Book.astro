@@ -14,16 +14,17 @@
     border: 1px solid var(--main-text);
     outline: solid 0px var(--main-text);
     background-color: transparent;
-    padding: var(--spacing-m) var(--spacing-xl);
+    padding: var(--spacing-s) var(--spacing-m);
     user-select: none;
     width: max-content;
+    height: max-content;
+    text-decoration: none;
+    
 
-    @include typography(paragraph);
+    @include typography(label);
 
     &:hover {
-      text-decoration: underline;
-      text-underline-offset: 5px;
-      outline: solid 2px var(--main-text);
+      outline: solid 5px var(--main-text);
     }
   }
 </style>

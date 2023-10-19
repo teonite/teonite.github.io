@@ -16,7 +16,6 @@
     "astro": "^3.2.3",
     "es-cookie": "^1.4.0",
     "motion": "^10.16.4",
-    "sass": "^1.69.0",
     "three": "^0.157.0"
   },
   "devDependencies": {
@@ -24,6 +23,7 @@
     "eslint": "^8.51.0",
     "eslint-plugin-astro": "^0.29.1",
     "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.0"
+    "prettier-plugin-astro": "^0.12.0",
+    "sass": "^1.69.0"
   }
 }
