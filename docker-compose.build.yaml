@@ -1,0 +1,10 @@
+version: v3
+
+services:
+
+  site-build:
+    build:
+      context: .
+      dockerfile: Dockerfile.build
+    volumes:
+      - ./.volume-dist:/app/dist
