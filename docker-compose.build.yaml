@@ -7,4 +7,4 @@ services:
       context: .
       dockerfile: Dockerfile.build
     volumes:
-      - ./.volume-dist:/app/dist
+      - ./docker-dist:/app/dist

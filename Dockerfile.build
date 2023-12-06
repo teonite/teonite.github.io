@@ -1,4 +1,4 @@
-FROM node:21.2 as deps
+FROM node:21.4 as deps
 WORKDIR /app
 COPY package.json .
 COPY pnpm-lock.yaml .

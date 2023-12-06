@@ -2,30 +2,51 @@
 
 Powered by: [Astro](https://astro.build/)
 
-## Install deps
+## Prerequisites
+### Node
 
-Make sure you have recommended version of Node.js -> [.nvmrc](.nvmrc)
+Current recommended version of Node.js is 21.4  
+Install via NVM or manually.
 
-Install dependencies with [pnpm](https://pnpm.io/)
-
+### NVM
 ```bash
-nvm install
-nvm use
+nvm install 21.4
+nvm use 21.4
+```
+
+### PNPM
+```bash
 npm i -g pnpm
 ```
+
+## Install deps
+
+Install dependencies with [pnpm](https://pnpm.io/), then:
 
 ```bash
 pnpm install
 ```
 
+## Build
+
+### PNPM
+
+```bash
+pnpm build
+```
+After that static files will reside in ./dist
+
+### Docker
+
+```bash
+docker-compose -f ./docker-compose.build.yaml run --build  site-build
+```
+
+After that the ready build will be inside ./docker-dist.  
+Note that docker will make docker-dist owned by root.
+
 ## Launch dev server
 
 ```bash
 pnpm dev
-```
-
-## Build
-
-```bash
-pnpm build
 ```
