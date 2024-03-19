@@ -189,7 +189,7 @@ const { title, coverUrl, subTitle, book } = Astro.props;
       }
 
       img {
-        width: 100%;
+        width: auto;
         height: auto;
         aspect-ratio: 16 / 9;
       }
@@ -200,6 +200,23 @@ const { title, coverUrl, subTitle, book } = Astro.props;
           object-fit: cover;
         }
       }
+
+      blockquote {
+        border-left: 2px solid var(--main-text);
+        padding-left: 20px;
+        margin: 0;
+      }
+
+      figure {
+        margin:0;
+        @include typography(footer);
+        color: var(--main-text)
+      }
+
+      figcaption {
+        padding-top: 10px;
+      }
+
     }
   }
 </style>
