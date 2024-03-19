@@ -24,7 +24,7 @@ html[data-theme="gray"] {
 // shared
 html {
   // font scaling factor
-  --fonts-scale: 0.8;
+  --fonts-scale: 1.2;
   //spacings
   --spacing-xs: 4px;
   --spacing-s: 10px;
@@ -34,6 +34,7 @@ html {
   --spacing-xxl: 64px;
 
   @include media-breakpoint-up(lg) {
+    --fonts-scale: 0.8;
     --spacing-xs: 8px;
     --spacing-s: 20px;
     --spacing-m: 32px;
@@ -41,4 +42,13 @@ html {
     --spacing-xl: 64px;
     --spacing-xxl: 128px;
   }
+  
+  @include media-breakpoint-down(sm){
+    --fonts-scale: 0.8;
+  }
+
+  @include media-breakpoint-up(xxl){
+    --fonts-scale: 1;
+  }
+  
 }

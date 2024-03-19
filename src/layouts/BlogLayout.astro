@@ -1,5 +1,5 @@
 ---
-import Book from "../components/Book.astro";
+import Share from "../components/Share.astro";
 import Divider from "../components/Divider.astro";
 import Root from "../components/Root.astro";
 
@@ -30,7 +30,7 @@ const { title, coverUrl, subTitle, book } = Astro.props;
           {
             book && (
               <div class="actions">
-                <Book />
+                <Share />
               </div>
             )
           }

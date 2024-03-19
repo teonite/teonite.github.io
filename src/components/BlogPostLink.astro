@@ -1,0 +1,76 @@
+---
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a {href}>
+  <slot>Read More</slot>
+</a>
+
+<style lang="scss">
+  @use "@/styles/helpers" as *;
+
+  a {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: auto;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 21px 55px 21px 19px;
+    user-select: none;
+    cursor: pointer;
+    border-left: 1px solid var(--main-text);
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      width: 280px;
+    }
+
+    @include typography(label);
+    color: var(--main-text);
+
+    &::before {
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      width: 1px;
+      background-color: var(--main-text);
+      user-select: none;
+      transition-property: width;
+      transition-duration: 250ms;
+      transition-timing-function: ease-in-out;
+    }
+
+    &::after {
+      user-select: none;
+      content: "→";
+      color: var(--main-text);
+      font-size: 48px;
+      position: absolute;
+      top: 50%;
+      right: -5px;
+      transform: translateY(-60%) rotate(-45deg);
+      transition-property: transform, right;
+      transition-duration: 250ms;
+      transition-timing-function: ease-in-out;
+    }
+
+    &:hover {
+      &::before {
+        width: 4px;
+      }
+      &::after {
+        transform: translateY(-50%) rotate(0deg);
+        right: 10px;
+      }
+    }
+  }
+</style>

@@ -1,189 +1,79 @@
 ---
-import Book from "../../components/Book.astro";
 import Divider from "../../components/Divider.astro";
-import PageLink from "../../components/PageLink.astro";
+import BlogPostLink from "../../components/BlogPostLink.astro";
 import DarkLayout from "../../layouts/DarkLayout.astro";
+import Share from "../../components/Share.astro";
 import "../../styles/base.scss";
 ---
 
 <DarkLayout>
   <header>
-    <h1>Our Services</h1>
-    <Book />
+    <h1>Blog</h1>
   </header>
   <Divider />
-  <section id="services">
-    <div class="service-wrapper" id="designdiscovery">
-      <h3>Design &amp; Discovery</h3>
-      <div class="service">
+
+  <section id="blog-posts">
+    <div class="blog-posts-wrapper" id="designdiscovery">
+      <h3>Navigating the Tech Landscape</h3>
+      <div class="blog-post">
         <div class="left">
-          <p>
-            Stakeholder expectations desitilled it into project objectives, specification,
-            technological architecture and risks analysis.
-          </p>
+         <img src="/images/blog/navigating.jpg" alt="Navigating the Tech Cover art" />
         </div>
         <div class="right">
           <p>
-            Workshops, interviews and refinements that will provide the project brief and
-            detailed technical documentation.
+            In the fast-paced world of technology, staying ahead of the curve is not just a competitive
+            advantage but a necessity. As a technical leader, you're undoubtedly aware of the challenges
+            in keeping your team informed about the latest tools, platforms, and trends. This is where the
+            concept of a Technology Radar comes into play.
           </p>
           <div class="bottom">
-            <PageLink href="/services/discovery" />
+            <BlogPostLink href="/blog/navigating_the_tech_landscape" />
           </div>
         </div>
       </div>
       <Divider />
     </div>
-    <div class="service-wrapper" id="softwareengineering">
-      <h3>Software Engineering</h3>
-      <div class="service">
+    <div class="blog-posts-wrapper" id="designdiscovery">
+      <h3>Delusion of Value</h3>
+      <div class="blog-post">
         <div class="left">
-          <p>
-            We deliver high-end products on time and budget. We specialize in delivering
-            mission-critical systems requiring high security standards.
-          </p>
+         <img src="/images/blog/delusion.jpg" alt="Delusion of Value Cover art" />
         </div>
         <div class="right">
-          <p>What do you get from it?</p>
-          <ul>
-            <li>
-              Cutting-edge software — serving your needs, deployed to a production
-              environment.
-            </li>
-            <li>
-              Quality reports — (after functional, stress and security tests) proving the
-              result is top—notch.
-            </li>
-            <li>
-              Documentation — (use cases, architecture, data flows, algorithms,
-              deployment) to allow everyone to understand how the solution was built.
-            </li>
-            <li>
-              Experienced maintenance team — to assist you in operating the system after
-              it reaches end users.
-            </li>
-          </ul>
+          <p>
+            Human nature often leans toward pretension and ego. We have a tendency to
+            perceive ourselves through the distorted reflections of status, unaware that we are
+            like figures in a funhouse mirror — a narrative as ancient as our existence.
+            Our societal validation often hinges on materialistic possessions rather than profound ideas.
+            We tend to overlook the wisdom encapsulated in the saying "Clothes don't make the man".
+          </p>
           <div class="bottom">
-            <PageLink href="/services/engineering/" />
+            <BlogPostLink href="/blog/delusion_of_value" />
           </div>
         </div>
       </div>
       <Divider />
     </div>
-    <div class="service-wrapper" id="duediligence">
-      <h3>Due Diligence</h3>
-      <div class="service">
+    <div class="blog-posts-wrapper" id="designdiscovery">
+      <h3>Insights into Collaborating with a Software House for Product Development</h3>
+      <div class="blog-post">
         <div class="left">
-          <p>
-            Tailored technological due diligence services to maximize the value of your
-            investments with informed decisions based on thorough assessments.
-          </p>
+         <img src="/images/blog/product-studio.jpg" alt="Delusion of Value Cover art" />
         </div>
         <div class="right">
           <p>
-            Our expertise in conducting thorough assessments will help you make informed
-            decisions and maximize the value of your technological investments.
+            In this article we explore the nuances of selecting the optimal product development approach,
+            emphasizing the essential traits to seek for a successful product development journey.
+            A perspective shared by of seasoned expert, leading development teams for 20 years at companies
+            like Allegro, home.pl and Shoper.
           </p>
-          <ul>
-            <li>Business</li>
-            <li>Team</li>
-            <li>Processes</li>
-            <li>Technology</li>
-          </ul>
           <div class="bottom">
-            <PageLink href="/services/diligence/" />
+            <BlogPostLink href="/blog/insights_into_collaborating" />
           </div>
         </div>
       </div>
       <Divider />
-    </div>
-    <div class="service-wrapper" id="rd">
-      <h3>Research &amp; Development</h3>
-      <div class="service">
-        <div class="left">
-          <p>
-            Innovative projects that challenge the status quo require a unique and
-            flexible process that encourages exploration and effectively manages risks.
-          </p>
-        </div>
-        <div class="right">
-          <p>
-            Innovative projects are often based on invalidated assumptions and hypotheses.
-            Once solved they bring a lot of value. But they also pose a lot of
-            technological risks.
-          </p>
-          <p>
-            We help you execute R&amp;D projects with our custom process focused on
-            exploration, risk management and prototyping.
-          </p>
-          <div class="bottom">
-            <PageLink href="/services/rd/" />
-          </div>
-        </div>
-      </div>
-      <Divider />
-    </div>
-    <div class="service-wrapper" id="uiux">
-      <h3>UI/UX & Branding</h3>
-      <div class="service">
-        <div class="left">
-          <p>
-            Combining UI/UX and artistic expertise we craft bespoke experiences that
-            enhance brand identity through compelling visuals. We specialize in creating
-            user-centric solutions that elevate your brand's impact.
-          </p>
-        </div>
-        <div class="right">
-          <p>
-            We are dedicated to craft intuitive and visually stunning user experiences. We
-            have successfully served clients across various industries, ranging from
-            start—ups to Fortune 500 companies.
-          </p>
-          <p>
-            We deliver any possible scope of design challenges. From mock—ups and UI
-            design to extensive branding of your product. Our design process incorporates
-            five essential components:
-          </p>
-          <ul>
-            <li>Comprehensive Analysis</li>
-            <li>User—Centric Design Approach</li>
-            <li>Engaging Visual Design</li>
-            <li>Prototyping and Testing</li>
-            <li>Seamless Handoff</li>
-          </ul>
-          <div class="bottom">
-            <PageLink href="/services/uiux/" />
-          </div>
-        </div>
-      </div>
-      <Divider />
-    </div>
-    <div class="service-wrapper" id="venture">
-      <h3>Venture Building</h3>
-      <div class="service">
-        <div class="left">
-          <p>
-            We invest in deeptech products in pre-seed and seed stages with cash & equity
-            model.
-          </p>
-        </div>
-        <div class="right">
-          <p>
-            With nearly 15 years of experience working with founders and building over 10
-            product companies, we have gained valuable insights into the critical
-            processes of bootstrapping businesses in their early stages.
-          </p>
-          <p>
-            We have also gained key insights into team and product development. Using this
-            experience and our verified and well-established processes, we invest in
-            deeptech products on pre-seed and seed stage.
-          </p>
-          <div class="bottom">
-            <PageLink href="/services/venture/" />
-          </div>
-        </div>
-      </div>
-    </div>
+    </div>    
   </section>
 </DarkLayout>
 
@@ -235,7 +125,7 @@ import "../../styles/base.scss";
     }
   }
 
-  #services {
+  #blog-posts {
     display: flex;
     flex-flow: column;
     row-gap: var(--spacing-xl);
@@ -247,7 +137,7 @@ import "../../styles/base.scss";
       line-height: 1.5;
     }
 
-    .service-wrapper {
+    .blog-posts-wrapper {
       width: 100%;
       display: flex;
       flex-flow: column;
@@ -260,7 +150,7 @@ import "../../styles/base.scss";
         color: var(--main-text);
       }
 
-      & > .service {
+      & > .blog-post {
         display: grid;
         width: 100%;
         column-gap: 30px;
@@ -342,6 +232,7 @@ import "../../styles/base.scss";
             justify-content: flex-end;
             width: 100%;
             user-select: none;
+            padding-top: 20px;
           }
         }
       }
