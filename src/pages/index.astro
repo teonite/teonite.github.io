@@ -363,6 +363,17 @@ import "../styles/base.scss";
             }
           }
 
+          @include media-breakpoint-up(xxxl) {
+            position: absolute;
+            &:nth-child(1) {
+              left: 0px;
+              top: 0;
+              width: 100%;
+              height: auto;
+              max-height: 720px;
+            }
+          }
+
           &:nth-child(2) {
             display: none;
           }
@@ -416,6 +427,16 @@ import "../styles/base.scss";
                 top: 0;
                 left: unset;
                 right: -210px;
+              }
+            }
+          }
+        }
+        @include media-breakpoint-up(xxxl) {
+          & > .cover {
+            img {
+              &:nth-child(1) {
+                right: 0px;
+                left: 0px;
               }
             }
           }
