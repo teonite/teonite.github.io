@@ -1,10 +1,10 @@
 ---
 interface Props {
   href: string;
-  text: string;
+  text?: string;
 }
 
-const { href, text } = Astro.props;
+const { href, text="More information" } = Astro.props;
 ---
 
 <a {href}>
