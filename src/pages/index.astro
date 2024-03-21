@@ -5,9 +5,10 @@ import PageLink from "../components/PageLink.astro";
 import Layout from "../layouts/DarkLayout.astro";
 import "../styles/base.scss";
 ---
+<!-- video player
 <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
 <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
-
+..>
 <Layout>
   <h1>Deeptech studio crafting mission-critical software.</h1>
   <div id="trusted-by">
@@ -77,10 +78,10 @@ import "../styles/base.scss";
     <Divider />
     <article>
       <div class="cover">
-        <!-- <img src="/images/products/deventiv.jpg" alt="deventiv-article-cover" /> -->
-        <video id="my-video" class="video-js" autoplay="autoplay" loop preload="auto" data-setup="{}">
+        <img src="/images/products/deventiv.jpg" alt="deventiv-article-cover" />
+        <!--<video id="my-video" class="video-js" autoplay="autoplay" loop preload="auto" data-setup="{}">
           <source src="/videos/deventiv/master.m3u8" type="application/x-mpegURL" />
-        </video>
+        </video>-->
       </div>
       <div class="content">
         <h3>AI powered 3D model reconstruction using data from a medical device.</h3>
