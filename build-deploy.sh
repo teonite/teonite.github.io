@@ -25,6 +25,7 @@ function serve() {
 }
 
 function build() {
+  docker-compose -f docker-compose.build.yaml build --no-cache
   docker-compose -f docker-compose.build.yaml up
 }
 
