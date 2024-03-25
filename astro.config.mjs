@@ -1,4 +1,5 @@
 import mdx from "@astrojs/mdx";
+import rehypeFigure from "@microflash/rehype-figure"; 
 import yaml from "@rollup/plugin-yaml";
 import { defineConfig } from "astro/config";
 import path, { dirname } from "path";
@@ -21,4 +22,7 @@ export default defineConfig({
     },
   },
   integrations: [mdx()],
+  markdown: {
+    rehypePlugins: [rehypeFigure],
+  }
 });

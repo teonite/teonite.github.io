@@ -19,7 +19,17 @@ const work = defineCollection({
     }),
 });
 
+const blog = defineCollection({
+    type: "content",
+    schema: z.object({
+        title: z.string(),
+        subtitle: z.string(),
+        cover: z.string(),
+    }),
+});
+
 export const collections = {
     services,
-    work
+    work,
+    blog
 };

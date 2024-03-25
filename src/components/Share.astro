@@ -1,0 +1,25 @@
+<p>Share:</p>
+<a href="#shareOnTwitter" target="_blank" rel="noopener noreferrer"><img src="/svg/xt-icon.svg"></a>
+<a href="#shareOnFacebook" target="_blank" rel="noopener noreferrer"><img src="/svg/fb-icon.svg"></a>
+<a href="#shareOnLinkedIn" target="_blank" rel="noopener noreferrer"><img src="/svg/li-icon.svg"></a>
+<style lang="scss">
+  @use "@/styles/helpers" as *;
+
+  a {
+    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
+    background-color: transparent;
+    padding: 0 10px;
+    border-bottom: solid 3px transparent;
+    user-select: none;
+    width: max-content;
+    height: max-content;
+
+    @include typography(label);
+
+    &:hover {
+      border-bottom: solid 3px var(--main-text);
+    }
+  }
+</style>
