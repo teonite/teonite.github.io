@@ -41,9 +41,8 @@ import "../styles/base.scss";
     </header>
     <article>
       <div class="cover">
-        <!-- <img src="/images/products/deventiv.jpg" alt="deventiv-article-cover" /> -->
-        <video class="video-js" data-setup="{}" autoplay loop muted preload="auto">
-          <source src="/videos/deventiv/master.m3u8" type="application/x-mpegURL" />
+        <video class="video-js" data-setup="{}" poster="/images/products/deventiv.jpg" autoplay loop muted preload="auto">
+          <source src="/videos/deventiv.webm" type="video/webm" />
         </video>
       </div>
       <div class="content">
@@ -191,9 +190,6 @@ import "../styles/base.scss";
       </div>
     </div>
   </section>
-  <!-- Load videos -->
-  <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet" />
-  <script src="https://unpkg.com/video.js/dist/video.min.js" is:inline></script>
 </Layout>
 
 <style lang="scss">
