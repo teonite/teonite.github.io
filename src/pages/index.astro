@@ -38,9 +38,31 @@ import "../styles/base.scss";
   <section id="our-work">
     <header>
       <h2>Our Work</h2>
-      <Book />
     </header>
     <article>
+      <div class="cover">
+        <video class="video-js" data-setup="{}" poster="/images/products/deventiv.jpg" autoplay loop muted preload="auto">
+          <source src="/videos/deventiv.webm" type="video/webm" />
+        </video>
+      </div>
+      <div class="content">
+        <h3>AI powered 3D model reconstruction using data from a medical device.</h3>
+        <p>
+          We combined skills in AI, 3D modelling and scientific research to train and fine
+          tune selected Neural Networks to recreate high precision 3D representation based
+          on custom optical setup.
+        </p>
+        <!--<div data-tf-live="01HSH0SZBAD018RNVXKZPP10H2"></div>-->
+        <div class="actions">
+          <PageLink
+            href="https://h7pq7oq6nfx.typeform.com/to/l2L4ZusB"
+            text="Request presentation"
+          />
+        </div>
+      </div>
+    </article>
+    <Divider />
+    <article class="odd">
       <div class="cover">
         <img src="/images/products/tmobile.jpg" alt="t-mobile-article-cover" />
       </div>
@@ -56,7 +78,7 @@ import "../styles/base.scss";
       </div>
     </article>
     <Divider />
-    <article class="odd">
+    <article>
       <div class="cover">
         <img src="/images/products/esa.jpg" alt="esa-cover" />
       </div>
@@ -72,7 +94,7 @@ import "../styles/base.scss";
       </div>
     </article>
     <Divider />
-    <article>
+    <article class="odd">
       <div class="cover">
         <img src="/images/products/uv.jpg" alt="uv-cover" />
       </div>
@@ -92,6 +114,7 @@ import "../styles/base.scss";
       </div>
     </article>
   </section>
+  <Divider />
   <section id="our-services">
     <header>
       <h2>Our services</h2>
@@ -348,7 +371,13 @@ import "../styles/base.scss";
         width: 100%;
         height: 100%;
         position: relative;
-        img {
+
+        .video-js {
+          width: 100%;
+        }
+
+        img,
+        video {
           width: 100%;
           height: auto;
           object-fit: cover;
