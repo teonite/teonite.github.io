@@ -1,0 +1,84 @@
+---
+title: Building AI products for scale 
+subtitle: The world of AI and image processing is rapidly evolving and staying ahead of the curve requires keen insight into the latest technologies and strategies.
+cover: /images/blog/building-ai.jpg
+---
+import Divider from "../../components/Divider.astro";
+
+## Introduction
+This post delves into various aspects of building an [Deep Image AI](https://deep-image.ai/?ref=teonite.com) — image processing product, focusing on infrastructure, image resolution, speed, scalability, storage management, quality control, and dataset management. Deep Image serves over a million image processing requests yearly.
+
+## Infrastructure and Memory: Balancing Speed with Capacity
+When building an AI image processing product, one of the critical decisions involves choosing the right hardware. Modern GPUs like the consumer RTX 4090 with 24GB demonstrate that memory is equally important as speed. This leads to a pivotal question: should you build your own GPU center, or opt for cloud providers like AWS?
+
+### Pros and Cons
+
+- **Own GPU Center**: Lower initial cost with RTX GPUs, but limited scalability.
+- **Cloud Providers**: Offer versatility and scalability but at a recurring cost.
+
+### Key Insight
+
+The transition to cloud is not a matter of 'if', but 'when'. Plan for scalability from the start.
+
+Implementing your solution and designing services architecture (provisioning, storage etc.) so that it’s easy to move or delegate part of the system to the cloud when you need it will save you a lot of money and handle new clients faster.
+
+## Image Resolution: Managing Large-Scale Processing
+
+Current models primarily support small image processing, often necessitating image tiling.
+
+From the product development perspective this is a generic problem of adapting and scaling technologies that work on a small scale but require additional development (and a substantial one) to make them work in a variety of real world applications.
+
+### Challenges
+
+- Processing high-resolution images (e.g., 20,000 × 20,000 pixels) requires significant memory and optimization.
+- Large numpy arrays used in processing are resource-intensive.
+
+### Strategies
+
+- Implement image tiling to handle any size. (If you want to hear more about that let us know)
+- Optimize memory and CPU usage for efficiency.
+
+## Speed and Scalability: The Architecture Matters
+
+Microservice architecture is crucial for dividing the processing job into manageable segments.
+
+### Key Points
+
+- Use queues to manage workflows efficiently.
+- Preload AI models into GPU memory to maximize performance.
+- Opt for asynchronous services to avoid processing bottlenecks.
+- Be aware that simple operations can become significant time sinks with large images.
+
+## Storage Management: Choosing the Right Platform
+
+Selecting the appropriate storage solution, such as S3, MinIO, Dropbox, OneDrive, or Google Drive, is vital for efficient data handling.
+
+Managing different types of storage should be decoupled from the main application. In that way it is easy to implement new types of storage without the necessity of changing the whole architecture. In near future our storage management will be released as a Python library as an open source.
+
+## Quality Control and Validation: Ensuring Excellence
+
+Quality control is non-negotiable. Define strict visual metrics like Peak Signal-to-Noise Ratio, Structural Similarity Index, Feature Similarity Index and incorporate human validation.
+
+The last one - human validation - is especially important. In the end no matter what metrics you define it is a human eye and image perception that counts. Some aspects of it are harder to translate to metrics than others. In our case the large volume of processed images gave us the opportunity to identify edge-cases and optimize / retrain ANNs according to soft quality criteria.
+
+### Benchmarking
+
+- Regularly compare new models against a diverse image set.
+- Use user-provided images for real-world benchmarks, understanding that human validation is key due to the absence of ground truth.
+
+## Datasets and AI Model Training: Continuous Improvement
+
+Training with synthetic data and keeping abreast of new datasets are critical. In deep-image.ai we use synthetic data to maintain better control over the training process. It allows us to reiterate quickly, and results in a very predictable, high quality final product.
+
+### Considerations
+
+- Augmentation is often necessary for small datasets.
+- Train models sequentially if they are part of a chain.
+- Weigh the costs and benefits of owning GPUs versus renting for training purposes.
+
+## Conclusion
+
+Building an AI product involves a complex interplay of hardware choices, software architecture, and continuous learning. By understanding these key areas and planning strategically, you can create a robust, scalable, and efficient solution. Stay adaptable, and keep innovating to stay ahead in the dynamic field of AI.
+
+<Divider />
+Michał Gryczka teontie co-founder, talks about AI, R&D, FinTech and data. Have any questions cath me on email: mike@teonite.com or WhatsApp : +48 668 354 700

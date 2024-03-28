@@ -14,7 +14,9 @@ import "../../styles/base.scss";
   <Divider />
   <section id="services">
     <div class="service-wrapper" id="designdiscovery">
-      <h3>Design &amp; Discovery</h3>
+      <a href="/services/discovery">
+        <h3>Design &amp; Discovery</h3>
+      </a>
       <div class="service">
         <div class="left">
           <p>
@@ -35,7 +37,9 @@ import "../../styles/base.scss";
       <Divider />
     </div>
     <div class="service-wrapper" id="softwareengineering">
-      <h3>Software Engineering</h3>
+      <a href="/services/engineering/">
+        <h3>Software Engineering</h3>
+      </a>
       <div class="service">
         <div class="left">
           <p>
@@ -71,7 +75,9 @@ import "../../styles/base.scss";
       <Divider />
     </div>
     <div class="service-wrapper" id="duediligence">
-      <h3>Due Diligence</h3>
+      <a href="/services/diligence/">
+        <h3>Due Diligence</h3>
+      </a>
       <div class="service">
         <div class="left">
           <p>
@@ -98,7 +104,9 @@ import "../../styles/base.scss";
       <Divider />
     </div>
     <div class="service-wrapper" id="rd">
-      <h3>Research &amp; Development</h3>
+      <a href="/services/rd/">
+        <h3>Research &amp; Development</h3>
+      </a>
       <div class="service">
         <div class="left">
           <p>
@@ -124,7 +132,9 @@ import "../../styles/base.scss";
       <Divider />
     </div>
     <div class="service-wrapper" id="uiux">
-      <h3>UI/UX & Branding</h3>
+      <a href="/services/uiux/">
+        <h3>UI/UX & Branding</h3>
+      </a>
       <div class="service">
         <div class="left">
           <p>
@@ -159,7 +169,9 @@ import "../../styles/base.scss";
       <Divider />
     </div>
     <div class="service-wrapper" id="venture">
-      <h3>Venture Building</h3>
+      <a href="/services/venture/">
+        <h3>Venture Building</h3>
+      </a>
       <div class="service">
         <div class="left">
           <p>
@@ -252,6 +264,11 @@ import "../../styles/base.scss";
       display: flex;
       flex-flow: column;
       row-gap: 48px;
+      
+      h3 {
+      @include typography(sub-header);
+        color: var(--main-text);
+      }
 
       & > h3 {
         grid-row: 1;
