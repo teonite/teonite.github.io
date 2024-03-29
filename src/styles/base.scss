@@ -79,3 +79,11 @@ pre {
   border: solid 1px var(--main-text);
   background-color: transparent !important;
 }
+
+code {
+  font-size: calc(18px * var(--fonts-scale));
+  line-height: 1.5;
+  @include media-breakpoint-up(lg) {
+    font-size: 18px;
+  }
+}
