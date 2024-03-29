@@ -73,3 +73,9 @@ a {
     text-decoration-color: var(--main-text);
   }
 }
+
+pre {
+  padding: 20px;
+  border: solid 1px var(--main-text);
+  background-color: transparent !important;
+}

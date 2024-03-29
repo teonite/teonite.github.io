@@ -1,0 +1,165 @@
+---
+title: Secure Tauri/Windows Code Signing with Certum HSM 
+subtitle: One of our products — Defguard & WireGuard Desktop Client has multiple platform releases (Linux, MacOS, and Windows). We're building it with our beloved Rust and a great multi-platform desktop framework Tauri.
+cover: /images/blog/signature.jpg
+---
+import Divider from "../../components/Divider.astro";
+
+![](/images/blog/defguard-main-screen.png)
+
+[Defguard & WireGuard desktop client](https://defguard.net/client/)
+
+While doing releases with [Tauri](https://tauri.app/) is pretty straightforward and well-documented, the [Code Signing for MacOS is](https://tauri.app/v1/guides/distribution/sign-macos) spot-on, but the [Windows Code Signing](https://tauri.app/v1/guides/distribution/sign-windows) is not that straightforward. Tauri documentation assumes you have a certificate file (pfx - with certificate & key) - but **most
+ (if not all) Code Signing Certificates are sold on dedicated HSMs 
+(Hardware Security Modules) that must be FIPS 140-2 compliant.**
+
+Thus to handle signing:
+
+1. One has to have a **self-hosted GitLab/Github Runner** - which just physically can have the HSM connected to the USB (and of 
+  course the runner needs to be in a secure network location and well as 
+  the system needs to be secured).
+2. There needs to be a solution & tools to handle this process automatically during the build & release.
+
+Most certificate authorities have a dedicated solution for that ([DigiCert](https://www.digicert.com/solutions/security-solutions-for-ci-cd), [Sectigo](https://www.sectigo.com/enterprise-solutions/certificate-manager/devops-solutions)) or solutions, examples, and a great documentation ([SSL.com](https://www.ssl.com/guide/code-signing-automation/)) but we have chosen [Certum Code Signing](https://www.certum.eu/en/code-signing-certificates/) certificate for two reasons, they operate as us in Szczecin Poland 💪 and they have a great [Open Source Code Signing](https://shop.certum.eu/open-source-code-signing.html) product - and [defguard](http://github.com/defGuard/defguard) is an open-source project. The downside is that **they do not have any CI/CD documentation or solutions**,
+ and weirdly (everything should be on the internet 😀, yes?) there are 
+no docs, solutions, snippets, projects, or blogs (you name it), that 
+could help us set up this process.
+
+So after weeks of going back 
+and forward with the Certum support and going nowhere (greeting for our 
+colleagues 👋), we took this project on our shoulders - and here are the
+ recipes for building a Debian GNU/Linux CI/CD runner.
+
+We assume you have:
+
+1. a configured GitHub/GitLab self-hosted runner based on Debian GNU/Linux (but Ubuntu should work as well)
+2. Bought an [Open Source Code Signing Certificate set from Certum](https://shop.certum.eu/open-source-code-signing.html)
+3. Have the certificate issued and the key is on the HSM shipped by Certum and it's connected to the runner.
+4. You
+  also have downloaded the certificate file in PEM format (from certum 
+  website), and placed it in /srv/codesign/certum/certificate.pem
+
+Now we need to prepare the runner system to support the HSM. First let's install all necessary system software:
+
+```bash
+apt install opensc opensc-pkcs11 libpcsclite-dev pcscd libacsccid1 \
+            libengine-pkcs11-openssl osslsigncode
+```
+
+Now, we need to install the Linux version of [proCertumCardManager](https://support.certum.eu/en/cert-offer-card-manager/) provided by Certum:
+
+```bash
+mkdir /srv/codesign/
+cd /srv/codesign/
+
+# pobieramy proCertumCardManager
+wget https://www.files.certum.eu/software/proCertumCardManager/Linux-Ubuntu/2.2.11/proCertumCardManager-2.2.11-x86_64-ubuntu.bin
+
+# We do not install the software, just extract it
+/srv/codesign/proCertumCardManager-2.2.11-x86_64-ubuntu.bin --keep
+mv dist certum
+
+# create links, if you would like to actually use the
+# Certum Card Manager software
+
+ln -s /srv/codesign/certum/cryptoCertum3PKCS-3.0.6.69-MS.so /usr/lib/libcrypto3PKCS.so
+ln -s /srv/codesign/certum/cryptoCertum3PKCS-3.0.6.69-MS.so /usr/lib/libcryptoCertum3PKCS.so
+```
+
+Now, we can check if the system sees the HSM and can show us the certificate & key details:
+
+```bash
+$ pkcs11-tool --module /srv/codesign/certum/sc30pkcs11-3.0.6.68-MS.so --login --list-objects
+
+Using slot 0 with a present token (0x1)
+Logging in to "profil standardowy".
+
+# here you need to provide the PIN to access the card/HSM
+
+Please enter User PIN:
+
+# After providing the PIN, you should see the contents of the card
+
+Private Key Object; RSA
+  label:      Open Source Developer, Robert Olejnik
+  ID:         352c322687efb09df068a792c49cbac631d40cf0
+  Usage:      decrypt, sign, unwrap
+warning: PKCS11 function C_GetAttributeValue(ALWAYS_AUTHENTICATE) failed: rv = CKR_ATTRIBUTE_TYPE_INVALID (0x12)
+
+  Access:     sensitive, always sensitive, never extractable, local
+Public Key Object; RSA 4096 bits
+  label:      Open Source Developer, Robert Olejnik
+  ID:         352c322687efb09df068a792c49cbac631d40cf0
+  Usage:      encrypt, verify, wrap
+  Access:     local
+Certificate Object; type = X.509 cert
+  label:      Open Source Developer, Robert Olejnik
+  subject:    DN: C=PL, ST=zachodniopomorskie, L=Szczecin, O=Open Source Developer, CN=Open Source Developer, Robert Olejnik
+  serial:     29EE7778CA5217107841BBBF6B3062E1
+  ID:         352c322687efb09df068a792c49cbac631d40cf0
+```
+
+! As you can see, the key ID (this is important) is: 352c322687efb09df068a792c49cbac631d40cf0
+
+Now
+ the final, let's check if the code signing works - for that we have a 
+defguard.exe unsigned binary, which we will sign and check if it works:
+
+```bash
+$ osslsigncode sign \
+  -pkcs11module /srv/codesign/certum/sc30pkcs11-3.0.6.68-MS.so \
+  -certs /srv/codesign/certificate.pem \
+  -key 352c322687efb09df068a792c49cbac631d40cf0 \
+  -pass <PIN> \
+  -h sha256 \
+  -t http://time.certum.pl/ \
+  -in defguard.exe \
+  -out defguard-signed.exe
+
+
+# You should see the following message and result:
+
+Engine "pkcs11" set.
+Succeeded
+```
+
+And checking the signature:
+
+```bash
+$ osslsigncode verify defguard-signed.exe
+
+Current PE checksum   : 0134E4A0
+Calculated PE checksum: 0134E4A0
+
+Signature Index: 0  (Primary Signature)
+Message digest algorithm  : SHA256
+Current message digest    : 13A86CCDF9DE5177ACC15A3AC895A1F39A652D85F6E9C3533C151D64547F930A
+Calculated message digest : 13A86CCDF9DE5177ACC15A3AC895A1F39A652D85F6E9C3533C151D64547F930A
+
+Signer's certificate:
+    Signer #0:
+        Subject: /C=PL/ST=zachodniopomorskie/L=Szczecin/O=Open Source Developer/CN=Open Source Developer, Robert Olejnik
+        Issuer : /C=PL/O=Asseco Data Systems S.A./CN=Certum Code Signing 2021 CA
+        Serial : 29EE7778CA5217107841BBBF6B3062E1
+        Certificate expiration date:
+            notBefore : Mar 21 06:12:37 2024 GMT
+            notAfter : Mar 21 06:12:36 2025 GMT
+
+Number of certificates: 4
+    Signer #0:
+        Subject: /C=PL/ST=zachodniopomorskie/L=Szczecin/O=Open Source Developer/CN=Open Source Developer, Robert Olejnik
+        Issuer : /C=PL/O=Asseco Data Systems S.A./CN=Certum Code Signing 2021 CA
+        Serial : 29EE7778CA5217107841BBBF6B3062E1
+        Certificate expiration date:
+            notBefore : Mar 21 06:12:37 2024 GMT
+            notAfter : Mar 21 06:12:36 2025 GMT
+# And so on...
+# And so on...
+# And so on...
+```
+
+Now what is left for you to do, is add the osslsigncode sign to your pipeline, and don't forget to make the **PIN a secret.**
+
+
+<Divider />
+Robert Olejnik

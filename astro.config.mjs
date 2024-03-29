@@ -24,5 +24,9 @@ export default defineConfig({
   integrations: [mdx()],
   markdown: {
     rehypePlugins: [rehypeFigure],
+    shikiConfig: {
+      theme: 'github-light',
+      wrap: true,
+    }
   }
 });
