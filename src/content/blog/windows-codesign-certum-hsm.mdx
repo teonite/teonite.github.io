@@ -9,35 +9,23 @@ import Divider from "../../components/Divider.astro";
 
 [Defguard & WireGuard desktop client](https://defguard.net/client/)
 
-While doing releases with [Tauri](https://tauri.app/) is pretty straightforward and well-documented, the [Code Signing for MacOS is](https://tauri.app/v1/guides/distribution/sign-macos) spot-on, but the [Windows Code Signing](https://tauri.app/v1/guides/distribution/sign-windows) is not that straightforward. Tauri documentation assumes you have a certificate file (pfx - with certificate & key) - but **most
- (if not all) Code Signing Certificates are sold on dedicated HSMs 
-(Hardware Security Modules) that must be FIPS 140-2 compliant.**
+While doing releases with [Tauri](https://tauri.app/) is pretty straightforward and well-documented, the [Code Signing for MacOS is](https://tauri.app/v1/guides/distribution/sign-macos) spot-on, but the [Windows Code Signing](https://tauri.app/v1/guides/distribution/sign-windows) is not that straightforward. Tauri documentation assumes you have a certificate file (pfx - with certificate & key) - but **most (if not all) Code Signing Certificates are sold on dedicated HSMs (Hardware Security Modules) that must be FIPS 140-2 compliant.**
 
 Thus to handle signing:
 
-1. One has to have a **self-hosted GitLab/Github Runner** - which just physically can have the HSM connected to the USB (and of 
-  course the runner needs to be in a secure network location and well as 
-  the system needs to be secured).
+1. One has to have a **self-hosted GitLab/Github Runner** - which just physically can have the HSM connected to the USB (and of course the runner needs to be in a secure network location and well as the system needs to be secured).
 2. There needs to be a solution & tools to handle this process automatically during the build & release.
 
-Most certificate authorities have a dedicated solution for that ([DigiCert](https://www.digicert.com/solutions/security-solutions-for-ci-cd), [Sectigo](https://www.sectigo.com/enterprise-solutions/certificate-manager/devops-solutions)) or solutions, examples, and a great documentation ([SSL.com](https://www.ssl.com/guide/code-signing-automation/)) but we have chosen [Certum Code Signing](https://www.certum.eu/en/code-signing-certificates/) certificate for two reasons, they operate as us in Szczecin Poland 💪 and they have a great [Open Source Code Signing](https://shop.certum.eu/open-source-code-signing.html) product - and [defguard](http://github.com/defGuard/defguard) is an open-source project. The downside is that **they do not have any CI/CD documentation or solutions**,
- and weirdly (everything should be on the internet 😀, yes?) there are 
-no docs, solutions, snippets, projects, or blogs (you name it), that 
-could help us set up this process.
+Most certificate authorities have a dedicated solution for that ([DigiCert](https://www.digicert.com/solutions/security-solutions-for-ci-cd), [Sectigo](https://www.sectigo.com/enterprise-solutions/certificate-manager/devops-solutions)) or solutions, examples, and a great documentation ([SSL.com](https://www.ssl.com/guide/code-signing-automation/)) but we have chosen [Certum Code Signing](https://www.certum.eu/en/code-signing-certificates/) certificate for two reasons, they operate as us in Szczecin Poland and they have a great [Open Source Code Signing](https://shop.certum.eu/open-source-code-signing.html) product - and [defguard](http://github.com/defGuard/defguard) is an open-source project. The downside is that **they do not have any CI/CD documentation or solutions**, and weirdly (everything should be on the internet, right?) there are no docs, solutions, snippets, projects, or blogs (you name it), that could help us set up this process.
 
-So after weeks of going back 
-and forward with the Certum support and going nowhere (greeting for our 
-colleagues 👋), we took this project on our shoulders - and here are the
- recipes for building a Debian GNU/Linux CI/CD runner.
+So after weeks of going back and forward with the Certum support and going nowhere (greeting for our colleagues), we took this project on our shoulders - and here are the recipes for building a Debian GNU/Linux CI/CD runner.
 
 We assume you have:
 
 1. a configured GitHub/GitLab self-hosted runner based on Debian GNU/Linux (but Ubuntu should work as well)
 2. Bought an [Open Source Code Signing Certificate set from Certum](https://shop.certum.eu/open-source-code-signing.html)
 3. Have the certificate issued and the key is on the HSM shipped by Certum and it's connected to the runner.
-4. You
-  also have downloaded the certificate file in PEM format (from certum 
-  website), and placed it in /srv/codesign/certum/certificate.pem
+4. You also have downloaded the certificate file in PEM format (from certum website), and placed it in /srv/codesign/certum/certificate.pem
 
 Now we need to prepare the runner system to support the HSM. First let's install all necessary system software:
 
@@ -101,9 +89,7 @@ Certificate Object; type = X.509 cert
 
 > ! As you can see, the key ID (this is important) is: 352c322687efb09df068a792c49cbac631d40cf0
 
-Now
- the final, let's check if the code signing works - for that we have a 
-defguard.exe unsigned binary, which we will sign and check if it works:
+Now the final, let's check if the code signing works - for that we have a defguard.exe unsigned binary, which we will sign and check if it works:
 
 ```bash
 $ osslsigncode sign \
