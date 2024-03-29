@@ -43,7 +43,7 @@ Now we need to prepare the runner system to support the HSM. First let's install
 
 ```bash
 apt install opensc opensc-pkcs11 libpcsclite-dev pcscd libacsccid1 \
-            libengine-pkcs11-openssl osslsigncode
+    libengine-pkcs11-openssl osslsigncode
 ```
 
 Now, we need to install the Linux version of [proCertumCardManager](https://support.certum.eu/en/cert-offer-card-manager/) provided by Certum:
@@ -52,7 +52,7 @@ Now, we need to install the Linux version of [proCertumCardManager](https://sup
 mkdir /srv/codesign/
 cd /srv/codesign/
 
-# pobieramy proCertumCardManager
+# We download proCertumCardManager
 wget https://www.files.certum.eu/software/proCertumCardManager/Linux-Ubuntu/2.2.11/proCertumCardManager-2.2.11-x86_64-ubuntu.bin
 
 # We do not install the software, just extract it
