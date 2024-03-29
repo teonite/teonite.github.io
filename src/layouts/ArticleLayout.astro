@@ -141,6 +141,7 @@ const { title, coverUrl, subTitle, book } = Astro.props;
       p {
         @include typography(paragraph);
         color: var(--main-text);
+        line-height: 2;
       }
 
       a {
@@ -167,7 +168,7 @@ const { title, coverUrl, subTitle, book } = Astro.props;
           position: relative;
           @include typography(paragraph);
           color: var(--main-text);
-          line-height: 0.8;
+          line-height: 1.6;
 
           &:not(&:first-child) {
             margin-top: 10px;
@@ -215,6 +216,7 @@ const { title, coverUrl, subTitle, book } = Astro.props;
         border-left: 2px solid var(--main-text);
         padding-left: 20px;
         margin: 0;
+        overflow: auto;
       }
 
       figure {
