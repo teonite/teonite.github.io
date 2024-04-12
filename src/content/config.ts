@@ -16,6 +16,7 @@ const work = defineCollection({
         title: z.string(),
         subtitle: z.string(),
         cover: z.string(),
+        category: z.array(z.enum(['ai', 'fintech', 'security'])),
     }),
 });
 
