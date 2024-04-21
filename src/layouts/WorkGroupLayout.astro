@@ -1,0 +1,130 @@
+---
+import { getCollection } from "astro:content";
+import Divider from "../components/Divider.astro";
+import Root from "../components/Root.astro";
+import WorkDisplay from "../components/WorkDisplay.astro";
+import type { WorkCategory } from "../content/config";
+import "../styles/base.scss";
+
+interface Props {
+  category: WorkCategory;
+  title: string;
+  pageCoverPath?: string;
+}
+
+const { category, title, pageCoverPath } = Astro.props;
+
+const workEntries = await getCollection("work").then((d) =>
+  d.filter((v) => v.data.category.includes(category)),
+);
+---
+
+<Root theme="gray">
+  <div id="main-background"></div>
+  <div id="main-wrapper">
+    {
+      pageCoverPath !== undefined && (
+        <div id="main-cover">
+          <img src={pageCoverPath} alt="page-cover-image" />
+        </div>
+      )
+    }
+    <main>
+      <header>
+        <h1>{title}</h1>
+      </header>
+      <Divider />
+      <div class="top">
+        <div class="trust">
+          <slot name="trust" />
+        </div>
+        <slot name="description" />
+      </div>
+      <Divider hidden />
+      <div class="entries">
+        {
+          workEntries.map((e, index) => (
+            <WorkDisplay entry={e} invert={index % 2 !== 0} />
+          ))
+        }
+      </div>
+    </main>
+  </div>
+</Root>
+
+<style lang="scss" is:global>
+  @use "@/styles/helpers" as *;
+
+  #main-background {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: var(--main-background);
+    content: " ";
+    display: block;
+    left: var(--spacing-m);
+    width: calc(100% - var(--spacing-m) * 2);
+    @include media-breakpoint-up(lg) {
+      left: var(--spacing-xl);
+      width: calc(100% - var(--spacing-xl) * 2);
+    }
+  }
+
+  #main-wrapper {
+    width: 100%;
+    max-width: 1920px;
+    position: relative;
+    background-color: transparent;
+    z-index: 1;
+    min-height: 100dvh;
+    background-color: transparent;
+  }
+
+  #main-cover {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    max-height: 430px;
+    z-index: -1;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  main {
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 40px 16px 32px 16px;
+    margin: 0 auto;
+    max-width: 1600px;
+
+    & > header {
+      min-height: 190px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
+    }
+
+    & > .top {
+      p {
+        @include typography(paragraph);
+      }
+    }
+
+    h1 {
+      @include typography(main-header);
+      text-align: left;
+    }
+
+    .entries {
+      display: flex;
+      flex-flow: column;
+      width: 100%;
+      row-gap: calc(var(--spacing-xl) * 1);
+    }
+  }
+</style>

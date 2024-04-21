@@ -1,5 +1,4 @@
 ---
-import Book from "../../components/Book.astro";
 import Divider from "../../components/Divider.astro";
 import DarkLayout from "../../layouts/DarkLayout.astro";
 import "../../styles/base.scss";
@@ -8,242 +7,139 @@ import "../../styles/base.scss";
 <DarkLayout>
   <header>
     <h1>Our Work</h1>
-    <Book />
   </header>
   <Divider />
-  <section id="products">
-    <div class="products-grid">
-      <div class="grid-item">
-        <a class="cover" href="https://www.medisensonic.com/" rel="noopener noreferrer">
-          <img src="/images/products/deventiv.jpg" alt="deventiv-cover" />
+  <div class="split">
+    <section class="explain">
+      <h2>Best people. Great work.</h2>
+      <p>
+        Explore the future of fintech and security with teonite®. Our AI-powered
+        solutions deliver efficiency and protection for your business needs. Experience
+        innovation, experience security — discover now.
+      </p>
+    </section>
+    <ul class="links">
+      <li>
+        <a>
+          <span>Artificial Intelligence</span>
         </a>
-        <div class="description">
-         <p>AI powered 3D model reconstruction using data from a medical device.</p>
-         <div class="divider vertical"></div>
-         <img class="logo" src="/images/logos/medisensonic.png" alt="medisensonic-logo" />
-        </div>
-      </div>
-      <div class="grid-item">
-        <a class="cover" href="/work/tmobile/" rel="noopener noreferrer">
-          <img src="/images/products/tmobile.jpg" alt="t-mobile-cover" />
+        <div class="arrow">→</div>
+      </li>
+      <li>
+        <a>
+          <span>Security</span>
         </a>
-        <div class="description">
-          <p>Predict T—Mobile stores location revenue.</p>
-          <div class="divider vertical"></div>
-          <img class="logo" src="/images/logos/tmobile.png" alt="t-mobile-logo" />
-        </div>
-      </div>
-      <div class="grid-item">
-        <a class="cover" href="/work/esa/">
-          <img src="/images/products/esa.jpg" alt="esa-cover" />
+        <div class="arrow">→</div>
+      </li>
+      <li>
+        <a href="/work/fintech" data-astro-prefetch>
+          <span>Fintech</span>
         </a>
-        <div class="description">
-          <p>Satellite communication system for European Space Agency.</p>
-          <div class="divider vertical"></div>
-          <img class="logo" src="/images/logos/esa.png" alt="esa-logo" />
-        </div>
-      </div>
-      <div class="grid-item">
-        <a class="cover" href="/work/uv/">
-          <img src="/images/products/uv.jpg" alt="uv-cover" />
-        </a>
-        <div class="description">
-          <p>
-            Cloud—based digital rights locker used by Sony Pictures, Universal Studios,
-            Warner Bros and others
-          </p>
-          <div class="divider vertical"></div>
-          <img class="logo" src="/images/logos/uv.png" alt="uv-logo" />
-        </div>
-      </div>
-      <div class="grid-item">
-        <a
-          class="cover"
-          href="https://deep-image.ai/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <img src="/images/products/deep-image-ai.jpg" alt="deep-image-cover" />
-        </a>
-        <div class="description">
-          <p>Revolutionary AI-Powered image enhancer & generato</p>
-          <div class="divider vertical"></div>
-          <img class="logo" src="/images/logos/deep-image.png" alt="deep-image-logo" />
-        </div>
-      </div>
-      <div class="grid-item">
-        <a
-          class="cover"
-          href="https://defguard.net/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/images/products/defguard.jpg" alt="defguard-cover" />
-        </a>
-        <div class="description">
-          <p>Open Source security platform</p>
-          <div class="divider vertical"></div>
-          <img class="logo" src="/images/logos/defguard.png" alt="defguard-logo" />
-        </div>
-      </div>
-      <div class="grid-item">
-        <a
-          class="cover"
-          href="https://widestreetmarkets.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/images/products/widestreet.jpg" alt="widestreet-cover" />
-        </a>
-        <div class="description">
-          <p>NPL trading platform & marketplace</p>
-          <div class="divider vertical"></div>
-          <img class="logo" src="/images/logos/widestreet.png" alt="widestreet-logo" />
-        </div>
-      </div>
-      <div class="grid-item">
-        <a
-          class="cover"
-          href="https://qvistorp.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/images/products/qvistorp.jpg" alt="qvistorp-cover" />
-        </a>
-        <div class="description">
-          <p>Strategic Portfolio Management</p>
-          <div class="divider vertical"></div>
-          <img class="logo" src="/images/logos/qvistorp.png" alt="qvistorp-logo" />
-        </div>
-      </div>
-      <div class="grid-item">
-        <a
-          class="cover"
-          href="https://brightpool.finance"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/images/products/brightpool.jpg" alt="brightpool-cover" />
-        </a>
-        <div class="description">
-          <p>Bid-to-earn DEX</p>
-          <div class="divider vertical"></div>
-          <img class="logo" src="/images/logos/brightpool.png" alt="brightpool-logo" />
-        </div>
-      </div>
-      <div class="grid-item">
-        <a
-          class="cover"
-          href="https://booste.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/images/products/booste.jpg" alt="booste-cover" />
-        </a>
-        <div class="description">
-          <p>Financial predictive analytics (AI)</p>
-          <div class="divider vertical"></div>
-          <img class="logo" src="/images/logos/booste.png" alt="booste-logo" />
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="arrow">→</div>
+      </li>
+    </ul>
+  </div>
 </DarkLayout>
 
 <style lang="scss" is:global>
   @use "@/styles/helpers" as *;
-
   main {
+    display: flex;
+    flex-flow: column;
+    row-gap: var(--spacing-m);
+
     h1 {
       @include typography(main-header);
       color: var(--main-text);
       line-height: 1.15;
     }
 
-    & > header {
-      display: flex;
-      flex-flow: column;
-      gap: var(--spacing-m);
-      padding-top: var(--spacing-xl);
-
-      @include media-breakpoint-up(xl) {
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: flex-start;
-      }
-      & > a {
-        display: block;
-        @include media-breakpoint-up(xl) {
-          margin-left: auto;
-        }
-      }
-    }
-  }
-
-  #products {
-    padding-top: var(--spacing-xxl);
     h2 {
-      @include typography(section-title);
-      color: var(--main-text);
-      width: 100%;
-      padding-bottom: var(--spacing-xl);
+      @include typography(sub-header);
+      line-height: 1.5;
     }
-    & > .products-grid {
-      width: 100%;
+
+    & > .divider {
+      margin: var(--spacing-xl) 0 !important;
+    }
+
+    & > .split {
       display: grid;
-      grid-template-rows: auto;
       grid-template-columns: 1fr;
-      grid-auto-flow: dense;
-      row-gap: var(--spacing-l);
-      column-gap: var(--spacing-s);
+      width: 100%;
+      gap: var(--spacing-s);
+      color: var(--main-text);
 
       @include media-breakpoint-up(lg) {
         grid-template-columns: 1fr 1fr;
       }
 
-      & > .grid-item {
-        width: 100%;
+      .explain {
+        p {
+          @include typography(paragraph);
+          line-height: 1.5;
+        }
+      }
+
+      .links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
         display: flex;
         flex-flow: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        row-gap: 8px;
+        row-gap: calc(var(--spacing-xs) * 2);
+        width: 100%;
 
-        & > .cover {
+        li,
+        a {
+          @include typography(paragraph);
+          line-height: 1.5;
+          width: 100%;
+        }
+
+        span {
           display: block;
           width: 100%;
-          padding: 0;
-          margin: 0;
-          cursor: pointer;
-          img {
-            padding: 0;
-            margin: 0;
-            width: 100%;
-            height: auto;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
+        }
+
+        li {
+          height: 72px;
+          display: grid;
+          grid-template-columns: 1fr 90px;
+          border-bottom: 1px solid var(--main-text);
+          box-sizing: border-box;
+          position: relative;
+          align-items: center;
+
+          .arrow {
+            color: var(--main-text);
+            font-size: 48px;
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(-45deg);
+            transition-property: transform, right;
+            transition-duration: 250ms;
+            transition-timing-function: ease-in-out;
+          }
+
+          &:hover {
+            .arrow {
+              transform: rotate(0deg);
+            }
           }
         }
 
-        & > .description {
-          width: 100%;
-          display: grid;
-          grid-template-rows: minmax(60px, auto);
-          grid-template-columns: 1fr auto 92px;
-          align-items: center;
+        a {
+          display: inline-block;
+          text-decoration: none;
+          cursor: pointer;
+          color: var(--main-text);
 
-          & > p {
-            @include typography(label);
-            color: var(--main-text);
-          }
-
-          & > .divider {
-            margin-left: auto;
-          }
-
-          & > .logo {
-            width: 92px;
-            height: auto;
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: var(--main-text);
           }
         }
       }

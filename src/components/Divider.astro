@@ -1,11 +1,12 @@
 ---
 interface Props {
   vertical?: boolean;
+  hidden?: boolean;
 }
-const { vertical } = Astro.props;
+const { vertical, hidden } = Astro.props;
 ---
 
-<div class:list={["divider", { vertical }]}></div>
+<div class:list={["divider", { vertical, hidden }]}></div>
 
 <style lang="scss">
   @use "@/styles/helpers" as *;
@@ -27,6 +28,10 @@ const { vertical } = Astro.props;
       @include media-breakpoint-up(lg) {
         margin: 0 30px;
       }
+    }
+
+    &.hidden {
+      background-color: transparent !important;
     }
   }
 </style>
