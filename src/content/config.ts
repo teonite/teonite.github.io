@@ -23,6 +23,12 @@ const work = defineCollection({
     display: z.object({
       title: z.string(),
       description: z.string(),
+      company: z
+        .object({
+          logo: z.string().optional(),
+          link: z.string().optional(),
+        })
+        .optional(),
     }),
   }),
 });

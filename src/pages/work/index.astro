@@ -1,7 +1,11 @@
 ---
+import { getCollection } from "astro:content";
 import Divider from "../../components/Divider.astro";
+import WorkDisplayShort from "../../components/WorkDisplayShort.astro";
 import DarkLayout from "../../layouts/DarkLayout.astro";
 import "../../styles/base.scss";
+
+const workEntries = await getCollection("work");
 ---
 
 <DarkLayout>
@@ -38,6 +42,10 @@ import "../../styles/base.scss";
         <div class="arrow">→</div>
       </li>
     </ul>
+  </div>
+  <Divider />
+  <div class="entries">
+    {workEntries.map((entry) => <WorkDisplayShort entry={entry} />)}
   </div>
 </DarkLayout>
 
@@ -142,6 +150,17 @@ import "../../styles/base.scss";
             text-decoration-color: var(--main-text);
           }
         }
+      }
+    }
+
+    & > .entries {
+      display: grid;
+      grid-template-columns: 1fr;
+      column-gap: var(--spacing-s);
+      row-gap: var(--spacing-l);
+
+      @include media-breakpoint-up(lg) {
+        grid-template-columns: 1fr 1fr;
       }
     }
   }

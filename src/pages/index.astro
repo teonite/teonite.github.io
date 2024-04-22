@@ -219,6 +219,28 @@ import "../styles/base.scss";
       </div>
     </div>
   </section>
+  <section id="products">
+    <header>
+      <h2>Products</h2>
+    </header>
+    <div class="product">
+      <div class="cover">
+        <img src="/images/pages/home/defguard.png" aria-label="defguard-product-cover" />
+      </div>
+      <div class="content">
+        <div class="logo">
+          <div class="logo-container">
+            <img src="/svg/defguard-logo.svg" aria-label="defguard-logo-image" />
+          </div>
+        </div>
+        <p>
+          Our Mission in Security Space.<br />
+          The only open-source solution with real WireGuard MFA/2FA & integrated OpenID Connect
+          SSO.
+        </p>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style lang="scss">
@@ -498,6 +520,54 @@ import "../styles/base.scss";
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  #products {
+    header {
+      padding-bottom: var(--spacing-xl);
+    }
+    & > .product {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+
+      @include media-breakpoint-up(lg) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cover {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        img {
+          width: 100%;
+        }
+      }
+      & > .content {
+        display: flex;
+        flex-flow: column;
+        row-gap: var(--spacing-m);
+
+        .logo {
+          box-sizing: border-box;
+          padding-bottom: var(--spacing-m);
+          border-bottom: 1px solid var(--main-text);
+          .logo-container {
+            max-height: 135px;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            img {
+              height: 100%;
+            }
+          }
+        }
+        p {
+          @include typography(paragraph);
+          color: var(--main-text);
         }
       }
     }
