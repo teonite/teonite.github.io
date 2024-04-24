@@ -1,13 +1,15 @@
 ---
-import Book from "../components/Book.astro";
-import Divider from "../components/Divider.astro";
-import PageLink from "../components/PageLink.astro";
-import Layout from "../layouts/DarkLayout.astro";
-import "../styles/base.scss";
+import Divider from "../../components/Divider.astro";
+import PageLink from "../../components/PageLink.astro";
+import Layout from "../../layouts/CategoryLayout.astro";
+import "../../styles/base.scss";
 ---
 
 <Layout>
-  <h1>Deeptech studio crafting mission-critical software.</h1>
+  <header>
+    <img src="/images/products/fintech.jpg" alt="page-cover" />
+    <h1>Innovation in fintech</h1>
+  </header>
   <div id="trusted-by">
     <p>Trusted by:</p>
     <ul>
@@ -34,10 +36,13 @@ import "../styles/base.scss";
       </li>
     </ul>
   </div>
-  <Divider />
   <section id="our-work">
     <header>
-      <h2>Our Work</h2>
+      <p>
+        Discover Our AI Solutions. Elevate your business with our advanced AI products and
+        expertise. From machine learning to natural language processing, we provide
+        tailored solutions to drive innovation and success.
+      </p>
     </header>
     <article>
       <div class="cover">
@@ -71,7 +76,6 @@ import "../styles/base.scss";
         </div>
       </div>
     </article>
-    <Divider />
     <article class="odd">
       <div class="cover">
         <img src="/images/products/tmobile.jpg" alt="t-mobile-article-cover" />
@@ -89,7 +93,6 @@ import "../styles/base.scss";
         </div>
       </div>
     </article>
-    <Divider />
     <article>
       <div class="cover">
         <img src="/images/products/esa.jpg" alt="esa-cover" />
@@ -107,7 +110,6 @@ import "../styles/base.scss";
         </div>
       </div>
     </article>
-    <Divider />
     <article class="odd">
       <div class="cover">
         <img src="/images/products/uv.jpg" alt="uv-cover" />
@@ -131,125 +133,32 @@ import "../styles/base.scss";
     </article>
   </section>
   <Divider />
-  <section id="products">
-    <header>
-      <h2>Products</h2>
-    </header>
-    <div class="product">
-      <div class="cover">
-        <a href="https://defguard.net"><img src="/images/pages/home/defguard.png" aria-label="defguard-product-cover" /></a>
-      </div>
-      <div class="content">
-        <div class="logo">
-          <div class="logo-container">
-            <a href="https://defguard.net"><img src="/svg/defguard-logo.svg" aria-label="defguard-logo-image" /></a>
-          </div>
-        </div>
-        <p>
-          Our Mission in Security Space.<br />
-          The only open-source solution with real WireGuard MFA/2FA & integrated OpenID Connect
-          SSO.
-        </p>
-      </div>
-    </div>
-  </section>
-  <Divider />
-  <section id="our-services">
-    <header>
-      <h2>Our services</h2>
-      <Book />
-    </header>
-    <div class="items-grid">
-      <div class="grid-item">
-        <a href="/services/discovery/">
-          <h3>Discovery & Design</h3>
-        </a>
-        <p>
-          Stakeholder expectations desitilled it into project objectives, specification,
-          technological architecture and risks analysis.
-        </p>
-        <div class="actions">
-          <PageLink href="/services/discovery/" />
-        </div>
-        <Divider />
-      </div>
-      <div class="grid-item">
-        <a href="/services/engineering/">
-          <h3>Software Engineering</h3>
-        </a>
-        <p>
-          We deliver high-end products on time and budget. We specialize in delivering
-          mission-critical systems requiring high security standards.
-        </p>
-        <div class="actions">
-          <PageLink href="/services/engineering/" />
-        </div>
-        <Divider />
-      </div>
-      <div class="grid-item">
-        <a href="/services/diligence/">
-          <h3>Due Diligence</h3>
-        </a>
-        <p>
-          Tailored technological due diligence services to maximize the value of your
-          investments with informed decisions based on thorough assessments.
-        </p>
-        <div class="actions">
-          <PageLink href="/services/diligence/" />
-        </div>
-        <Divider />
-      </div>
-      <div class="grid-item">
-        <a href="/services/uiux/">
-          <h3>UI/UX & Branding</h3>
-        </a>
-        <p>
-          Combining UI/UX and artistic expertise we craft bespoke experiences that enhance
-          brand identity through compelling visuals. We specialize in creating
-          user-centric solutions that elevate your brand's impact.
-        </p>
-        <div class="actions">
-          <PageLink href="/services/uiux/" />
-        </div>
-        <Divider />
-      </div>
-      <div class="grid-item">
-        <a href="/services/rd/">
-          <h3>Research & Development</h3>
-        </a>
-        <p>
-          Innovative projects that challenge the status quo require a unique and flexible
-          process that encourages exploration and effectively manages risks.
-        </p>
-        <div class="actions">
-          <PageLink href="/services/rd/" />
-        </div>
-        <Divider />
-      </div>
-      <div class="grid-item">
-        <a href="/services/venture/">
-          <h3>Venture Building</h3>
-        </a>
-        <p>
-          We invest in deeptech products in pre-seed and seed stages with cash & equity
-          model.
-        </p>
-        <div class="actions">
-          <PageLink href="/services/venture/" />
-        </div>
-        <Divider />
-      </div>
-    </div>
-  </section>
 </Layout>
 
 <style lang="scss">
   @use "@/styles/helpers" as *;
 
+  a {
+    color: var(--main-text);
+  }
+
   h1 {
     @include typography(main-header);
     color: var(--main-text);
     letter-spacing: 8px;
+  }
+  p {
+    @include typography(label);
+    color: var(--main-text);
+  }
+
+  header {
+    position: absolute;
+    width: 100%;
+    background-image: url("/images/products/fintech.jpg");
+    height: 20vh;
+    background-size: cover;
+    background-position: center center;
   }
 
   #trusted-by {
@@ -305,54 +214,6 @@ import "../styles/base.scss";
             width: 90px;
             user-select: none;
           }
-        }
-      }
-    }
-  }
-
-  #our-services {
-    display: flex;
-    flex-flow: column;
-    row-gap: var(--spacing-xl);
-    padding-top: var(--spacing-xl);
-
-    & > h2 {
-      @include typography(section-title);
-      color: var(--main-text);
-      letter-spacing: 6.4px;
-    }
-
-    h3 {
-      @include typography(sub-header);
-      color: var(--main-text);
-    }
-
-    p {
-      @include typography(paragraph);
-      color: var(--main-text);
-    }
-
-    & > .items-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-      grid-auto-flow: dense;
-      gap: var(--spacing-xl);
-
-      @include media-breakpoint-up(xl) {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      & > .grid-item {
-        display: flex;
-        flex-flow: column;
-        row-gap: 20px;
-
-        & > .actions {
-          display: flex;
-          flex-flow: row nowrap;
-          align-items: center;
-          justify-content: flex-end;
         }
       }
     }
@@ -520,54 +381,6 @@ import "../styles/base.scss";
               }
             }
           }
-        }
-      }
-    }
-  }
-
-  #products {
-    header {
-      padding-bottom: var(--spacing-xl);
-    }
-    & > .product {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--spacing-xl);
-
-      @include media-breakpoint-up(lg) {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .cover {
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-        img {
-          width: 100%;
-        }
-      }
-      & > .content {
-        display: flex;
-        flex-flow: column;
-        row-gap: var(--spacing-m);
-
-        .logo {
-          box-sizing: border-box;
-          padding-bottom: var(--spacing-m);
-          border-bottom: 1px solid var(--main-text);
-          .logo-container {
-            max-height: 135px;
-            width: 100%;
-            max-width: 100%;
-            overflow: hidden;
-            img {
-              height: 100%;
-            }
-          }
-        }
-        p {
-          @include typography(paragraph);
-          color: var(--main-text);
         }
       }
     }

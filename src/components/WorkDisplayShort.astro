@@ -1,0 +1,79 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Divider from "./Divider.astro";
+
+interface Props {
+  entry: CollectionEntry<"work">;
+}
+
+const { entry } = Astro.props;
+const entryLink = `/work/article/${entry.slug}`;
+---
+
+<div class="work-display-short">
+  <a class="cover-container" href={entryLink}>
+    <img src={entry.data.cover} aria-label="coverImage" />
+  </a>
+  <div
+    class:list={[
+      "description",
+      { split: entry.data.display?.company?.logo !== undefined },
+    ]}
+  >
+    <p>{entry.data.display.title}</p>
+    {
+      entry.data.display?.company?.logo !== undefined && (
+        <>
+          <Divider vertical />
+          <img src={entry.data.display.company.logo} aria-label="company-logo" />
+        </>
+      )
+    }
+  </div>
+</div>
+
+<style lang="scss">
+  @use "@/styles/helpers" as *;
+
+  .work-display-short {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    row-gap: 8px;
+
+    .cover-container {
+      max-width: 100%;
+      overflow: hidden;
+      max-height: 400px;
+      img {
+        width: 100%;
+      }
+    }
+
+    .description {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      min-height: 60px;
+
+      p {
+        @include typography(label);
+        color: var(--main-text);
+        max-width: 100%;
+        text-wrap: wrap;
+        word-break: break-all;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      &.split {
+        display: grid;
+        grid-template-columns: 1fr 64px 94px;
+      }
+    }
+  }
+</style>

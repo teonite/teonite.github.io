@@ -4,7 +4,7 @@ interface Props {
   text?: string;
 }
 
-const { href, text="More information" } = Astro.props;
+const { href, text = "More information" } = Astro.props;
 ---
 
 <a {href}>

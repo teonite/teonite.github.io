@@ -1,8 +1,8 @@
 ---
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 import { getCollection } from "astro:content";
-import ArticleLayout from "../../layouts/ArticleLayout.astro";
-import "../../styles/base.scss";
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import "../../../styles/base.scss";
 
 export const getStaticPaths = (async () => {
   const works = await getCollection("work");
