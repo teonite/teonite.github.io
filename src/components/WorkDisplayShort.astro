@@ -20,7 +20,7 @@ const entryLink = `/work/article/${entry.slug}`;
       { split: entry.data.display?.company?.logo !== undefined },
     ]}
   >
-    <p>{entry.data.title}</p>
+    <p>{entry.data.display.title}</p>
     {
       entry.data.display?.company?.logo !== undefined && (
         <>

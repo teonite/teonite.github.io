@@ -1,0 +1,97 @@
+---
+title: defguard — Open Source Enterprise SSO & VPN
+subtitle: The only open-source solution with real WireGuard MFA/2FA & integrated OpenID Connect SSO. 
+cover: /images/products/defguard.jpg
+category: [security]
+display:
+  title: Open Source Enterprise SSO & VPN
+  description: |
+    The only open-source solution with real WireGuard MFA/2FA & integrated OpenID Connect SSO.
+  company:
+    logo: /images/logos/defguard.png
+---
+import Divider from "../../components/Divider.astro";
+
+[![defguard desktop client](/images/products/design/defguard.png)](https://defguard.net)
+
+### SSO & Identity Provider
+The power of every organization is its users - secure your users data with your own SSO and stop relying on cloud/3rd party providers. As a core principle, defguard is based and built on open standards:
+
+- [OpenID Connect](https://openid.net/connect/) based Identity Provider
+- [OpenLDAP](https://www.openldap.org/) synchronization - currently supporting users and groups synchronization
+- [PostgreSQL](https://www.postgresql.org/) as core data backend
+
+Defguard SSO supports Multi-Factor Authentication to secure your apps and VPNs:
+
+- **Time-based One-Time Password** Algorithm (TOTP - e.g. Google Authenticator)
+- **Email** tokens
+- **WebAuthn / FIDO2** - for hardware key authentication support and **Passkeys**
+- **Web3** - authentication with crypto software and hardware wallets using Metamask, Wallet Connect, Ledger Extension
+
+### Enterprise WireGuard VPN with MFA/2FA
+defguard has a unique and secure architecture as well as **first of it’s kind Multi-Factor Authentication for WireGuard with TOTP/Email and WireGuard session Pre-Shared Keys**.
+ Since WireGuard protocol doesn’t support 2FA, most (if not all) 
+available WireGuard solutions use 2FA authorization to the “application”
+ itself (not Wireguard tunnel). By using our desktop application 
+defguard provides **real MFA/2FA** - read more about it in our [documentation](https://defguard.gitbook.io/defguard/admin-and-features/wireguard/architecture). Other features:
+
+- Beautiful [desktop clients](https://defguard.net/client) for Mac, Windows & Linux
+- **multiple VPN Locations** (networks/sites) - with defined access (all users or only Admin group)
+- multiple Gateways for each VPN Location (**high availability/failover**) - supported on a cluster of routers/firewalls for Linux, FreeBSD/PFSense/OPNSense
+- **import** your current WireGuard server configuration with a **wizard**!
+- **dashboard and statistics overview** of connected users/devices for admins
+- automatic IP allocation
+- kernel (Linux, FreeBSD/OPNSense/PFSense) & userspace WireGuard support with our Rust library
+
+*defguard is not an official WireGuard project, and WireGuard is a registered trademark of Jason A. Donenfeld.*
+
+### Secure Remote Enrollment & Onboarding
+[Secure user remote enrollment](https://defguard.gitbook.io/defguard/help/remote-user-enrollment) is a process, during which the user can: double-check their data, setup
+ their password, configure a device to access VPN and secured systems, 
+and if in trouble get admin contact detauls.
+
+After enrollment the user can be [onboarded](https://defguard.gitbook.io/defguard/help/remote-user-enrollment/user-onboarding-after-enrollment) with relevant company information, links to company systems, security 
+guidelines, etc. In the enrollment module, you can write custom messages
+ using markdown that will be shown on the last step of the enrollment 
+process and sent to the user via email.
+
+Enrollment is supported as a website, or **can be done with [defguard client](https://defguard.net/client)** which makes it a lot simpler and more secure. Also, during this process
+ the client configures all VPN locations automatically - all is done 
+with just entering a secure token, that can be emailed to the user 
+automatically!
+
+### Beatiful dekstop client
+Defguard client is the only open source client to support **Multi-Factor Authentication** with TOTP, Email & Pre-Shared WireGuard session keys! Also has:
+
+- Live statistics, VPN details, logs, dark theme, settings, and more!
+- Secure and remote [user enrollment](https://defguard.gitbook.io/defguard/help/remote-user-enrollment) - setting up password, automatically configuring the client for all VPN Locations/Networks
+- [Onboarding](https://defguard.gitbook.io/defguard/help/remote-user-enrollment/user-onboarding-after-enrollment) - displaying custom onboarding messages, with templates, links …
+- Ability to route **predefined VPN traffic or ALL traffic throuhg the VPN**
+- Supports not only defguard instances, but any WireGuard VPN sever (just import your config)
+
+### Yubikey provisioning
+An easy way to provision YubiKey hardware keys in an organization, generate signing keys - GPG/PGP and authentication keys - e.g. SSH
+
+### Checked by professionals
+defguard was **thoroughly and comprehensively audited** by one of the best **security researchers in Poland**: [ISEC](https://isec.pl/).
+
+ISEC
+ is also a strategic partner of defguard, reviewing every major release 
+from a security perspective, making defguard one of the most secure core
+ components in the open source ecosystem.
+
+All Critical and Major issues have been fixed in dedicated [pull requests](https://github.com/DefGuard/defguard/pulls?q=is%3Apr+is%3Aclosed). Retest will follow soon (we’ll notify on our Twitter).
+
+[Download Full Report](https://defguard.net/pdf/isec-defguard.pdf)
+
+### Integrations
+Automate processes that involve your organization’s data using:
+
+- **API** - all functionalities are exposed via REST API
+- **Webhooks** - outgoing webhooks are a simple way for defguard to notify your 
+  systems of ongoing changes in identity management (user was added, 
+  deleted, modified) or hardware key provisioning (easily propagateGPG/PGP
+   or SSH keys to your internal systems)
+
+### Portability & speed
+We’ve implemented defguard in Rust for code portability, security, and speed. You can easily run defguard on various Linux-based systems on x86, arm, and other architectures (including Raspberry PI, OpenWRT, etc.) and Unix systems FreeBSD, OpenBSD, and others. We’ve prepared various Linux and OPNSense (FreeBSD) but we are constantly working on other platforms.

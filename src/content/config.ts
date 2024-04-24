@@ -9,7 +9,7 @@ const services = defineCollection({
   }),
 });
 
-const workCategory = z.enum(["ai", "fintech", "security"]);
+const workCategory = z.enum(["ai", "fintech", "security", "rnd"]);
 
 export type WorkCategory = z.infer<typeof workCategory>;
 
