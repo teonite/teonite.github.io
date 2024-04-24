@@ -71,7 +71,7 @@ import "../styles/base.scss";
         </div>
       </div>
     </article>
-    <Divider />
+    <!-- <Divider /> -->
     <article class="odd">
       <div class="cover">
         <img src="/images/products/tmobile.jpg" alt="t-mobile-article-cover" />
@@ -89,7 +89,7 @@ import "../styles/base.scss";
         </div>
       </div>
     </article>
-    <Divider />
+    <!-- <Divider /> -->
     <article>
       <div class="cover">
         <img src="/images/products/esa.jpg" alt="esa-cover" />
@@ -107,7 +107,7 @@ import "../styles/base.scss";
         </div>
       </div>
     </article>
-    <Divider />
+    <!-- <Divider /> -->
     <article class="odd">
       <div class="cover">
         <img src="/images/products/uv.jpg" alt="uv-cover" />
@@ -150,6 +150,23 @@ import "../styles/base.scss";
           The only open-source solution with real WireGuard MFA/2FA & integrated OpenID Connect
           SSO.
         </p>
+      </div>
+    </div>
+    <div class="product">
+      <div class="content">
+        <div class="logo">
+          <div class="logo-container">
+            <a href="https://deep-image.ai"><img src="/svg/deep-image-logo.svg" aria-label="deep-image-logo-image" /></a>
+          </div>
+        </div>
+        <p>
+          Our Mission in Security Space.<br />
+          The only open-source solution with real WireGuard MFA/2FA & integrated OpenID Connect
+          SSO.
+        </p>
+      </div>
+      <div class="cover">
+        <a href="https://deep-image.ai"><img src="/images/pages/home/deep-image.png" aria-label="deep-image-product-cover" /></a>
       </div>
     </div>
   </section>
@@ -533,6 +550,7 @@ import "../styles/base.scss";
       display: grid;
       grid-template-columns: 1fr;
       gap: var(--spacing-xl);
+      padding-bottom: var(--spacing-xxl);
 
       @include media-breakpoint-up(lg) {
         grid-template-columns: 1fr 1fr;

@@ -27,7 +27,7 @@
 
     // Generate points
     const pointColor = 0xff6400;
-    const pointSize = 0.012;
+    const pointSize = 0.010;
     const cubeSize = 3;
     const pointSpacing = 0.08;
     const pointsPerAxis = Math.floor(cubeSize / pointSpacing);
@@ -38,7 +38,7 @@
         for (let z = 0; z < pointsPerAxis; z++) {
           const point = new THREE.Vector3(
             x * pointSpacing - cubeSize / 2,
-            y * pointSpacing - cubeSize / 2,
+            y * pointSpacing - cubeSize / 2 + 2,
             z * pointSpacing - cubeSize / 2
           );
           pointsArray.push(point);
@@ -73,7 +73,7 @@
     });
 
     // Render loop
-    const rotationSpeed = 0.001;
+    const rotationSpeed = 0.0005;
     const minimalRotationSpeed = 0.0001;
 
     // Initial cube rotation
@@ -125,7 +125,7 @@
 
   #canvas-track {
     position: absolute;
-    top: 0;
+    top: -800px;
     left: 16px;
     width: calc(100% - 16px * 2);
     height: 150vh;
