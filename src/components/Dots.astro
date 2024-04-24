@@ -16,7 +16,8 @@
       0.1,
       1000
     );
-    camera.position.z = 5;
+    camera.position.z = 5.5;
+    camera.position.y = -0.5;
 
     // Set up fog
     scene.fog = new THREE.Fog(0x000000, 3, 6); // Adjust the near and far values
@@ -27,7 +28,7 @@
 
     // Generate points
     const pointColor = 0xff6400;
-    const pointSize = 0.010;
+    const pointSize = 0.012;
     const cubeSize = 3;
     const pointSpacing = 0.08;
     const pointsPerAxis = Math.floor(cubeSize / pointSpacing);
@@ -38,7 +39,7 @@
         for (let z = 0; z < pointsPerAxis; z++) {
           const point = new THREE.Vector3(
             x * pointSpacing - cubeSize / 2,
-            y * pointSpacing - cubeSize / 2 + 2,
+            y * pointSpacing - cubeSize / 2,
             z * pointSpacing - cubeSize / 2
           );
           pointsArray.push(point);
