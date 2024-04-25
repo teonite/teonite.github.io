@@ -43,7 +43,6 @@ const workEntries = await getCollection("work");
       </li>
     </ul>
   </div>
-  <Divider />
   <div class="entries">
     {workEntries.map((entry) => <WorkDisplayShort entry={entry} />)}
   </div>
@@ -158,6 +157,7 @@ const workEntries = await getCollection("work");
       grid-template-columns: 1fr;
       column-gap: var(--spacing-s);
       row-gap: var(--spacing-l);
+      padding-top: var(--spacing-l);
 
       @include media-breakpoint-up(lg) {
         grid-template-columns: 1fr 1fr;
