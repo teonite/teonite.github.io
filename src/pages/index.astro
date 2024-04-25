@@ -142,7 +142,7 @@ import "../styles/base.scss";
             <a href="https://defguard.net"><img src="/svg/defguard-logo.svg" aria-label="defguard-logo-image" /></a>
           </div>
         </div>
-        <h3>Our Mission in Security Space</h3>
+        <h3><a href="https://defguard.net">Our Mission in Security Space</a></h3>
         <p>
           The only open-source solution with real WireGuard MFA/2FA & integrated OpenID Connect SSO.
         </p>
@@ -158,7 +158,7 @@ import "../styles/base.scss";
             <a href="https://deep-image.ai"><img src="/svg/deep-image-logo.svg" aria-label="deep-image-logo-image" /></a>
           </div>
         </div>
-        <h3>Our AI-driven Image Generator</h3>
+        <h3><a href="https://deep-image.ai">Our AI-driven Image Generator</a></h3>
         <p>
           Easy-to-use app to automatically generate and enhance photos in a few clicks, without the need
           of manual post-processing.
@@ -591,6 +591,9 @@ import "../styles/base.scss";
         }
         h3 {
           @include typography(sub-header);
+          color: var(--main-text);
+        }
+        h3 > a {
           color: var(--main-text);
         }
       }
