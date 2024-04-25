@@ -136,20 +136,19 @@ import "../styles/base.scss";
       <h2>Products</h2>
     </header>
     <div class="product">
-      <div class="cover">
-        <a href="https://defguard.net"><img src="/images/pages/home/defguard.png" aria-label="defguard-product-cover" /></a>
-      </div>
       <div class="content">
         <div class="logo">
           <div class="logo-container">
             <a href="https://defguard.net"><img src="/svg/defguard-logo.svg" aria-label="defguard-logo-image" /></a>
           </div>
         </div>
+        <h3>Our Mission in Security Space</h3>
         <p>
-          Our Mission in Security Space.<br />
-          The only open-source solution with real WireGuard MFA/2FA & integrated OpenID Connect
-          SSO.
+          The only open-source solution with real WireGuard MFA/2FA & integrated OpenID Connect SSO.
         </p>
+      </div>
+      <div class="cover">
+        <a href="https://defguard.net"><img src="/images/pages/home/defguard.png" aria-label="defguard-product-cover" /></a>
       </div>
     </div>
     <div class="product">
@@ -159,10 +158,10 @@ import "../styles/base.scss";
             <a href="https://deep-image.ai"><img src="/svg/deep-image-logo.svg" aria-label="deep-image-logo-image" /></a>
           </div>
         </div>
+        <h3>Our AI-driven Image Generator</h3>
         <p>
-          Our Mission in Security Space.<br />
-          The only open-source solution with real WireGuard MFA/2FA & integrated OpenID Connect
-          SSO.
+          Easy-to-use app to automatically generate and enhance photos in a few clicks, without the need
+          of manual post-processing.
         </p>
       </div>
       <div class="cover">
@@ -307,6 +306,7 @@ import "../styles/base.scss";
         display: block;
         height: 100%;
         width: 90px;
+        max-width: 22vw;
         overflow: hidden;
         & > .img-wrapper {
           user-select: none;
@@ -319,7 +319,7 @@ import "../styles/base.scss";
           img {
             height: auto;
             max-height: 100%;
-            width: 90px;
+            width: 100%;
             user-select: none;
           }
         }
@@ -552,7 +552,7 @@ import "../styles/base.scss";
       gap: var(--spacing-xl);
       padding-bottom: var(--spacing-xxl);
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(xl) {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -580,11 +580,17 @@ import "../styles/base.scss";
             overflow: hidden;
             img {
               height: 100%;
+              width: 40vw;
+              max-width: 220px;
             }
           }
         }
         p {
           @include typography(paragraph);
+          color: var(--main-text);
+        }
+        h3 {
+          @include typography(sub-header);
           color: var(--main-text);
         }
       }

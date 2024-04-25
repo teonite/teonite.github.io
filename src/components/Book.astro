@@ -1,7 +1,16 @@
+---
+interface Props {
+  href?: string;
+  text?: string;
+}
+
+const { href = "https://calendly.com/mgryczka/teonite-introduction", text = "More information" } = Astro.props;
+---
+
 <a
-  href="https://calendly.com/mgryczka/teonite-introduction"
+  href={href}
   target="_blank"
-  rel="noopener noreferrer">Book a Call</a
+  rel="noopener noreferrer">{text}</a
 >
 <style lang="scss">
   @use "@/styles/helpers" as *;
