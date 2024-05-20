@@ -1,0 +1,60 @@
+---
+title: Source Code Validation Service for Casper Blockchain
+subtitle: teonite partnered with Casper Blockchain to provide core development in rust
+cover: '/images/products/tmobile.jpg'
+category: [fintech, security]
+display:
+  title: Source Code Validation Service for Casper Blockchain
+  description: |
+    
+  company:
+    logo: /images/logos/tmobile.png
+---
+import Divider from "../../components/Divider.astro";
+
+## Project goal
+The primary aim of our project was to introduce robust tools and services for smart contract source code validation on the Casper blockchain. 
+
+Such functionality is vital in block explorers and supports user trust through transparency and verifiability. This feature allows end users to browse and validate the deployment code, essential for anyone interacting with smart contracts.
+
+## We delivered this project in 5 milestones:
+### Milestone 1
+We explored the feasibility of implementing source code validation on the Casper blockchain. Key questions included whether WASM deployments were pre-processed by the node, altering the binary from its original upload. Our research confirmed our ability to replicate the binary optimization process that occurs within the blockchain node.
+
+### Milestone 2 
+We delivered a distributed build system that supports a defined library of Rust compilers and the Casper-contract smart contract library. This system enables rapid production of WASM builds for subsequent validation.
+
+### Milestone 3 
+Our crew implemented a REST API complete with RUST DOC documentation, along with storage microservices to manage all relevant data—source code, metadata (developer, dates, etc.), WASM builds, validation data and Validation microservice, written in Rust, which performs cryptographic operations to validate the source code and WASM bytecode, generating comprehensive validation data.
+
+### Milestone 4
+We enhanced the casper-client with features that allow users to submit source code to the validation service. As of this writing, these changes are approved and  pending integration.
+Example usage of new functionality:
+
+```
+casper-client verify-contract -v --verification-url-basepath http://verificator:8080 DEPLOY-KEY
+DEPLOY-KEY : deployment hash of the contract as returned by casper-client put-deploy
+```
+
+### Milestone 5
+Brings an example web service (and React components library) - that will use the validation service and based on the submitted deploy hash can state if the deployment is validated - if so, enable to browsing the validated deploy source code
+
+## Roadmap
+
+Casper Association, Casper Labs, Pixys, MAKE and Teonite are working closely to deploy all components on test and production environments to make this functionality available to the greater public.
+
+
+## Future opportunities
+
+The purpose of this grant and project was to verify the feasibility of source code validation implementation and deliver validation core functionality.
+
+
+We see a lot of opportunities for further development of tools and services including:
+- A contract history view feature that shows changes over selected time spans.
+- A developer validation service to provide detailed information about developers, enhancing trust for enterprise users of the Casper blockchain.
+- An AI/Machine Learning tool to analyze smart contracts for potential scams, using insights from security firms.
+- Advanced data analytics for more in-depth insights into smart contract source code.
+- Premium validation services offering detailed security analysis, including audits and security report access.
+
+This project not only proved the feasibility of source code validation on the Casper blockchain but also laid the groundwork for future innovations that can enhance blockchain transparency, security, and usability.
+
