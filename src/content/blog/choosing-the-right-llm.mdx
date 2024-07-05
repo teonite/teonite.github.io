@@ -1,0 +1,89 @@
+---
+title: Choosing the Right LLM for a Production-Grade Solution 
+subtitle: Selecting the optimal LLM for production involves balancing costs related to infrastructure, energy, maintenance, and licensing against the model's performance, accuracy, and adaptability.
+cover: /images/blog/LLM-pills.jpg
+---
+import Divider from "../../components/Divider.astro";
+
+### After reading this article you will learn:
+
+- What are the differences between LLM models in terms of cost and quality?
+- How to calculate the operational costs of LLM-based solutions?
+- How to set up an effective R&D process involving LLMs?
+
+In today's rapidly evolving landscape of large language models (LLMs), selecting the optimal model for your production-grade solution can be a complex but critical decision. 
+
+This case study outlines our methodical approach to this decision, aiming to provide insights and strategies that can benefit other IT leaders facing similar challenges. 
+
+It summarises our learning from a fintech project implemented in Q1 and Q2 of 2024. The solution is already working in production.
+
+<Divider />
+
+### Building a model shortlist
+  
+The first and foremost step in our selection process was to thoroughly understand our business needs. Different LLMs offer varied strengths, with some focusing on speed and others on quality. It was essential to determine the priority for our specific use case.
+
+Our default LLM of choice was gpt-4-0125-preview. At the time it was the latest model from OpenAI and claimed to be the most intelligent. What was also important for us it was trained on data up to Dec 2023. After establishing a prompt that returned promising results on the model we started experimenting with different models.
+
+Relying on LLM rankings can offer a comparative perspective on model performance. We utilized the leaderboard at [chat.lmsys.org](https://chat.lmsys.org/?leaderboard) to gauge the relative standings of various LLMs, which helped us choose other LLMs to test.
+
+In the beginning, GPT was smashing other models in terms of intelligence and it was the only reliable option. We had a candidate. It was time to think about speed.
+
+Since our solution demanded the results in real-time speed was a big factor. The user had to wait for an LLM response several times to complete the main process in the application. We started exploring different models that were less intelligent, but faster. 
+
+A model that stood out was [Groq](https://groq.com/). It was the fastest model we tested and some tasks that did not require that much intelligence were delegated to this model.
+
+While developing the solution new models came out. In the end, we decided on these models:
+- **GPT-4 Turbo**: High-quality outputs, making it an excellent choice for tasks where accuracy and detail are paramount.
+- **Groq**: Excels in speed, ideal for simpler tasks.
+- **GPT-4o**: Strikes a balance between speed and quality, serving as a versatile option.
+- **Claude 3.5 Sonnet by Anthropic**: A new and promising contender, showing potential as a direct competitor to GPT-4 Turbo. We are still evaluating whether it will be our choice for the hardest tasks.
+
+### Evaluating Operational Costs
+
+While performance is crucial, the operational cost of using a chosen LLM can be a significant factor. Some models may offer superior performance but at a prohibitive cost. Therefore, it's important to consider budget constraints and balance performance with affordability.
+We created a cost comparison of the models on the shortlist. In order to create the comparison we had to:
+
+1. Calculate the number of tokens consumed by our prompts and completions for a single completed process in the solution. The costs are always returned in metadata sections of an LLM response, so we just summed them up.
+2. Assume a certain number of users and processes completed each month.
+3. Calculate the number of tokens consumed by the users each month.
+4. Calculate the monthly operational costs of each LLM model based on the token used in a month. The prices per 1M tokens can be taken from many LLM cost comparison websites like [this one](https://llm-price.com/).
+
+In the end, our main focus was quality and the client accepted the fact that he’s paying more for models that offer the best results. Knowing the differences in prices was a valid lesson and we made sure that the client was making a cautious decision.
+  
+### Staying Updated with LLM Trends
+  
+The field of LLMs is dynamic, with frequent updates and new models emerging. Keeping abreast of the latest developments was crucial in our decision-making process. 
+Different hypotheses were tested during the development process. Even though we had a working solution we were constantly testing new models hoping for better, faster results.
+We relied on several reliable sources for the most current information:
+
+- **[AlphaSignal.ai](https://AlphaSignal.ai)**: An excellent AI-oriented newsletter providing timely updates.
+- **[Hacker News](https://news.ycombinator.com/)**: A valuable resource for cutting-edge information, albeit requiring some filtering due to its breadth.
+  
+### Establishing an R&D Process for POC Development
+  
+Creating a robust research and development (R&D) process was pivotal. We needed an environment conducive to rapid experimentation, allowing us to test multiple hypotheses without committing extensive resources to ideas that might not pan out.
+
+The most important aspects of our R&D process where the following:
+
+1. **Convenient Experimentation Environment**: We used tools like [Marimo.io](https://marimo.io) to create IPython-notebooks with enhanced developer experience. This setup allowed for instant presentation of partial results to clients without the need for dedicated apps and interfaces. Hosting these notebooks ensured clients had constant access.
+2. **Flexible Libraries**: We integrated libraries like [BerriAI's litellm](https://github.com/BerriAI/litellm) and [Haystack by deepset.ai](https://github.com/deepset-ai/haystack), which facilitated easy switching between different LLM models.
+3. **Thorough Testing Set**: Developing a comprehensive testing set was a labor-intensive but crucial step. A larger dataset ensures more reliable testing outcomes.
+4. **Accuracy Measurement**: We designed a solution to measure accuracy while minimizing variables. Using the same prompts and testing data across different models provided consistent results.
+5. **Reporting Solution**: We established a reporting mechanism to measure and document the average accuracy of each model, generating PDF reports for clients to maintain transparency.
+  
+### Flexibility in the Final Solution
+  
+A critical aspect of our implementation was the ability to change the model in the final solution. While we considered hiding this option from broad users, it remained accessible to internal testers. This flexibility ensures that we can adapt to future advancements without overhauling the entire system.
+  
+### LLM model ensembling
+  
+Lastly, we are exploring the innovative approach of using [LLM model ensembling](https://www.linkedin.com/pulse/power-ensemble-methods-large-language-models-zahir-shaikh-8ox1f/) in our final solution. This involves having multiple LLMs perform the same task to improve overall performance, accuracy, and robustness compared to individual models. This dynamic selection process could be a game-changer, enhancing the reliability of our solution.
+  
+### Conclusion
+  
+Choosing the right LLM for a production-grade solution is a multifaceted process that requires a thorough understanding of business needs, cost considerations, staying updated with industry trends, and a robust R&D framework. 
+Our structured approach and commitment to flexibility and innovation have positioned us to deliver high-quality, adaptive solutions. This case study serves as a roadmap for other IT leaders navigating the complexities of LLM selection and implementation.
+
+<Divider />
+Kamil Chudy — Chief Architect at teonite, software engineer, team leader and avid problem solver. Builds technological foundations using bleeding edge technologies.
