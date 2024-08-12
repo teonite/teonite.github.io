@@ -14,7 +14,7 @@ const {title, content, links } = Astro.props;
     <p>{content}</p>
       <div class="links">
         {
-          links.map((link) => {
+          links && links.map((link) => {
             <div class="link">
               <div class="text">{link}</div>
               <div class="arrow">→</div>
@@ -36,7 +36,7 @@ const {title, content, links } = Astro.props;
     justify-content: space-between;
     align-items: flex-start;
     flex-shrink: 0;
-
+    overflow: hidden;
     border-radius: var(--spacing-S, 20px);
     background: var(--secondary-surfaces);
 

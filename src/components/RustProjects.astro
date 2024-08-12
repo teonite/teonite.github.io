@@ -1,0 +1,27 @@
+---
+import ProjectBox from "./ProjectBox.astro"
+---
+
+<div class="projects">
+  <ProjectBox title="Open Source SSO and VPN" content="defguard is our original product - all Open Source. Implemented entirely in Rust - combines aspects of secure architecture, system level coding, networking and beautiful app."></ProjectBox>
+  <ProjectBox title="Casper Network node" content="As members of core dev team, building and extending blockchain node, we focus on security related features like Hardware Security Modules integration and transaction signing that support network validators."></ProjectBox>
+  <ProjectBox title="Multi-factor authentication solution" content="Our implementation of MFA integrated with KeyCloak and coded in Rust protects clients of Home.pl (biggest internet services provider in Poland). "></ProjectBox>
+  <ProjectBox title="DEX" content="We have picked Rust as a strong foundation for building banking-grade secure backend and infrastructure supporting DeFi exchange. "></ProjectBox>
+  <ProjectBox title="Cryptocurrency exchange Order Book Engine" content="Rust implementation of an exchange order book mechanism focused on ultimate performance and speed."></ProjectBox>
+  <ProjectBox title="Algorithmic trading solution" content="Rust implementation of multi-site distributed trading solution, controlling trading nodes in globally distributed traders network. Capable of running sophisticated trading strategies."></ProjectBox>
+  <ProjectBox title="Source Code Verification Service" content="Vital functionality for block explorers supports trust through transparency and verifiability. This essential feature allows end users to browse and validate smart contract code."></ProjectBox>
+  <ProjectBox title="defguard_wireguard_rsv0.4.2" content="A unified multi-platform high-level API for managing WireGuard interfaces"></ProjectBox>
+</div>
+
+<style lang="scss">
+  @use "@/styles/helpers" as *;
+
+  .projects {
+    display: flex;
+    width: 1528px;
+    padding-top: var(--spacing-XL, 64px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-M, 32px);
+  }
+</style>

@@ -1,0 +1,106 @@
+---
+import { getCollection } from "astro:content";
+import WorkDisplay from "../components/WorkDisplay.astro";
+import type { WorkCategory } from "../content/config";
+import "../styles/base.scss";
+
+interface Props {
+  category: WorkCategory;
+  title: string;
+  pageCoverPath?: string;
+}
+
+const { category } = Astro.props;
+
+const projects = await getCollection("projects").then((d) =>
+  d.filter((v) => v.data.category.includes(category)),
+);
+---
+
+<div class="entries">
+  {
+    projects.map((e, index) => (
+      <WorkDisplay entry={e} invert={index % 2 !== 0} />
+    ))
+  }
+</div>
+
+<style lang="scss" is:global>
+  @use "@/styles/helpers" as *;
+
+  #main-background {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: var(--main-background);
+    content: " ";
+    display: block;
+    left: var(--spacing-m);
+    width: calc(100% - var(--spacing-m) * 2);
+    @include media-breakpoint-up(lg) {
+      left: var(--spacing-xl);
+      width: calc(100% - var(--spacing-xl) * 2);
+    }
+  }
+
+  #main-wrapper {
+    width: 100%;
+    max-width: 1920px;
+    position: relative;
+    background-color: transparent;
+    z-index: 1;
+    min-height: 100dvh;
+    background-color: transparent;
+  }
+
+  #main-cover {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    // inset: 0;
+    width: 100%;
+    max-height: 430px;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  main {
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 40px 16px 32px 16px;
+    margin: 0 auto;
+    max-width: 1600px;
+
+    & > header {
+      min-height: 400px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
+    }
+
+    & > .top {
+      p {
+        @include typography(paragraph);
+      }
+    }
+
+    h1 {
+      @include typography(main-header);
+      text-align: left;
+      padding-top: 8%;
+    }
+
+    .entries {
+      display: flex;
+      flex-flow: column;
+      width: 100%;
+      row-gap: calc(var(--spacing-xl) * 1);
+    }
+  }
+</style>
