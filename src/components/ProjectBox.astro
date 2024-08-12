@@ -30,15 +30,17 @@ const {title, content, links } = Astro.props;
 
   .info-box {
     display: flex;
-    width: 740px;
-    height: 420px;
     flex-direction: column;
+    width: 740px;
+    max-width: 100%;
+    min-height: 420px;
     justify-content: space-between;
     align-items: flex-start;
     flex-shrink: 0;
     overflow: hidden;
     border-radius: var(--spacing-S, 20px);
     background: var(--secondary-surfaces);
+    text-wrap: wrap;
 
     .info-box-text {
       display: flex;

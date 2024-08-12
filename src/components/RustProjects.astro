@@ -17,11 +17,10 @@ import ProjectBox from "./ProjectBox.astro"
   @use "@/styles/helpers" as *;
 
   .projects {
-    display: flex;
-    width: 1528px;
-    padding-top: var(--spacing-XL, 64px);
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
     gap: var(--spacing-M, 32px);
+    grid-template-column: 1fr 1fr;
   }
 </style>
