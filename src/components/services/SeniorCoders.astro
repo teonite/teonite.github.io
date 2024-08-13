@@ -1,87 +1,49 @@
+---
+import Coder from "./Coder.astro";
+---
+
 <div class="coders">
-  <div class="coder">
-    <div class="photo">
-      <img src="/images/people/kamil.png" />
-    </div>
-    <div class="name">Kamil Chudy</div>
-    <div class="description">
-      Seasoned solution architect, cycling addict (5+ bikes) and father. Guarding teonite
-      coding standards and quality.
-    </div>
-    <div class="gh-icon">
-      <img src="/svg/github-icon.svg" />
-    </div>
-  </div>
+  <Coder
+    name="Kamil Chudy"
+    description="Seasoned solution architect, cycling addict (5+ bikes) and father. Guarding teonite coding standards and quality."
+    photoUrl="/images/people/kamil.png"
+    ghUrl="https://github.com"
+  />
 
-  <div class="coder">
-    <div class="photo">
-      <img src="/images/people/jacek.png" />
-    </div>
-    <div class="name">Jacek Chmielewski</div>
-    <div class="description">
-      Digital nomad, coding from his camper van (if not paragliding). Specialty: Machine
-      Learning and R&D. DefGuard contributor and Rust advocate.
-    </div>
-    <div class="gh-icon">
-      <img src="/svg/github-icon.svg" />
-    </div>
-  </div>
+  <Coder
+    name="Jacek Chmielewski"
+    description="Digital nomad, coding from his camper van (if not paragliding). Specialty: Machine Learning and R&D. DefGuard contributor and Rust advocate."
+    photoUrl="/images/people/jacek.png"
+    ghUrl="https://github.com"
+  />
 
-  <div class="coder">
-    <div class="photo">
-      <img src="/images/people/adam.png" />
-    </div>
-    <div class="name">Adam Ciarciński</div>
-    <div class="description">
-      Geek. 20+ years of experience in coding (low level, high level, medium level... )
-      BSD contributor and linux expert.
-    </div>
-    <div class="gh-icon">
-      <img src="/svg/github-icon.svg" />
-    </div>
-  </div>
+  <Coder
+    name="Adam Ciarciński"
+    description="Geek. 20+ years of experience in coding (low level, high level, medium level... ) BSD contributor and linux expert."
+    photoUrl="/images/people/adam.png"
+    ghUrl="https://github.com"
+  />
 
-  <div class="coder">
-    <div class="photo">
-      <img src="/images/people/maciej.png" />
-    </div>
-    <div class="name">Maciej Wójcik</div>
-    <div class="description">
-      Chief Architect at teonite, software engineer, team leader and avid problem solver.
-      Builds technological foundations using bleeding edge technologies.
-    </div>
-    <div class="gh-icon">
-      <img src="/svg/github-icon.svg" />
-    </div>
-  </div>
+  <Coder
+    name="Maciej Wójcik"
+    description="Chief Architect at teonite, software engineer, team leader and avid problem solver. Builds technological foundations using bleeding edge technologies."
+    photoUrl="/images/people/maciej.png"
+    ghUrl="https://github.com"
+  />
 
-  <div class="coder">
-    <div class="photo">
-      <img src="/svg/tntBox.svg" />
-    </div>
-    <div class="name">Aleksander Trzepizur</div>
-    <div class="description">
-      Chief Architect at teonite, software engineer, team leader and avid problem solver.
-      Builds technological foundations using bleeding edge technologies.
-    </div>
-    <div class="gh-icon">
-      <img src="/svg/github-icon.svg" />
-    </div>
-  </div>
+  <Coder
+    name="Aleksander Trzepizur"
+    description="Chief Architect at teonite, software engineer, team leader and avid problem solver. Builds technological foundations using bleeding edge technologies."
+    photoUrl="/svg/tntBox.svg"
+    ghUrl="https://github.com"
+  />
 
-  <div class="coder">
-    <div class="photo">
-      <img src="/svg/tntBox.svg" />
-    </div>
-    <div class="name">Filip Ślęzak</div>
-    <div class="description">
-      Chief Architect at teonite, software engineer, team leader and avid problem solver.
-      Builds technological foundations using bleeding edge technologies.
-    </div>
-    <div class="gh-icon">
-      <img src="/svg/github-icon.svg" />
-    </div>
-  </div>
+  <Coder
+    name="Filip Ślęzak"
+    description="Chief Architect at teonite, software engineer, team leader and avid problem solver. Builds technological foundations using bleeding edge technologies."
+    photoUrl="/svg/tntBox.svg"
+    ghUrl="https://github.com"
+  />
 </div>
 
 <style lang="scss">
@@ -94,42 +56,5 @@
     font-family: "PP Neue Machina";
     font-style: normal;
     justify-content: center;
-
-    .coder {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      padding: 0px var(--spacing-S, 20px);
-      border-left: 1px solid var(--main-text, #fff);
-      width: 457px;
-      gap: var(--spacing-S, 20px);
-
-      .photo {
-        width: 256px;
-        height: 256px;
-        img {
-          border-radius: var(--spacing-XS, 8px);
-        }
-      }
-
-      .name {
-        font-size: 32px;
-        font-weight: 400;
-        line-height: 150%;
-        letter-spacing: 3.2px;
-      }
-
-      .description {
-        color: var(--main-text, #fff);
-        text-align: justify;
-
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 150%;
-        letter-spacing: 2px;
-      }
-    }
   }
 </style>
