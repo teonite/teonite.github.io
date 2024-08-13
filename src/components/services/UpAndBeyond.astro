@@ -1,0 +1,42 @@
+---
+import Manager from "./Manager.astro";
+---
+
+<div class="management">
+  <Manager
+    name="Robert Olejnik"
+    role="Security & Infrastructure"
+    photoUrl="/images/people/robert.png"
+    ghUrl="https://github.com"
+    liUrl="https://linkedin.com"
+  />
+  <Manager
+    name="Michał Gryczka"
+    role="Analysis & Data"
+    photoUrl="/images/people/michal.png"
+    ghUrl="https://github.com"
+    liUrl="https://linkedin.com"
+  />
+  <Manager
+    name="Przemysław Sinkiewicz"
+    role="Product & Management"
+    photoUrl="/images/people/przemek.png"
+    ghUrl="https://github.com"
+    liUrl="https://linkedin.com"
+  />
+</div>
+
+<style lang="scss">
+  @use "@/styles/helpers" as *;
+
+  .management {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-L, 48px);
+    width: 100%;
+
+    font-family: "PP Neue Machina";
+    font-style: normal;
+    font-weight: 400;
+  }
+</style>
