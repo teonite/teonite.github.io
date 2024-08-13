@@ -1,11 +1,46 @@
 <div class="management">
   <div class="manager">
-    <div class="photo">
-    </div>
+    <div class="photo"></div>
     <div class="content">
       <div class="description">
         <h1>Robert Olejnik</h1>
         <h2>Security & Infrastructure</h2>
+      </div>
+      <div class="social">
+        <a href="https://google.com">
+          <img src="/svg/github-icon.svg" />
+        </a>
+        <a href="https://google.com">
+          <img src="/svg/li-icon.svg" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="manager">
+    <div class="photo"></div>
+    <div class="content">
+      <div class="description">
+        <h1>Michał Gryczka</h1>
+        <h2>Analysis & Data</h2>
+      </div>
+      <div class="social">
+        <a href="https://google.com">
+          <img src="/svg/github-icon.svg" />
+        </a>
+        <a href="https://google.com">
+          <img src="/svg/li-icon.svg" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="manager">
+    <div class="photo"></div>
+    <div class="content">
+      <div class="description">
+        <h1>Przemysław Sinkiewicz</h1>
+        <h2>Product & Management</h2>
       </div>
       <div class="social">
         <a href="https://google.com">
@@ -24,7 +59,9 @@
 
   .management {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: var(--spacing-L, 48px);
+    width: 100%;
 
     font-family: "PP Neue Machina";
     font-style: normal;
@@ -35,7 +72,7 @@
       flex-direction: column;
       gap: var(--spacing-S, 20px);
       height: 494px;
-      width: 478px;
+      min-width: 478px;
       padding: var(--spacing-S, 20px);
       border-radius: var(--spacing-S, 20px);
       background: var(--secondary-surfaces, #fff);
@@ -49,7 +86,6 @@
         background-size: cover;
         background-repeat: no-repeat;
         border-radius: var(--spacing-XS, 8px);
-
       }
       .content {
         display: flex;
