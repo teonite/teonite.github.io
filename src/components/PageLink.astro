@@ -2,17 +2,23 @@
 interface Props {
   href: string;
   text?: string;
+  fullWidth?: boolean;
 }
 
-const { href, text = "More information" } = Astro.props;
+const { href, text = "More information", fullWidth = false } = Astro.props;
 ---
 
-<a {href}>
+<a {href} class:list={{ fullWidth }}>
   <slot>{text}</slot>
 </a>
 
 <style lang="scss">
   @use "@/styles/helpers" as *;
+
+  .fullWidth {
+    width: 100%;
+    justify-content: flex-start;
+  }
 
   a {
     display: flex;
