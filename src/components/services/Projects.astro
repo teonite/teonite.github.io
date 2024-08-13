@@ -1,0 +1,74 @@
+---
+import PageLink from "../PageLink.astro";
+import Project from "./Project.astro";
+---
+
+<div class="projects">
+  <Project
+    title="Open Source SSO and VPN"
+    content="defguard is our original product - all Open Source. Implemented entirely in Rust - combines aspects of secure architecture, system level coding, networking and beautiful app."
+  >
+    <PageLink href="https://google.com" text="Google" />
+    <PageLink href="https://google.com" text="Google" />
+  </Project>
+  <Project
+    title="Casper Network node"
+    content="As members of core dev team, building and extending blockchain node, we focus on security related features like Hardware Security Modules integration and transaction signing that support network validators."
+  >
+    <PageLink href="https://google.com" text="Google" />
+    <PageLink href="https://google.com" text="Google" />
+  </Project>
+  <Project
+    title="Multi-factor authentication solution"
+    content="Our implementation of MFA integrated with KeyCloak and coded in Rust protects clients of Home.pl (biggest internet services provider in Poland). "
+  >
+    <PageLink href="https://google.com" text="Google" />
+    <PageLink href="https://google.com" text="Google" />
+  </Project>
+  <Project
+    title="DEX"
+    content="We have picked Rust as a strong foundation for building banking-grade secure backend and infrastructure supporting DeFi exchange. "
+  >
+    <PageLink href="https://google.com" text="Google" />
+    <PageLink href="https://google.com" text="Google" />
+  </Project>
+  <Project
+    title="Cryptocurrency exchange Order Book Engine"
+    content="Rust implementation of an exchange order book mechanism focused on ultimate performance and speed."
+  >
+    <PageLink href="https://google.com" text="Google" />
+    <PageLink href="https://google.com" text="Google" />
+  </Project>
+  <Project
+    title="Algorithmic trading solution"
+    content="Rust implementation of multi-site distributed trading solution, controlling trading nodes in globally distributed traders network. Capable of running sophisticated trading strategies."
+  >
+    <PageLink href="https://google.com" text="Google" />
+    <PageLink href="https://google.com" text="Google" />
+  </Project>
+  <Project
+    title="Source Code Verification Service"
+    content="Vital functionality for block explorers supports trust through transparency and verifiability. This essential feature allows end users to browse and validate smart contract code."
+  >
+    <PageLink href="https://google.com" text="Google" />
+    <PageLink href="https://google.com" text="Google" />
+  </Project>
+  <Project
+    title="defguard_wireguard_rsv0.4.2"
+    content="A unified multi-platform high-level API for managing WireGuard interfaces"
+  >
+    <PageLink href="https://google.com" text="Google" />
+    <PageLink href="https://google.com" text="Google" />
+  </Project>
+</div>
+
+<style lang="scss">
+  @use "@/styles/helpers" as *;
+
+  .projects {
+    display: grid;
+    justify-content: center;
+    gap: var(--spacing-M, 32px);
+    grid-template-columns: 1fr 1fr;
+  }
+</style>

@@ -1,36 +1,24 @@
 ---
-import PageLink from '../PageLink.astro';
-
 interface Props {
   title: string;
   content: string;
-  links?: string[];
 }
 
-const {title, content, links } = Astro.props;
+const {title, content } = Astro.props;
 ---
 
-<div class="info-box">
-  <h1>{title}</h3>
+<div class="project">
+  <h1>{title}</h1>
   <p>{content}</p>
   <div class="links">
-    <PageLink href="https://google.com" text="Google"></PageLink>
-    <PageLink href="https://google.com" text="Google"></PageLink>
-    {
-      links && links.map((link) => {
-        <div class="link">
-          <div class="text">{link}</div>
-          <div class="arrow">→</div>
-        </div>
-      })
-    }
+      <slot/>
   </div>
 </div>
 
 <style lang="scss">
   @use "@/styles/helpers" as *;
 
-  .info-box {
+  .project {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
