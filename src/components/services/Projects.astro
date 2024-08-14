@@ -70,5 +70,9 @@ import Project from "./Project.astro";
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     gap: var(--spacing-l, 32px);
+
+    @include media-breakpoint-down(lg) {
+          grid-template-columns: none;
+    }
   }
 </style>

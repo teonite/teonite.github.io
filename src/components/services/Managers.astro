@@ -6,21 +6,21 @@ import Manager from "./Manager.astro";
   <Manager
     name="Robert Olejnik"
     role="Security & Infrastructure"
-    photoUrl="/images/people/robert.png"
+    photoUrl="/images/people/robert.jpg"
     ghUrl="https://github.com"
     liUrl="https://linkedin.com"
   />
   <Manager
     name="Michał Gryczka"
     role="Analysis & Data"
-    photoUrl="/images/people/michal.png"
+    photoUrl="/images/people/michal.jpg"
     ghUrl="https://github.com"
     liUrl="https://linkedin.com"
   />
   <Manager
     name="Przemysław Sinkiewicz"
     role="Product & Management"
-    photoUrl="/images/people/przemek.png"
+    photoUrl="/images/people/przemek.jpg"
     ghUrl="https://github.com"
     liUrl="https://linkedin.com"
   />
@@ -34,5 +34,8 @@ import Manager from "./Manager.astro";
     justify-content: center;
     gap: var(--spacing-l, 48px);
     width: 100%;
+    @include media-breakpoint-down(lg) {
+      display: block;
+    }
   }
 </style>

@@ -29,7 +29,7 @@
   }
 
   @if $value == "paragraph" {
-    font-size: calc(18px * var(--fonts-scale));
+    font-size: calc(30px * var(--fonts-scale));
     line-height: 1.5;
     @include media-breakpoint-up(lg) {
       font-size: calc(32px * var(--fonts-scale));

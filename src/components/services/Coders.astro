@@ -6,28 +6,28 @@ import Coder from "./Coder.astro";
   <Coder
     name="Kamil Chudy"
     description="Seasoned solution architect, cycling addict (5+ bikes) and father. Guarding teonite coding standards and quality."
-    photoUrl="/images/people/kamil.png"
+    photoUrl="/images/people/kamil.jpg"
     ghUrl="https://github.com"
   />
 
   <Coder
     name="Jacek Chmielewski"
     description="Digital nomad, coding from his camper van (if not paragliding). Specialty: Machine Learning and R&D. DefGuard contributor and Rust advocate."
-    photoUrl="/images/people/jacek.png"
+    photoUrl="/images/people/jacek.jpg"
     ghUrl="https://github.com"
   />
 
   <Coder
     name="Adam Ciarciński"
     description="Geek. 20+ years of experience in coding (low level, high level, medium level... ) BSD contributor and linux expert."
-    photoUrl="/images/people/adam.png"
+    photoUrl="/images/people/adam.jpg"
     ghUrl="https://github.com"
   />
 
   <Coder
     name="Maciej Wójcik"
     description="Chief Architect at teonite, software engineer, team leader and avid problem solver. Builds technological foundations using bleeding edge technologies."
-    photoUrl="/images/people/maciej.png"
+    photoUrl="/images/people/maciej.jpg"
     ghUrl="https://github.com"
   />
 
@@ -54,5 +54,9 @@ import Coder from "./Coder.astro";
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 23px;
     justify-content: center;
+
+    @include media-breakpoint-down(md) {
+          grid-template-columns: none;
+    }
   }
 </style>

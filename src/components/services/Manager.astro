@@ -35,13 +35,18 @@ const { name, role, photoUrl, ghUrl, liUrl } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-s, 20px);
-    height: 494px;
+    height: 440px;
     width: 100%;
     box-sizing: border-box;
     max-width: 478px;
     padding: var(--spacing-s, 20px);
     border-radius: var(--spacing-s, 20px);
     background: var(--secondary-surfaces, #fff);
+    @include media-breakpoint-down(lg) {
+      max-width: none;
+      margin:20px auto;
+    }
+    
 
     .photo {
       width: 100%;
