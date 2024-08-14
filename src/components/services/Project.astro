@@ -34,16 +34,11 @@ const { title, content } = Astro.props;
     padding: var(--spacing-m, 32px);
 
     h1 {
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 150%;
-      letter-spacing: 3.2px;
+      @include typography(paragraph);
     }
 
     p {
-      font-size: 20px;
-      letter-spacing: 2px;
+      @include typography(label);
     }
 
     .links {

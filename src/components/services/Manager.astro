@@ -64,15 +64,11 @@ const { name, role, photoUrl, ghUrl, liUrl } = Astro.props;
         justify-content: flex-start;
 
         h1 {
-          font-size: 32px;
-          line-height: 150%;
-          letter-spacing: 3.2px;
+          @include typography(paragraph);
         }
 
         h2 {
-          font-size: 20px;
-          line-height: 150%;
-          letter-spacing: 2px;
+          @include typography(label);
         }
       }
 

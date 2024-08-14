@@ -47,20 +47,11 @@ const { name, description, photoUrl = "/svg/tntBox.svg", ghUrl } = Astro.props;
     }
 
     .name {
-      font-size: 32px;
-      font-weight: 400;
-      line-height: 150%;
-      letter-spacing: 3.2px;
+      @include typography(paragraph);
     }
 
     .description {
-      color: var(--main-text, #fff);
-
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 150%;
-      letter-spacing: 2px;
+      @include typography(label);
     }
   }
 </style>
