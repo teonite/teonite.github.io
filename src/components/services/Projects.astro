@@ -1,4 +1,5 @@
 ---
+import Book from "./Book.astro";
 import PageLink from "../PageLink.astro";
 import Project from "./Project.astro";
 ---
@@ -14,31 +15,51 @@ import Project from "./Project.astro";
     title="Casper Network node"
     content="As members of core dev team, building and extending blockchain node, we focus on security related features like Hardware Security Modules integration and transaction signing that support network validators."
   >
-    <PageLink href="https://github.com/teonite/casper-node" text="Go to Github Project" fullWidth />
+    <PageLink
+      href="https://github.com/teonite/casper-node"
+      text="Go to Github Project"
+      fullWidth
+    />
   </Project>
   <Project
     title="Multi-factor authentication solution"
     content="Our implementation of MFA integrated with KeyCloak and coded in Rust protects clients of Home.pl (biggest internet services provider in Poland). "
   >
-    <PageLink href="https://teonite.com/work/article/home-pl/" text="Case Study" fullWidth />
+    <PageLink
+      href="https://teonite.com/work/article/home-pl/"
+      text="Case Study"
+      fullWidth
+    />
   </Project>
   <Project
     title="Brightpool DEX"
     content="We have picked Rust as a strong foundation for building banking-grade secure backend and infrastructure supporting DeFi exchange. "
   >
-    <PageLink href="https://teonite.com/work/article/brightpool/" text="Case Study" fullWidth />
+    <PageLink
+      href="https://teonite.com/work/article/brightpool/"
+      text="Case Study"
+      fullWidth
+    />
   </Project>
   <Project
     title="Cryptocurrency exchange Order Book Engine"
     content="Rust implementation of an exchange order book mechanism focused on ultimate performance and speed."
   >
-    <PageLink href="https://teonite.com/work/article/foxtral/" text="Case Study" fullWidth />
+    <PageLink
+      href="https://teonite.com/work/article/foxtral/"
+      text="Case Study"
+      fullWidth
+    />
   </Project>
   <Project
     title="Algorithmic trading solution"
     content="Rust implementation of multi-site distributed trading solution, controlling trading nodes in globally distributed traders network. Capable of running sophisticated trading strategies."
   >
-     <PageLink href="https://teonite.com/work/article/crypto-shaker/" text="Case Study" fullWidth />
+    <PageLink
+      href="https://teonite.com/work/article/crypto-shaker/"
+      text="Case Study"
+      fullWidth
+    />
   </Project>
   <Project
     title="Source Code Verification Service"
@@ -54,6 +75,8 @@ import Project from "./Project.astro";
     <PageLink href="https://google.com" text="crates.io" fullWidth />
     <PageLink href="https://google.com" text="docs.rs" fullWidth />
   </Project>
+
+  <Book title="This spot is reserved for your project" />
 </div>
 
 <style lang="scss">
@@ -65,8 +88,12 @@ import Project from "./Project.astro";
     justify-content: center;
     gap: var(--spacing-l, 32px);
 
+    :last-child {
+      grid-column: span 2;
+    }
+
     @include media-breakpoint-down(lg) {
-          grid-template-columns: none;
+      grid-template-columns: none;
     }
   }
 </style>
