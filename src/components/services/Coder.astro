@@ -30,11 +30,11 @@ const { name, description, photoUrl = "/svg/tntBox.svg", ghUrl } = Astro.props;
     flex-direction: column;
     align-items: flex-start;
 
-    padding: 0px var(--spacing-s, 20px);
-    border-left: 1px solid var(--main-text, #fff);
+    padding: 0px var(--spacing-s);
+    border-left: 1px solid var(--main-text);
     width: 85%;
     max-width: 457px;
-    gap: var(--spacing-s, 20px);
+    gap: var(--spacing-s);
     overflow: hidden;
     text-wrap: wrap;
     @include media-breakpoint-down(md) {
@@ -45,7 +45,7 @@ const { name, description, photoUrl = "/svg/tntBox.svg", ghUrl } = Astro.props;
       width: 200px;
       height: 200px;
       img {
-        border-radius: var(--spacing-xs, 8px);
+        border-radius: var(--spacing-xs);
       }
     }
 

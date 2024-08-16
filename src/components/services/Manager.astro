@@ -34,14 +34,14 @@ const { name, role, photoUrl, ghUrl, liUrl } = Astro.props;
   .manager {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-s, 20px);
+    gap: var(--spacing-s);
     height: 440px;
     width: 100%;
     box-sizing: border-box;
     max-width: 478px;
-    padding: var(--spacing-s, 20px);
-    border-radius: var(--spacing-s, 20px);
-    background: var(--secondary-surfaces, #fff);
+    padding: var(--spacing-s);
+    border-radius: var(--spacing-s);
+    background: var(--secondary-surfaces);
     @include media-breakpoint-down(lg) {
       max-width: none;
       margin:20px auto;
@@ -55,7 +55,7 @@ const { name, role, photoUrl, ghUrl, liUrl } = Astro.props;
       background-position: 0px 40%;
       background-size: cover;
       background-repeat: no-repeat;
-      border-radius: var(--spacing-xs, 8px);
+      border-radius: var(--spacing-xs);
     }
     .content {
       display: flex;

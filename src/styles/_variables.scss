@@ -25,7 +25,7 @@ html[data-theme="gray"] {
 html {
   // font scaling factor
   --fonts-scale: 1.2;
-  //spacings
+  // spacings
   --spacing-xs: 4px;
   --spacing-s: 10px;
   --spacing-m: 16px;
@@ -51,4 +51,6 @@ html {
     --fonts-scale: 1;
   }
   
+  // colors
+  --tnt-orange: #{$primary-tntOrange};
 }

@@ -1,66 +1,52 @@
 ---
 interface Props {
   title: string;
+  bookUrl: string;
 }
 
-const { title } = Astro.props;
+const { title, bookUrl } = Astro.props;
 ---
 
 <div class="project">
-  <!-- <div class="content"><p>{title}</p></div> -->
   <div class="content"><p>{title}</p></div>
-  <div class="book">Book a call</div>
-</div>
+  <div class="book">
+    <a href={bookUrl}>Book a Call</a>
+  </div>
 
-<style lang="scss">
-  @use "@/styles/helpers" as *;
+  <style lang="scss">
+    @use "@/styles/helpers" as *;
 
-  .project {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 740px;
-    min-height: 320px;
-    box-sizing: border-box;
-    // flex-shrink: 0;
-    // overflow: hidden;
-    border-radius: var(--spacing-s, 20px);
-    background: var(--secondary-surfaces);
-    // text-wrap: wrap;
-    // padding: var(--spacing-m, 31px);
-
-    // .content {
-    //   width: 100%;
-    //   height: 100%;
-    //   max-width: 610px;
-    //   p {
-    //     @include typography(sub-header);
-    //     position: relative;
-    //     top: 50%;
-    //     text-align: center;
-    //   }
-
-    .content {
+    .project {
       display: flex;
-      height: 100%;
       flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-    }
+      width: 100%;
+      min-height: 280px;
+      box-sizing: border-box;
+      border-radius: var(--spacing-s);
+      background: var(--secondary-surfaces);
 
-    .book {
-      @include typography(paragraph);
-      display: flex;
-      padding: var(--spacing-m, 32px) var(--spacing-xl, 64px);
-      justify-content: center;
-      align-items: center;
-      align-self: stretch;
-      color: var(--primary-tntOrange);
-      justify-content: center;
-      color: var(--primary-tntOrange, #ff6400);
-      border-top: 1px solid var(--primary-tntOrange, #ff6400);
+      .content {
+        @include typography(sub-header);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+      }
+
+      .book {
+        @include typography(paragraph);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--spacing-m) var(--spacing-xl);
+        box-sizing: border-box;
+        color: var(--tnt-orange);
+        border-top: 1px solid var(--tnt-orange);
+      }
     }
-  }
-</style>
+  </style>
+</div>
