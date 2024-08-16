@@ -1,0 +1,46 @@
+---
+import Book from "../Book.astro";
+---
+
+<div class="container">
+  <div>
+    <img src="/images/people/michal.jpg" />
+  </div>
+  <div class="info">
+    <div class="header">
+      <h1>Michał Gryczka</h1>
+      <div>Sales</div>
+    </div>
+    <div>phone: +48 562 586 456</div>
+    <div class="book">
+      <Book />
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @use "@/styles/helpers" as *;
+
+  .container {
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--spacing-xl);
+    img {
+      max-width: 512px;
+      max-height: 512px;
+      border-radius: var(--spacing-s);
+    }
+    h1 {
+      @include typography(sub-header);
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-m);
+      @include typography(label);
+    }
+    .book {
+      padding-top: var(--spacing-xl);
+    }
+  }
+</style>
