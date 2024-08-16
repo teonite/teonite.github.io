@@ -32,7 +32,7 @@ const { title, bookUrl } = Astro.props;
       justify-content: space-between;
       align-items: center;
       @include media-breakpoint-up(lg) {
-        width: calc(50% - var(--spacing-l) * .5);
+        width: calc(50% - var(--spacing-l) * 0.5);
       }
       min-height: 280px;
       box-sizing: border-box;
@@ -56,8 +56,12 @@ const { title, bookUrl } = Astro.props;
         align-items: center;
         padding: var(--spacing-m) var(--spacing-xl);
         box-sizing: border-box;
-        color: var(--tnt-orange);
         border-top: 1px solid var(--tnt-orange);
+
+        a, a:visited {
+          color: var(--tnt-orange);
+          text-decoration: none;
+        }
       }
     }
   }
