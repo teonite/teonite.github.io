@@ -33,15 +33,15 @@ const { title, content } = Astro.props;
     text-wrap: wrap;
     padding: var(--spacing-m);
 
-    h1 {
+    & > h1 {
       @include typography(paragraph);
     }
 
-    p {
+    & > p {
       @include typography(label);
     }
 
-    .links {
+    & > .links {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;

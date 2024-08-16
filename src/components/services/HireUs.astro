@@ -25,21 +25,21 @@ import Book from "../Book.astro";
     display: flex;
     justify-content: flex-start;
     gap: var(--spacing-xl);
-    img {
+    & > img {
       max-width: 512px;
       max-height: 512px;
       border-radius: var(--spacing-s);
     }
-    h1 {
+    & > h1 {
       @include typography(sub-header);
     }
-    .info {
+    & > .info {
       display: flex;
       flex-direction: column;
       gap: var(--spacing-m);
       @include typography(label);
     }
-    .book {
+    & > .book {
       padding-top: var(--spacing-xl);
     }
   }

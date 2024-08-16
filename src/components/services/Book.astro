@@ -26,7 +26,7 @@ const { title, bookUrl } = Astro.props;
       grid-column: span 2;
     }
 
-    .book {
+    & > .book {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -39,7 +39,7 @@ const { title, bookUrl } = Astro.props;
       border-radius: var(--spacing-s);
       background: var(--secondary-surfaces);
 
-      .content {
+      & > .content {
         @include typography(sub-header);
         display: flex;
         flex-direction: column;
@@ -49,7 +49,7 @@ const { title, bookUrl } = Astro.props;
         text-align: center;
       }
 
-      .book-link {
+      & > .book-link {
         @include typography(paragraph);
         display: flex;
         justify-content: center;
@@ -58,7 +58,7 @@ const { title, bookUrl } = Astro.props;
         box-sizing: border-box;
         border-top: 1px solid var(--tnt-orange);
 
-        a, a:visited {
+        & > a, a:visited {
           color: var(--tnt-orange);
           text-decoration: none;
         }
