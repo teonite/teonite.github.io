@@ -76,7 +76,10 @@ import Project from "./Project.astro";
     <PageLink href="https://google.com" text="docs.rs" fullWidth />
   </Project>
 
-  <Book title="This spot is reserved for your project" bookUrl="https://calendly.com/mgryczka/teonite-introduction"/>
+  <Book
+    title="This spot is reserved for your project"
+    bookUrl="https://calendly.com/mgryczka/teonite-introduction"
+  />
 </div>
 
 <style lang="scss">
@@ -87,10 +90,6 @@ import Project from "./Project.astro";
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     gap: var(--spacing-l);
-
-    :last-child {
-      grid-column: span 2;
-    }
 
     @include media-breakpoint-down(lg) {
       grid-template-columns: none;

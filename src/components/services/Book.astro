@@ -7,21 +7,33 @@ interface Props {
 const { title, bookUrl } = Astro.props;
 ---
 
-<div class="project">
-  <div class="content"><p>{title}</p></div>
+<div class="centered">
   <div class="book">
-    <a href={bookUrl}>Book a Call</a>
+    <div class="content"><p>{title}</p></div>
+    <div class="book-link">
+      <a href={bookUrl}>Book a Call</a>
+    </div>
   </div>
+</div>
 
-  <style lang="scss">
-    @use "@/styles/helpers" as *;
+<style lang="scss">
+  @use "@/styles/helpers" as *;
 
-    .project {
+  .centered {
+    display: flex;
+    justify-content: center;
+    @include media-breakpoint-up(lg) {
+      grid-column: span 2;
+    }
+
+    .book {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
+      @include media-breakpoint-up(lg) {
+        width: calc(50% - var(--spacing-l) * .5);
+      }
       min-height: 280px;
       box-sizing: border-box;
       border-radius: var(--spacing-s);
@@ -37,7 +49,7 @@ const { title, bookUrl } = Astro.props;
         text-align: center;
       }
 
-      .book {
+      .book-link {
         @include typography(paragraph);
         display: flex;
         justify-content: center;
@@ -48,5 +60,5 @@ const { title, bookUrl } = Astro.props;
         border-top: 1px solid var(--tnt-orange);
       }
     }
-  </style>
-</div>
+  }
+</style>
