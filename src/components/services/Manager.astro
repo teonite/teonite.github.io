@@ -29,8 +29,6 @@ const { name, role, photoUrl, ghUrl, liUrl } = Astro.props;
 </div>
 
 <style lang="scss">
-  @use "@/styles/helpers" as *;
-
   .manager {
     display: flex;
     flex-direction: column;
@@ -44,9 +42,8 @@ const { name, role, photoUrl, ghUrl, liUrl } = Astro.props;
     background: var(--secondary-surfaces);
     @include media-breakpoint-down(lg) {
       max-width: none;
-      margin:20px auto;
+      margin: 20px auto;
     }
-    
 
     & > .photo {
       width: 100%;

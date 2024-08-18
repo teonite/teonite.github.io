@@ -47,16 +47,26 @@ import Coder from "./Coder.astro";
 </div>
 
 <style lang="scss">
-  @use "@/styles/helpers" as *;
-
   .coders {
+    --col-count: 1;
+    --col-size: 1fr;
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 23px;
-    justify-content: center;
+    grid-template-columns: repeat(var(--col-count), var(--col-size));
+    row-gap: var(--spacing-m);
+    justify-content: space-between;
 
-    @include media-breakpoint-down(md) {
-          grid-template-columns: none;
+    @include b-up(md) {
+      --col-count: 2;
+      --col-size: minmax(300px, 457px);
+    }
+
+    @include b-up(lg) {
+      --col-count: 2;
+    }
+
+    @include b-up(xxl) {
+      --col-count: 3;
     }
   }
 </style>

@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import Divider from "../../components/Divider.astro";
 import WorkDisplayShort from "../../components/WorkDisplayShort.astro";
 import DarkLayout from "../../layouts/DarkLayout.astro";
-import "../../styles/base.scss";
 
 const workEntries = await getCollection("work");
 ---
@@ -49,7 +48,6 @@ const workEntries = await getCollection("work");
 </DarkLayout>
 
 <style lang="scss" is:global>
-  @use "@/styles/helpers" as *;
   main {
     display: flex;
     flex-flow: column;
@@ -77,7 +75,7 @@ const workEntries = await getCollection("work");
       gap: var(--spacing-s);
       color: var(--main-text);
 
-      @include media-breakpoint-up(lg) {
+      @include b-up(lg) {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -159,7 +157,7 @@ const workEntries = await getCollection("work");
       row-gap: var(--spacing-l);
       padding-top: var(--spacing-l);
 
-      @include media-breakpoint-up(lg) {
+      @include b-up(lg) {
         grid-template-columns: 1fr 1fr;
       }
     }

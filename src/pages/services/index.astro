@@ -3,7 +3,6 @@ import Book from "../../components/Book.astro";
 import Divider from "../../components/Divider.astro";
 import PageLink from "../../components/PageLink.astro";
 import DarkLayout from "../../layouts/DarkLayout.astro";
-import "../../styles/base.scss";
 ---
 
 <DarkLayout>
@@ -200,8 +199,6 @@ import "../../styles/base.scss";
 </DarkLayout>
 
 <style lang="scss" is:global>
-  @use "@/styles/helpers" as *;
-
   main {
     h1 {
       @include typography(main-header);
@@ -215,7 +212,7 @@ import "../../styles/base.scss";
       gap: var(--spacing-m);
       padding-top: var(--spacing-xl);
 
-      @include media-breakpoint-up(xl) {
+      @include b-up(xl) {
         flex-flow: row wrap;
         align-items: center;
         justify-content: flex-start;
@@ -223,7 +220,7 @@ import "../../styles/base.scss";
 
       & > a {
         display: block;
-        @include media-breakpoint-up(xl) {
+        @include b-up(xl) {
           margin-left: auto;
         }
       }
@@ -234,13 +231,13 @@ import "../../styles/base.scss";
       gap: var(--spacing-m);
       padding-top: var(--spacing-xl);
 
-      @include media-breakpoint-up(xl) {
+      @include b-up(xl) {
         flex-flow: row wrap;
       }
 
       & > a {
         display: block;
-        @include media-breakpoint-up(xl) {
+        @include b-up(xl) {
           margin-left: auto;
         }
       }
@@ -264,9 +261,9 @@ import "../../styles/base.scss";
       display: flex;
       flex-flow: column;
       row-gap: 48px;
-      
+
       h3 {
-      @include typography(sub-header);
+        @include typography(sub-header);
         color: var(--main-text);
       }
 
@@ -290,7 +287,7 @@ import "../../styles/base.scss";
           row-gap: var(--spacing-xl);
         }
 
-        @include media-breakpoint-up(lg) {
+        @include b-up(lg) {
           grid-template-rows: auto;
           grid-template-columns: 1fr 1fr;
         }
@@ -298,7 +295,7 @@ import "../../styles/base.scss";
         & > .left {
           grid-row: 1;
           grid-column: 1 / 2;
-          @include media-breakpoint-up(lg) {
+          @include b-up(lg) {
             grid-row: 1;
             grid-column: 1 / 2;
           }
@@ -323,7 +320,7 @@ import "../../styles/base.scss";
           grid-row: 2;
           grid-column: 1 / 2;
 
-          @include media-breakpoint-up(lg) {
+          @include b-up(lg) {
             grid-row: 1;
             grid-column: 2 / 3;
           }

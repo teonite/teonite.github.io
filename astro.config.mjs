@@ -1,5 +1,5 @@
 import mdx from "@astrojs/mdx";
-import rehypeFigure from "@microflash/rehype-figure"; 
+import rehypeFigure from "@microflash/rehype-figure";
 import yaml from "@rollup/plugin-yaml";
 import { defineConfig } from "astro/config";
 import path, { dirname } from "path";
@@ -11,13 +11,17 @@ const __dirname = dirname(__filename);
 export default defineConfig({
   site: "https://teonite.com",
   vite: {
-    server: {
-      port: 3000,
-    },
     plugins: [yaml()],
     resolve: {
       alias: {
         "@/": `${path.resolve(__dirname, "src")}/`,
+      },
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "@/styles/global" as *;`,
+        },
       },
     },
   },
@@ -25,8 +29,8 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [rehypeFigure],
     shikiConfig: {
-      theme: 'github-light',
+      theme: "github-light",
       wrap: true,
-    }
-  }
+    },
+  },
 });

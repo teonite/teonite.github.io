@@ -1,0 +1,35 @@
+---
+interface Props {
+  maxWidth?: number;
+  id?: string;
+  className?: string;
+}
+
+const { maxWidth, className, id } = Astro.props;
+
+const limitedStyle: astroHTML.JSX.CSSProperties = {
+  maxWidth: maxWidth !== undefined ? `${maxWidth}px` : `var(--content-limit);`,
+};
+---
+
+<div class:list={["content-limiter", className]} id={id}>
+  <div class="limited-content" style={limitedStyle}>
+    <slot />
+  </div>
+</div>
+
+<style lang="scss">
+  .content-limiter {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    width: 100%;
+
+    .limited-content {
+      width: 100%;
+    }
+  }
+</style>

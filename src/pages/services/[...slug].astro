@@ -1,8 +1,6 @@
 ---
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 import { getCollection } from "astro:content";
-import Layout from "../../layouts/ServicesLayout.astro";
-import "../../styles/base.scss";
 
 export const getStaticPaths = (async () => {
   const services = await getCollection("services");
@@ -19,10 +17,8 @@ export const getStaticPaths = (async () => {
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { data, render } = Astro.props.service;
+const { render } = Astro.props.service;
 const { Content } = await render();
 ---
 
-<Layout title={data.title} subTitle={data.subtitle} book={true} coverUrl={data.cover}>
-  <Content />
-</Layout>
+<Content />

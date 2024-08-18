@@ -33,7 +33,7 @@
     <li><a href="/">home</a></li>
     <li><a href="/work/">our work</a></li>
     <li><a href="/services/">services</a></li>
-      <li><a href="/blog/">blog</a></li>
+    <li><a href="/blog/">blog</a></li>
     <li><a href="/contact">contact</a></li>
   </ul>
 </dialog>
@@ -141,7 +141,6 @@
 </script>
 
 <style lang="scss">
-  @use "@/styles/helpers" as *;
   nav {
     display: flex;
     flex-flow: row nowrap;
@@ -158,7 +157,7 @@
     transition-delay: 150ms;
     height: 64px;
 
-    @include media-breakpoint-up(lg) {
+    @include b-up(lg) {
       height: 128px;
     }
 
@@ -173,7 +172,7 @@
       box-sizing: border-box;
       padding: 0 16px;
 
-      @include media-breakpoint-up(lg) {
+      @include b-up(lg) {
         padding: 0 var(--spacing-xl);
       }
 
@@ -186,7 +185,7 @@
         list-style: none;
         column-gap: 32px;
 
-        @include media-breakpoint-up(lg) {
+        @include b-up(lg) {
           display: flex;
         }
 
@@ -232,7 +231,7 @@
       padding: 0;
       cursor: pointer;
 
-      @include media-breakpoint-up(lg) {
+      @include b-up(lg) {
         display: none;
       }
     }

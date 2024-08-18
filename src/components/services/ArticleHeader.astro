@@ -1,0 +1,40 @@
+---
+import Divider from "../Divider.astro";
+
+type Props = {
+  cover?: string;
+};
+
+const { cover } = Astro.props;
+---
+
+<header class="article-header">
+  <div class="content">
+    <slot />
+    <Divider />
+    <!-- TODO: Trusted by here -->
+  </div>
+  {cover !== undefined && <img src={cover} />}
+</header>
+
+<style lang="scss">
+  .article-header {
+    --top-space: 200px;
+    box-sizing: border-box;
+    padding-top: calc(200px);
+    padding-bottom: var(--spacing-xl);
+    .content {
+      display: flex;
+      flex-flow: column;
+      row-gap: var(--spacing-l);
+
+      h1 {
+        @include typography(main-header);
+      }
+
+      & > p {
+        @include typography(sub-header);
+      }
+    }
+  }
+</style>

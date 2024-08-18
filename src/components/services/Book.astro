@@ -17,12 +17,10 @@ const { title, bookUrl } = Astro.props;
 </div>
 
 <style lang="scss">
-  @use "@/styles/helpers" as *;
-
   .centered {
     display: flex;
     justify-content: center;
-    @include media-breakpoint-up(lg) {
+    @include b-up(lg) {
       grid-column: span 2;
     }
 
@@ -31,7 +29,7 @@ const { title, bookUrl } = Astro.props;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      @include media-breakpoint-up(lg) {
+      @include b-up(lg) {
         width: calc(50% - var(--spacing-l) * 0.5);
       }
       min-height: 280px;
@@ -58,7 +56,8 @@ const { title, bookUrl } = Astro.props;
         box-sizing: border-box;
         border-top: 1px solid var(--tnt-orange);
 
-        & > a, a:visited {
+        & > a,
+        a:visited {
           color: var(--tnt-orange);
           text-decoration: none;
         }

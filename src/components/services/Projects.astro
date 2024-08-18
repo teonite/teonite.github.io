@@ -1,6 +1,6 @@
 ---
-import Book from "./Book.astro";
 import PageLink from "../PageLink.astro";
+import Book from "./Book.astro";
 import Project from "./Project.astro";
 ---
 
@@ -83,13 +83,14 @@ import Project from "./Project.astro";
 </div>
 
 <style lang="scss">
-  @use "@/styles/helpers" as *;
-
   .projects {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     gap: var(--spacing-l);
+    width: 100%;
+    box-sizing: border-box;
+    padding: calc(var(--spacing-l) + var(--spacing-m)) 0;
 
     @include media-breakpoint-down(lg) {
       grid-template-columns: none;

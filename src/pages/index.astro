@@ -3,7 +3,6 @@ import Book from "../components/Book.astro";
 import Divider from "../components/Divider.astro";
 import PageLink from "../components/PageLink.astro";
 import Layout from "../layouts/DarkLayout.astro";
-import "../styles/base.scss";
 ---
 
 <Layout>
@@ -48,7 +47,8 @@ import "../styles/base.scss";
           <h3>Enhancing Casper blockchain security</h3>
         </a>
         <p>
-          teonite receives Casper Grant Award to develop smart contract Source Code Verification Service.
+          teonite receives Casper Grant Award to develop smart contract Source Code
+          Verification Service.
         </p>
         <div class="actions">
           <PageLink href="/work/article/casper/" />
@@ -96,7 +96,8 @@ import "../styles/base.scss";
           <h3>Predictive modelling with Machine Learning</h3>
         </a>
         <p>
-          Providing advanced models to <nobr>T-Mobile</nobr> capable of predicting planned store location profitability.
+          Providing advanced models to <nobr>T-Mobile</nobr> capable of predicting planned
+          store location profitability.
         </p>
         <div class="actions">
           <PageLink href="/work/article/tmobile/" />
@@ -126,15 +127,13 @@ import "../styles/base.scss";
       </div>
       <div class="content">
         <a href="/work/article/uv">
-          <h3>
-            Scalable Digital Rights Management (DRM) platform development
-          </h3>
+          <h3>Scalable Digital Rights Management (DRM) platform development</h3>
         </a>
         <p>
-          Implementation  of UltraViolet platform with over 28 million users with over 250 million movies and
-          TV shows in 13 countries. Operated by movie studios inc. Sony Pictures, Universal Studios,
-          Warner Bros.
-        </p>          
+          Implementation of UltraViolet platform with over 28 million users with over 250
+          million movies and TV shows in 13 countries. Operated by movie studios inc. Sony
+          Pictures, Universal Studios, Warner Bros.
+        </p>
         <div class="actions">
           <PageLink href="/work/article/uv/" />
         </div>
@@ -150,33 +149,51 @@ import "../styles/base.scss";
       <div class="content">
         <div class="logo">
           <div class="logo-container">
-            <a href="https://defguard.net"><img src="/svg/defguard-logo.svg" aria-label="defguard-logo-image" /></a>
+            <a href="https://defguard.net"
+              ><img src="/svg/defguard-logo.svg" aria-label="defguard-logo-image" /></a
+            >
           </div>
         </div>
         <h3><a href="https://defguard.net">Our Mission in Security Space</a></h3>
         <p>
-          The only open-source solution with real WireGuard MFA/2FA & integrated OpenID Connect SSO.
+          The only open-source solution with real WireGuard MFA/2FA & integrated OpenID
+          Connect SSO.
         </p>
       </div>
       <div class="cover">
-        <a href="https://defguard.net"><img src="/images/pages/home/defguard.png" aria-label="defguard-product-cover" /></a>
+        <a href="https://defguard.net"
+          ><img
+            src="/images/pages/home/defguard.png"
+            aria-label="defguard-product-cover"
+          /></a
+        >
       </div>
     </div>
     <div class="product">
       <div class="content">
         <div class="logo">
           <div class="logo-container">
-            <a href="https://deep-image.ai"><img src="/svg/deep-image-logo.svg" aria-label="deep-image-logo-image" /></a>
+            <a href="https://deep-image.ai"
+              ><img
+                src="/svg/deep-image-logo.svg"
+                aria-label="deep-image-logo-image"
+              /></a
+            >
           </div>
         </div>
         <h3><a href="https://deep-image.ai">Our AI-driven Image Generator</a></h3>
         <p>
-          Easy-to-use app to automatically generate and enhance photos in a few clicks, without the need
-          of manual post-processing.
+          Easy-to-use app to automatically generate and enhance photos in a few clicks,
+          without the need of manual post-processing.
         </p>
       </div>
       <div class="cover">
-        <a href="https://deep-image.ai"><img src="/images/pages/home/deep-image.png" aria-label="deep-image-product-cover" /></a>
+        <a href="https://deep-image.ai"
+          ><img
+            src="/images/pages/home/deep-image.png"
+            aria-label="deep-image-product-cover"
+          /></a
+        >
       </div>
     </div>
   </section>
@@ -271,8 +288,6 @@ import "../styles/base.scss";
 </Layout>
 
 <style lang="scss">
-  @use "@/styles/helpers" as *;
-
   h1 {
     @include typography(main-header);
     color: var(--main-text);
@@ -309,7 +324,7 @@ import "../styles/base.scss";
       row-gap: 15px;
       column-gap: 20px;
 
-      @include media-breakpoint-up(xl) {
+      @include b-up(xl) {
         column-gap: 50px;
       }
 
@@ -367,7 +382,7 @@ import "../styles/base.scss";
       grid-auto-flow: dense;
       gap: var(--spacing-xl);
 
-      @include media-breakpoint-up(xl) {
+      @include b-up(xl) {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -394,7 +409,7 @@ import "../styles/base.scss";
       row-gap: var(--spacing-xl);
       align-items: center;
 
-      @include media-breakpoint-up(xl) {
+      @include b-up(xl) {
         grid-template-rows: auto;
         grid-template-columns: 1fr auto;
         column-gap: var(--spacing-m);
@@ -412,7 +427,7 @@ import "../styles/base.scss";
         grid-row: 2;
         grid-column: 1 / 2;
 
-        @include media-breakpoint-up(xl) {
+        @include b-up(xl) {
           grid-row: 1;
           grid-column: 2 /3;
         }
@@ -437,7 +452,7 @@ import "../styles/base.scss";
       grid-template-rows: auto auto;
       row-gap: 20px;
 
-      @include media-breakpoint-up(xl) {
+      @include b-up(xl) {
         grid-template-columns: 1fr 1fr;
         row-gap: unset;
         min-height: 700px;
@@ -459,7 +474,7 @@ import "../styles/base.scss";
           width: 100%;
           height: auto;
           object-fit: cover;
-          @include media-breakpoint-up(xl) {
+          @include b-up(xl) {
             position: absolute;
             &:nth-child(1) {
               left: -210px;
@@ -470,7 +485,7 @@ import "../styles/base.scss";
             }
           }
 
-          @include media-breakpoint-up(xxxl) {
+          @include b-up(xxxl) {
             position: absolute;
             &:nth-child(1) {
               left: 0px;
@@ -495,7 +510,7 @@ import "../styles/base.scss";
         row-gap: var(--spacing-m);
         width: 100%;
 
-        @include media-breakpoint-up(xl) {
+        @include b-up(xl) {
           grid-row: 1;
           grid-column: 2/3;
         }
@@ -524,7 +539,7 @@ import "../styles/base.scss";
       }
 
       &.odd {
-        @include media-breakpoint-up(xl) {
+        @include b-up(xl) {
           & > .content {
             grid-column: 1/2;
           }
@@ -539,7 +554,7 @@ import "../styles/base.scss";
             }
           }
         }
-        @include media-breakpoint-up(xxxl) {
+        @include b-up(xxxl) {
           & > .cover {
             img {
               &:nth-child(1) {
@@ -563,7 +578,7 @@ import "../styles/base.scss";
       gap: var(--spacing-xl);
       padding-bottom: var(--spacing-xxl);
 
-      @include media-breakpoint-up(xl) {
+      @include b-up(xl) {
         grid-template-columns: 1fr 1fr;
       }
 

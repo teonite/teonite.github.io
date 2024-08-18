@@ -52,8 +52,6 @@ const workEntries = await getCollection("work").then((d) =>
 </Root>
 
 <style lang="scss" is:global>
-  @use "@/styles/helpers" as *;
-
   #main-background {
     position: absolute;
     top: 0;
@@ -63,7 +61,7 @@ const workEntries = await getCollection("work").then((d) =>
     display: block;
     left: var(--spacing-m);
     width: calc(100% - var(--spacing-m) * 2);
-    @include media-breakpoint-up(lg) {
+    @include b-up(lg) {
       left: var(--spacing-xl);
       width: calc(100% - var(--spacing-xl) * 2);
     }
@@ -106,7 +104,7 @@ const workEntries = await getCollection("work").then((d) =>
       min-height: 400px;
     }
 
-    @include media-breakpoint-up(lg) {
+    @include b-up(lg) {
       padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
     }
 

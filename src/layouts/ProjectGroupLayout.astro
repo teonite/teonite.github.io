@@ -18,16 +18,10 @@ const projects = await getCollection("projects").then((d) =>
 ---
 
 <div class="entries">
-  {
-    projects.map((e, index) => (
-      <WorkDisplay entry={e} invert={index % 2 !== 0} />
-    ))
-  }
+  {projects.map((e, index) => <WorkDisplay entry={e} invert={index % 2 !== 0} />)}
 </div>
 
 <style lang="scss" is:global>
-  @use "@/styles/helpers" as *;
-
   #main-background {
     position: absolute;
     top: 0;
@@ -37,7 +31,7 @@ const projects = await getCollection("projects").then((d) =>
     display: block;
     left: var(--spacing-m);
     width: calc(100% - var(--spacing-m) * 2);
-    @include media-breakpoint-up(lg) {
+    @include b-up(lg) {
       left: var(--spacing-xl);
       width: calc(100% - var(--spacing-xl) * 2);
     }
@@ -80,7 +74,7 @@ const projects = await getCollection("projects").then((d) =>
       min-height: 400px;
     }
 
-    @include media-breakpoint-up(lg) {
+    @include b-up(lg) {
       padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
     }
 

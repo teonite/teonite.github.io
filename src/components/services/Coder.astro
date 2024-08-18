@@ -23,28 +23,28 @@ const { name, description, photoUrl = "/svg/tntBox.svg", ghUrl } = Astro.props;
 </div>
 
 <style lang="scss">
-  @use "@/styles/helpers" as *;
-
   .coder {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    box-sizing: border-box;
 
     padding: 0px var(--spacing-s);
     color: var(--main-text);
     border-left: 1px solid var(--main-text);
-    width: 85%;
-    max-width: 457px;
     gap: var(--spacing-s);
-    overflow: hidden;
     text-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
     @include media-breakpoint-down(md) {
       max-width: none;
     }
 
     & > .photo {
-      width: 200px;
-      height: 200px;
+      --dimention: 256px;
+      width: 100%;
+      max-width: var(--dimention);
       img {
         border-radius: var(--spacing-xs);
       }

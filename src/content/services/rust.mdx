@@ -2,36 +2,52 @@
 title: Rust development outsourcing
 subtitle: We help tech leaders to build secure and scalable systems by leveraging Rust language superpowers.
 cover: /images/services/rust.jpg
+layout: "../../layouts/services/ServicesLayoutV2.astro"
 ---
+import ContentLimiter from "../../components/ContentLimiter.astro";
 import Divider from "../../components/Divider.astro";
-import Projects from "../../components/services/Projects.astro";
+import ContentBlock from "../../components/services/ArticleContentBlock.astro";
+import ArticleHeader from "../../components/services/ArticleHeader.astro";
 import Coders from "../../components/services/Coders.astro";
-import Managers from "../../components/services/Managers.astro";
 import HireUs from "../../components/services/HireUs.astro";
+import Managers from "../../components/services/Managers.astro";
+import Projects from "../../components/services/Projects.astro";
 import DarkSection from "../../layouts/DarkSection.astro";
 
-## Proof of code
+<ContentLimiter>
 
-We believe in Open Source. Our code is available on GitHub. Go and check it.
+  <ArticleHeader>
+    # Rust development outsourcing
 
-<Projects />
+    We help tech leader to build secure and scalable systems by leveraging Rust language superpowers.
+  </ArticleHeader>
 
+  <ContentBlock>
+    ## Proof of code
+
+    We believe in Open Source. Our code is available on GitHub. Go and check it.
+  </ContentBlock>
+
+  <Projects />
+</ContentLimiter>
 <DarkSection>
 
-## Team up with senior coders
+  <ContentBlock>
+    ## Team up with senior coders
 
-Work with full-stack software engineers with proven track record working together for a decade.
+    Work with full-stack software engineers with proven track record working together for a decade.
+  </ContentBlock>
 
-<Coders />
+  <Coders />
 
 </DarkSection>
 
-## Up and beyond.
+<ContentBlock>
+  ## Up and beyond.
 
-It’s not only about the team. We got you covered with our Senior management supervision and support.
+  It's not only about the team. We got you covered with our Senior management supervision and support.
+</ContentBlock>
 
 <Managers />
-
-## Hire Us
 
 <HireUs />

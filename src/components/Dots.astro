@@ -14,10 +14,10 @@
       getFov(),
       targetElement.clientWidth / targetElement.clientHeight,
       0.1,
-      1000
+      1000,
     );
     camera.position.z = 5;
-    camera.position. y = -0.4;
+    camera.position.y = -0.4;
 
     // Set up fog
     scene.fog = new THREE.Fog(0x000000, 3, 6); // Adjust the near and far values
@@ -40,7 +40,7 @@
           const point = new THREE.Vector3(
             x * pointSpacing - cubeSize / 2,
             y * pointSpacing - cubeSize / 2,
-            z * pointSpacing - cubeSize / 2
+            z * pointSpacing - cubeSize / 2,
           );
           pointsArray.push(point);
         }
@@ -105,8 +105,6 @@
 </div>
 
 <style lang="scss" is:global>
-  @use "@/styles/helpers" as *;
-
   #main-background {
     position: absolute;
     top: 0;
@@ -118,7 +116,7 @@
     content: " ";
     display: block;
 
-    @include media-breakpoint-up(lg) {
+    @include b-up(lg) {
       left: var(--spacing-xl);
       width: calc(100% - var(--spacing-xl) * 2);
     }
@@ -138,7 +136,7 @@
     align-items: center;
     justify-content: flex-start;
 
-    @include media-breakpoint-up(lg) {
+    @include b-up(lg) {
       left: var(--spacing-xl);
       width: calc(100% - var(--spacing-xl) * 2);
     }

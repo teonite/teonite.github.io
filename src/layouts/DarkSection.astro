@@ -1,16 +1,28 @@
-<div class="section" data-theme="dark">
-  <slot />
-</div>
+---
+import ContentLimiter from "../components/ContentLimiter.astro";
+---
 
-<style lang="scss">
-  @use "@/styles/helpers" as *;
+<section class="article-section" data-theme="dark">
+  <ContentLimiter>
+    <slot />
+  </ContentLimiter>
+</section>
 
-  .section {
-    background-color: var(--primary-black);
+<style lang="scss" is:global>
+  .article-section {
+    --container-shift: calc(calc(var(--spacing-xl) + var(--spacing-l)) * -1);
+    --compensation: calc((var(--spacing-xl) + var(--spacing-l)) * 2);
+
+    background-color: var(--main-background);
+    margin-left: var(--container-shift);
+    min-width: calc(100% + var(--compensation));
     box-sizing: border-box;
-    padding: 0px 16px 32px 16px;
-    margin: 0 auto;
-    width: 100%;
+    padding: var(--spacing-xxl) calc(var(--compensation) / 2);
 
+    .limited-content {
+      display: flex;
+      flex-flow: column;
+      row-gap: var(--spacing-m);
+    }
   }
 </style>
