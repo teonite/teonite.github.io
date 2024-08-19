@@ -24,12 +24,13 @@ const { cover } = Astro.props;
     padding-top: calc(200px);
     padding-bottom: var(--spacing-xl);
     position: relative;
-    z-index: 10;
     overflow: hidden;
     .content {
       display: flex;
       flex-flow: column;
       row-gap: var(--spacing-l);
+      position: relative;
+      z-index: 10;
 
       h1 {
         @include typography(main-header);
