@@ -1,5 +1,6 @@
 ---
 import Book from "../components/Book.astro";
+import BookDemo from "../components/BookDemo.astro";
 import Divider from "../components/Divider.astro";
 import PageLink from "../components/PageLink.astro";
 import Layout from "../layouts/DarkLayout.astro";
@@ -7,7 +8,9 @@ import "../styles/base.scss";
 ---
 
 <Layout>
-  <h1>Deeptech studio crafting mission-critical software.</h1>
+  <h1>
+    We accelerate complex software projects.
+  </h1>
   <div id="trusted-by">
     <p>Trusted by:</p>
     <ul>
@@ -141,10 +144,131 @@ import "../styles/base.scss";
       </div>
     </article>
   </section>
+
   <Divider />
+
+  <section id="our-services">
+    <header>
+      <h2>Services</h2>
+    </header>
+    <div class="items-grid">
+
+      <div class="grid-item">
+        <a href="/services/rust/">
+          <h3>Rust Development</h3>
+        </a>
+        <p>
+          We help tech leader to build secure and scalable systems by leveraging our expertise in Rust technology. 
+        </p>
+        <!-- <div class="actions">
+          <PageLink href="/services/rust/" />
+        </div> -->
+        <Divider />
+      </div>
+
+      <div class="grid-item">
+        <a href="/services/engineering/">
+          <h3>Python Development</h3>
+        </a>
+        <p>We help all sort of organisations to build modern and reliable business applications with Python immense ecosystem capabilities.</p>
+        <!-- <div class="actions">
+          <PageLink href="/services/engineering/" />
+        </div> -->
+        <Divider />
+      </div>
+
+      <div class="grid-item">
+        <a href="/services/uiux/">
+          <h3>UI/UX & Branding</h3>
+        </a>
+        <p>
+          Combining UI/UX and artistic expertise we craft bespoke experiences that enhance
+          brand identity through compelling visuals. We specialize in creating
+          user-centric solutions that elevate your brand's impact.
+        </p>
+        <div class="actions">
+          <PageLink href="/services/uiux/" />
+        </div>
+        <Divider />
+      </div>
+
+      <div class="grid-item">
+        
+          <h3>Web Development</h3>
+        
+        <p>
+          We help web comapnies to create fast and bautiful web apps with use of TypeScript, React.js and Angular.js. 
+        </p>
+        <div class="actions">
+          <!-- replace with book a call? -->
+          <Book/>
+          <!-- <PageLink href="/services/webdevelopment/" /> -->
+        </div>
+        <Divider />
+      </div>  
+
+      <div class="grid-item">
+        <h3>LLM (ChatGPT) Integration</h3>
+      <p>
+        We help business leaders to leverage LLM technologies (ChatGPT, Groq, Gemini) in order to automate business processes with lower cost and more flexibility.
+      </p>
+      <div class="actions">
+        <!-- replace with book a call? -->
+        <BookDemo/>
+        <!-- <PageLink href="/services/webdevelopment/" /> -->
+      </div>
+      <Divider />
+    </div>  
+
+      <div class="grid-item">
+        <a href="/services/discovery/">
+          <h3>Systems Specyfication & Design</h3>
+        </a>
+        <p>
+          We help product owners to create valuable specyfication for systems and applications through systematic process of Discovery & Design. 
+        </p>
+        <div class="actions">
+          <PageLink href="/services/discovery/" />
+        </div>
+        <Divider />
+      </div>
+      
+      
+
+      <!-- <div class="grid-item">
+        <a href="/services/diligence/">
+          <h3>Due Diligence</h3>
+        </a>
+        <p>
+          Tailored technological due diligence services to maximize the value of your
+          investments with informed decision§s based on thorough assessments.
+        </p>
+        <div class="actions">
+          <PageLink href="/services/diligence/" />
+        </div>
+        <Divider />
+      </div> -->
+
+      <div class="grid-item">
+        <a href="/services/rd/">
+          <h3>Research & Development</h3>
+        </a>
+        <p>
+          Innovative projects that challenge the status quo require a unique and flexible
+          process that encourages exploration and effectively manages risks.
+        </p>
+        <div class="actions">
+          <PageLink href="/services/rd/" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Divider />
+  
   <section id="products">
     <header>
-      <h2>Products</h2>
+      <h2>Original Products</h2>
     </header>
     <div class="product">
       <div class="content">
@@ -153,11 +277,11 @@ import "../styles/base.scss";
             <a href="https://defguard.net"><img src="/svg/defguard-logo.svg" aria-label="defguard-logo-image" /></a>
           </div>
         </div>
-        <h3><a href="https://defguard.net">Our Mission in Security Space</a></h3>
+        <h3><a href="https://defguard.net">Open Source SSO & VPN for WireGuard</a></h3>
         <p>
           The only open-source solution with real WireGuard MFA/2FA & integrated OpenID Connect SSO.
         </p>
-      </div>
+      </div>  
       <div class="cover">
         <a href="https://defguard.net"><img src="/images/pages/home/defguard.png" aria-label="defguard-product-cover" /></a>
       </div>
@@ -180,94 +304,7 @@ import "../styles/base.scss";
       </div>
     </div>
   </section>
-  <Divider />
-  <section id="our-services">
-    <header>
-      <h2>Our services</h2>
-      <Book />
-    </header>
-    <div class="items-grid">
-      <div class="grid-item">
-        <a href="/services/discovery/">
-          <h3>Discovery & Design</h3>
-        </a>
-        <p>
-          Stakeholder expectations desitilled it into project objectives, specification,
-          technological architecture and risks analysis.
-        </p>
-        <div class="actions">
-          <PageLink href="/services/discovery/" />
-        </div>
-        <Divider />
-      </div>
-      <div class="grid-item">
-        <a href="/services/engineering/">
-          <h3>Software Engineering</h3>
-        </a>
-        <p>
-          We deliver high-end products on time and budget. We specialize in delivering
-          mission-critical systems requiring high security standards.
-        </p>
-        <div class="actions">
-          <PageLink href="/services/engineering/" />
-        </div>
-        <Divider />
-      </div>
-      <div class="grid-item">
-        <a href="/services/diligence/">
-          <h3>Due Diligence</h3>
-        </a>
-        <p>
-          Tailored technological due diligence services to maximize the value of your
-          investments with informed decisions based on thorough assessments.
-        </p>
-        <div class="actions">
-          <PageLink href="/services/diligence/" />
-        </div>
-        <Divider />
-      </div>
-      <div class="grid-item">
-        <a href="/services/uiux/">
-          <h3>UI/UX & Branding</h3>
-        </a>
-        <p>
-          Combining UI/UX and artistic expertise we craft bespoke experiences that enhance
-          brand identity through compelling visuals. We specialize in creating
-          user-centric solutions that elevate your brand's impact.
-        </p>
-        <div class="actions">
-          <PageLink href="/services/uiux/" />
-        </div>
-        <Divider />
-      </div>
-      <div class="grid-item">
-        <a href="/services/rd/">
-          <h3>Research & Development</h3>
-        </a>
-        <p>
-          Innovative projects that challenge the status quo require a unique and flexible
-          process that encourages exploration and effectively manages risks.
-        </p>
-        <div class="actions">
-          <PageLink href="/services/rd/" />
-        </div>
-        <Divider />
-      </div>
-      <div class="grid-item">
-        <a href="/services/venture/">
-          <h3>Venture Building</h3>
-        </a>
-        <p>
-          We invest in deeptech products in pre-seed and seed stages with cash & equity
-          model.
-        </p>
-        <div class="actions">
-          <PageLink href="/services/venture/" />
-        </div>
-        <Divider />
-      </div>
-    </div>
-  </section>
+
 </Layout>
 
 <style lang="scss">

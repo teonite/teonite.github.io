@@ -1,0 +1,40 @@
+---
+interface Props {
+  href?: string;
+  text?: string;
+}
+
+const { href = "https://calendly.com/mgryczka/teonite-introduction", text = "Book a Demo" } = Astro.props;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer">{text}</a
+>
+<style lang="scss">
+  @use "@/styles/helpers" as *;
+
+  a {
+    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
+    color: var(--main-text);
+    border: 1px solid var(--main-text);
+    outline: solid 0px var(--main-text);
+    background-color: transparent;
+    padding: var(--spacing-s) var(--spacing-m);
+    user-select: none;
+    width: max-content;
+    height: max-content;
+    text-decoration: none;
+    
+
+    @include typography(label);
+
+    &:hover {
+      outline: solid 5px var(--main-text);
+      text-decoration: none;
+    }
+  }
+</style>
