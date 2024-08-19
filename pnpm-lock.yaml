@@ -23,6 +23,9 @@ importers:
       astro:
         specifier: ^4.14.2
         version: 4.14.2(rollup@4.14.2)(sass@1.75.0)(typescript@5.2.2)
+      astro-robots-txt:
+        specifier: 1.0.0
+        version: 1.0.0
       es-cookie:
         specifier: ^1.5.0
         version: 1.5.0
@@ -808,6 +811,9 @@ packages:
     resolution: {integrity: sha512-8hJaCuqxObShWl2wEsnASqh/DbQ2O+S66m0Q3ctJlzBPEQ4pfGwwama3FCjZO3GDLQsjvn1T0v93Vxyu/+5fGw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  astro-robots-txt@1.0.0:
+    resolution: {integrity: sha512-6JQSLid4gMhoWjOm85UHLkgrw0+hHIjnJVIUqxjU2D6feKlVyYukMNYjH44ZDZBK1P8hNxd33PgWlHzCASvedA==}
+
   astro@4.14.2:
     resolution: {integrity: sha512-x9VeYx8Ih6kYKBMVwwsfRzsZVq30+SUhiawnYQ6+46qQnEx3zH05KcH24HsJMe6dVpHD8HdH7CWR5C4o7Q/jeg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
@@ -1195,6 +1201,10 @@ packages:
   file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
     engines: {node: ^10.12.0 || >=12.0.0}
+
+  filename-reserved-regex@3.0.0:
+    resolution: {integrity: sha512-hn4cQfU6GOT/7cFHXBqeBg2TbrMBgdD0kcjLhvSQYYwm3s4B6cjvBfb7nBALJLAXqmU5xajSa7X2NnUud/VCdw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   fill-range@7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
@@ -2245,6 +2255,10 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
+  valid-filename@4.0.0:
+    resolution: {integrity: sha512-VEYTpTVPMgO799f2wI7zWf0x2C54bPX6NAfbZ2Z8kZn76p+3rEYCTYVYzMUcVSMvakxMQTriBf24s3+WeXJtEg==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+
   vfile-location@5.0.2:
     resolution: {integrity: sha512-NXPYyxyBSH7zB5U6+3uDdd6Nybz6o6/od9rk8bp9H8GR3L+cm/fC0uUTbqBmUTnMCUDslAGBOIKNfvvb+gGlDg==}
 
@@ -3142,6 +3156,11 @@ snapshots:
       - supports-color
       - typescript
 
+  astro-robots-txt@1.0.0:
+    dependencies:
+      valid-filename: 4.0.0
+      zod: 3.23.8
+
   astro@4.14.2(rollup@4.14.2)(sass@1.75.0)(typescript@5.2.2):
     dependencies:
       '@astrojs/compiler': 2.10.3
@@ -3642,6 +3661,8 @@ snapshots:
   file-entry-cache@6.0.1:
     dependencies:
       flat-cache: 3.1.1
+
+  filename-reserved-regex@3.0.0: {}
 
   fill-range@7.0.1:
     dependencies:
@@ -5096,6 +5117,10 @@ snapshots:
       punycode: 2.3.0
 
   util-deprecate@1.0.2: {}
+
+  valid-filename@4.0.0:
+    dependencies:
+      filename-reserved-regex: 3.0.0
 
   vfile-location@5.0.2:
     dependencies:

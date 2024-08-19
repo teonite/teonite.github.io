@@ -4,6 +4,7 @@ import yaml from "@rollup/plugin-yaml";
 import { defineConfig } from "astro/config";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
+import robotsTxt from 'astro-robots-txt';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -25,7 +26,7 @@ export default defineConfig({
       },
     },
   },
-  integrations: [mdx()],
+  integrations: [mdx(), robotsTxt()],
   markdown: {
     rehypePlugins: [rehypeFigure],
     shikiConfig: {
