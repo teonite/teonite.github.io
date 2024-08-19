@@ -9,8 +9,6 @@ const { vertical, hidden } = Astro.props;
 <div class:list={["divider", { vertical, hidden }]}></div>
 
 <style lang="scss">
-  @use "@/styles/helpers" as *;
-
   .divider {
     display: block;
     width: 100%;
@@ -25,7 +23,7 @@ const { vertical, hidden } = Astro.props;
       height: 100%;
       background-color: var(--main-text);
       margin: 0 8px;
-      @include media-breakpoint-up(lg) {
+      @include b-up(lg) {
         margin: 0 30px;
       }
     }

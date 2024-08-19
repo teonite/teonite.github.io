@@ -4,37 +4,45 @@ interface Props {
   text?: string;
 }
 
-const { href = "https://calendly.com/mgryczka/teonite-introduction", text = "Book a Call" } = Astro.props;
+const {
+  href = "https://calendly.com/mgryczka/teonite-introduction",
+  text = "Book a Call",
+} = Astro.props;
 ---
 
-<a
-  href={href}
-  target="_blank"
-  rel="noopener noreferrer">{text}</a
->
+<div class="book">
+  <a href={href} target="_blank" rel="noopener noreferrer">{text}</a>
+</div>
+
 <style lang="scss">
-  @use "@/styles/helpers" as *;
-
-  a {
-    cursor: pointer;
+  .book {
     display: block;
+    width: min-content;
     box-sizing: border-box;
-    color: var(--main-text);
-    border: 1px solid var(--main-text);
-    outline: solid 0px var(--main-text);
-    background-color: transparent;
-    padding: var(--spacing-s) var(--spacing-m);
-    user-select: none;
-    width: max-content;
-    height: max-content;
-    text-decoration: none;
-    
+    border: 4px solid transparent;
+    cursor: pointer;
 
-    @include typography(label);
-
-    &:hover {
-      outline: solid 5px var(--main-text);
+    a {
+      display: block;
+      box-sizing: border-box;
+      color: var(--main-text);
+      border: 1px solid var(--main-text);
+      outline: solid 0px var(--main-text);
+      background-color: transparent;
+      padding: var(--spacing-s) var(--spacing-m);
+      user-select: none;
+      width: max-content;
+      height: max-content;
       text-decoration: none;
+
+      @include typography(label);
+    }
+    &:hover {
+      border-color: var(--main-text);
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 </style>

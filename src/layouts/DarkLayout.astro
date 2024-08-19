@@ -14,15 +14,13 @@ import Root from "../components/Root.astro";
 </Root>
 
 <style lang="scss">
-  @use "@/styles/helpers" as *;
-
   main {
     box-sizing: border-box;
     padding: 45vh 16px 32px 16px;
     margin: 0 auto;
     max-width: 1600px;
 
-    @include media-breakpoint-up(lg) {
+    @include b-up(lg) {
       padding: 34vh var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
     }
   }

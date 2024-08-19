@@ -2,7 +2,6 @@
 import Book from "../../components/Book.astro";
 import Divider from "../../components/Divider.astro";
 import DarkLayout from "../../layouts/DarkLayout.astro";
-import "../../styles/base.scss";
 ---
 
 <DarkLayout>
@@ -18,9 +17,13 @@ import "../../styles/base.scss";
           <img src="/images/products/deventiv.jpg" alt="deventiv-cover" />
         </a>
         <div class="description">
-         <p>AI powered 3D model reconstruction using data from a medical device.</p>
-         <div class="divider vertical"></div>
-         <img class="logo" src="/images/logos/medisensonic.png" alt="medisensonic-logo" />
+          <p>AI powered 3D model reconstruction using data from a medical device.</p>
+          <div class="divider vertical"></div>
+          <img
+            class="logo"
+            src="/images/logos/medisensonic.png"
+            alt="medisensonic-logo"
+          />
         </div>
       </div>
       <div class="grid-item">
@@ -151,8 +154,6 @@ import "../../styles/base.scss";
 </DarkLayout>
 
 <style lang="scss" is:global>
-  @use "@/styles/helpers" as *;
-
   main {
     h1 {
       @include typography(main-header);
@@ -166,14 +167,14 @@ import "../../styles/base.scss";
       gap: var(--spacing-m);
       padding-top: var(--spacing-xl);
 
-      @include media-breakpoint-up(xl) {
+      @include b-up(xl) {
         flex-flow: row wrap;
         align-items: center;
         justify-content: flex-start;
       }
       & > a {
         display: block;
-        @include media-breakpoint-up(xl) {
+        @include b-up(xl) {
           margin-left: auto;
         }
       }
@@ -197,7 +198,7 @@ import "../../styles/base.scss";
       row-gap: var(--spacing-l);
       column-gap: var(--spacing-s);
 
-      @include media-breakpoint-up(lg) {
+      @include b-up(lg) {
         grid-template-columns: 1fr 1fr;
       }
 

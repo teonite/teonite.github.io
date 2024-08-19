@@ -13,8 +13,6 @@ const { href, text = "More information", fullWidth = false } = Astro.props;
 </a>
 
 <style lang="scss">
-  @use "@/styles/helpers" as *;
-
   .fullWidth {
     width: 100%;
     justify-content: flex-start;
@@ -35,7 +33,7 @@ const { href, text = "More information", fullWidth = false } = Astro.props;
     border-left: 1px solid var(--main-text);
     width: 100%;
 
-    @include media-breakpoint-up(lg) {
+    @include b-up(lg) {
       width: auto;
     }
 

@@ -1,0 +1,31 @@
+<div class="article-content-block">
+  <slot />
+</div>
+
+<style lang="scss" is:global>
+  .article-content-block {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    row-gap: var(--spacing-m);
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    a {
+      color: var(--main-text);
+    }
+
+    h2 {
+      @include typography(section-title);
+    }
+
+    p {
+      @include typography(paragraph);
+    }
+  }
+</style>

@@ -1,41 +1,15 @@
 ---
-import Divider from "../components/Divider.astro";
-import Root from "../components/Root.astro";
-import Share from "../components/Share.astro";
+import Root from "../../components/Root.astro";
+import type { Services } from "../../content/config";
 
-interface Props {
-  // page title
-  title: string;
-  // subtitle
-  subTitle?: string;
-  // page cover image url
-  coverUrl: string;
-  // show book a call action
-  book?: boolean;
-}
-
-const { title, coverUrl, subTitle, book } = Astro.props;
+const { frontmatter } = Astro.props;
+const { cover, subtitle, title } = frontmatter as Services;
 ---
 
 <Root theme="gray">
-  <div id="main-wrapper">
+  <div id="main-wrapper" class="services-main">
     <main>
-      <div class="cover-wrapper">
-        <img src={coverUrl} alt="page-cover" />
-      </div>
       <article>
-        <header>
-          <h1>{title}</h1>
-          {subTitle && <p set:html={subTitle} />}
-          {
-            book && (
-              <div class="actions">
-                <Share />
-              </div>
-            )
-          }
-        </header>
-        <Divider />
         <slot />
       </article>
     </main>
@@ -43,7 +17,12 @@ const { title, coverUrl, subTitle, book } = Astro.props;
 </Root>
 
 <style lang="scss" is:global>
+  #main-wrapper.services-main {
+    background-color: var(--main-background);
+  }
+
   main {
+    --content-limit: 1530px;
     background-color: var(--main-background);
 
     a {
@@ -92,11 +71,6 @@ const { title, coverUrl, subTitle, book } = Astro.props;
 
       padding: var(--spacing-l);
 
-      @include b-up(lg) {
-        margin: 64px auto;
-        max-width: 1000px;
-      }
-
       section {
         width: 100%;
         display: flex;
@@ -116,7 +90,6 @@ const { title, coverUrl, subTitle, book } = Astro.props;
         p {
           @include typography(sub-header);
           color: var(--main-text);
-          line-height: 1.8;
         }
       }
       .actions {
@@ -144,7 +117,7 @@ const { title, coverUrl, subTitle, book } = Astro.props;
       }
 
       a {
-        text-decoration: underline;
+        text-decoration: none;
         text-underline-offset: 8px;
       }
 
@@ -167,7 +140,7 @@ const { title, coverUrl, subTitle, book } = Astro.props;
           position: relative;
           @include typography(paragraph);
           color: var(--main-text);
-          line-height: 1.7;
+          line-height: 1.2;
 
           &:not(&:first-child) {
             margin-top: 10px;

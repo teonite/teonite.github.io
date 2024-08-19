@@ -2,10 +2,9 @@
 const isProd = import.meta.env.PROD;
 ---
 
-<script src="//embed.typeform.com/next/embed.js" is:inline></script>
+{isProd && <Fragment>    
 
-{isProd && <Fragment>
-    
+<script src="//embed.typeform.com/next/embed.js" is:inline></script>
 <script is:inline async="" src="https://www.googletagmanager.com/gtag/js?id=UA-1358910-24"
 ></script>
 

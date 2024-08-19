@@ -1,0 +1,87 @@
+---
+import DarkSection from "../../layouts/DarkSection.astro";
+import Book from "../Book.astro";
+---
+
+<DarkSection>
+  <div class="hire-us">
+    <h2>Hire Us</h2>
+    <div class="contact">
+      <div class="avatar">
+        <img src="/images/people/michal.jpg" />
+      </div>
+      <div class="info">
+        <div class="top">
+          <p>Michał Gryczka</p>
+          <p>Sales</p>
+          <p>phone: <a href="tel:+48.562.586.456">+48 562 586 456</a></p>
+        </div>
+        <Book />
+      </div>
+    </div>
+  </div>
+</DarkSection>
+
+<style lang="scss" is:global>
+  .hire-us {
+    & > h2 {
+      @include typography(main-header);
+      padding-bottom: var(--spacing-xl);
+      width: 100%;
+      text-align: left;
+    }
+    .contact {
+      --cols-config: 1fr;
+      width: 100%;
+      display: grid;
+      grid-template-columns: var(--cols-config);
+      gap: var(--spacing-xl);
+
+      @include b-up(md) {
+        --cols-config: 300px 1fr;
+      }
+
+      @include b-up(lg) {
+        --cols-config: 300px 1fr;
+      }
+
+      @include b-up(xl) {
+        --cols-config: 1fr 2fr;
+      }
+
+      @include b-up(xxl) {
+        --cols-config: 1fr 2.5fr;
+      }
+
+      .avatar {
+        box-sizing: border-box;
+        overflow: hidden;
+
+        img {
+          border-radius: var(--spacing-s);
+          width: 100%;
+          height: unset;
+        }
+      }
+
+      .info {
+        .top {
+          > :nth-child(1) {
+            @include typography(sub-header);
+          }
+          > :nth-child(2) {
+            @include typography(label);
+            padding-bottom: var(--spacing-m);
+          }
+          > :nth-child(3) {
+            @include typography(label);
+            padding-bottom: calc(var(--spacing-m) + var(--spacing-xl));
+          }
+        }
+        & > .book > a {
+          @include typography(paragraph);
+        }
+      }
+    }
+  }
+</style>

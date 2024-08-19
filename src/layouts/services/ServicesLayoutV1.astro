@@ -1,39 +1,26 @@
 ---
-import Book from "../components/Book.astro";
-import Divider from "../components/Divider.astro";
-import Root from "../components/Root.astro";
+import Book from "../../components/Book.astro";
+import Divider from "../../components/Divider.astro";
+import Root from "../../components/Root.astro";
+import type { Services } from "../../content/config";
 
-interface Props {
-  // page title
-  title: string;
-  // subtitle
-  subTitle?: string;
-  // page cover image url
-  coverUrl: string;
-  // show book a call action
-  book?: boolean;
-}
-
-const { title, coverUrl, subTitle, book } = Astro.props;
+const { frontmatter } = Astro.props;
+const { cover, subtitle, title } = frontmatter as Services;
 ---
 
-<Root theme="gray">
+<Root theme="dark">
   <div id="main-wrapper">
     <main>
       <div class="cover-wrapper">
-        <img src={coverUrl} alt="page-cover" />
+        <img src={cover} alt="page-cover" />
       </div>
       <article>
         <header>
           <h1>{title}</h1>
-          {subTitle && <p set:html={subTitle} />}
-          {
-            book && (
-              <div class="actions">
-                <Book />
-              </div>
-            )
-          }
+          {subtitle && <p set:html={subtitle} />}
+          <div class="actions">
+            <Book />
+          </div>
         </header>
         <Divider />
         <slot />
@@ -43,8 +30,6 @@ const { title, coverUrl, subTitle, book } = Astro.props;
 </Root>
 
 <style lang="scss" is:global>
-  @use "@/styles/helpers" as *;
-
   main {
     background-color: var(--main-background);
 
@@ -54,7 +39,7 @@ const { title, coverUrl, subTitle, book } = Astro.props;
       color: var(--main-text);
 
       &:visited {
-        color: var(main-text);
+        color: var(--main-text);
       }
     }
 
@@ -69,7 +54,7 @@ const { title, coverUrl, subTitle, book } = Astro.props;
         height: 40vh;
         object-fit: cover;
 
-        @include media-breakpoint-up(lg) {
+        @include b-up(lg) {
           width: 100%;
           height: auto;
           max-height: 60vh;
@@ -79,10 +64,10 @@ const { title, coverUrl, subTitle, book } = Astro.props;
 
     & > article {
       --fonts-scale: 1;
-      @include media-breakpoint-down(sm){
+      @include media-breakpoint-down(sm) {
         --fonts-scale: 0.8;
       }
-      @include media-breakpoint-up(lg){
+      @include b-up(lg) {
         --fonts-scale: 0.6;
       }
 
@@ -94,7 +79,7 @@ const { title, coverUrl, subTitle, book } = Astro.props;
 
       padding: var(--spacing-l);
 
-      @include media-breakpoint-up(lg) {
+      @include b-up(lg) {
         margin: 64px auto;
         max-width: 1200px;
       }
@@ -145,7 +130,7 @@ const { title, coverUrl, subTitle, book } = Astro.props;
       }
 
       a {
-        text-decoration: underline;
+        text-decoration: none;
         text-underline-offset: 8px;
       }
 
@@ -153,13 +138,13 @@ const { title, coverUrl, subTitle, book } = Astro.props;
       ol {
         padding: 0;
         padding-left: 20px;
-        @include media-breakpoint-up(lg) {
+        @include b-up(lg) {
           padding-left: 40px;
         }
 
         &:not(&:first-child) {
           margin-top: 10px;
-          @include media-breakpoint-up(lg) {
+          @include b-up(lg) {
             margin-top: 20px;
           }
         }
@@ -173,7 +158,7 @@ const { title, coverUrl, subTitle, book } = Astro.props;
           &:not(&:first-child) {
             margin-top: 10px;
 
-            @include media-breakpoint-up(lg) {
+            @include b-up(lg) {
               margin-top: 20px;
             }
           }
@@ -220,15 +205,14 @@ const { title, coverUrl, subTitle, book } = Astro.props;
       }
 
       figure {
-        margin:0;
+        margin: 0;
         @include typography(footer);
-        color: var(--main-text)
+        color: var(--main-text);
       }
 
       figcaption {
         padding-top: 10px;
       }
-
     }
   }
 </style>

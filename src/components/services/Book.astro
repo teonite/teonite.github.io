@@ -1,0 +1,67 @@
+---
+interface Props {
+  title: string;
+  bookUrl: string;
+}
+
+const { title, bookUrl } = Astro.props;
+---
+
+<div class="centered">
+  <div class="book">
+    <div class="content"><p>{title}</p></div>
+    <div class="book-link">
+      <a href={bookUrl}>Book a Call</a>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .centered {
+    display: flex;
+    justify-content: center;
+    @include b-up(lg) {
+      grid-column: span 2;
+    }
+
+    & > .book {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      @include b-up(lg) {
+        width: calc(50% - var(--spacing-l) * 0.5);
+      }
+      min-height: 280px;
+      box-sizing: border-box;
+      border-radius: var(--spacing-s);
+      background: var(--secondary-surfaces);
+
+      & > .content {
+        @include typography(sub-header);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+      }
+
+      & > .book-link {
+        @include typography(paragraph);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--spacing-m) var(--spacing-xl);
+        box-sizing: border-box;
+        border-top: 1px solid var(--tnt-orange);
+
+        & > a,
+        a:visited {
+          color: var(--tnt-orange);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+</style>

@@ -1,13 +1,17 @@
 import { defineCollection, z } from "astro:content";
 
+const servicesSchema = z.object({
+  title: z.string(),
+  subtitle: z.string(),
+  cover: z.string(),
+});
+
 const services = defineCollection({
   type: "content",
-  schema: z.object({
-    title: z.string(),
-    subtitle: z.string(),
-    cover: z.string(),
-  }),
+  schema: servicesSchema,
 });
+
+export type Services = z.infer<typeof servicesSchema>;
 
 const workCategory = z.enum(["ai", "fintech", "security", "rnd"]);
 

@@ -2,7 +2,6 @@
 import Divider from "../../components/Divider.astro";
 import PageLink from "../../components/PageLink.astro";
 import Layout from "../../layouts/CategoryLayout.astro";
-import "../../styles/base.scss";
 ---
 
 <Layout>
@@ -136,8 +135,6 @@ import "../../styles/base.scss";
 </Layout>
 
 <style lang="scss">
-  @use "@/styles/helpers" as *;
-
   a {
     color: var(--main-text);
   }
@@ -191,7 +188,7 @@ import "../../styles/base.scss";
       row-gap: 15px;
       column-gap: 20px;
 
-      @include media-breakpoint-up(xl) {
+      @include b-up(xl) {
         column-gap: 50px;
       }
 
@@ -227,7 +224,7 @@ import "../../styles/base.scss";
       row-gap: var(--spacing-xl);
       align-items: center;
 
-      @include media-breakpoint-up(xl) {
+      @include b-up(xl) {
         grid-template-rows: auto;
         grid-template-columns: 1fr auto;
         column-gap: var(--spacing-m);
@@ -245,7 +242,7 @@ import "../../styles/base.scss";
         grid-row: 2;
         grid-column: 1 / 2;
 
-        @include media-breakpoint-up(xl) {
+        @include b-up(xl) {
           grid-row: 1;
           grid-column: 2 /3;
         }
@@ -270,7 +267,7 @@ import "../../styles/base.scss";
       grid-template-rows: auto auto;
       row-gap: 20px;
 
-      @include media-breakpoint-up(xl) {
+      @include b-up(xl) {
         grid-template-columns: 1fr 1fr;
         row-gap: unset;
         min-height: 700px;
@@ -292,7 +289,7 @@ import "../../styles/base.scss";
           width: 100%;
           height: auto;
           object-fit: cover;
-          @include media-breakpoint-up(xl) {
+          @include b-up(xl) {
             position: absolute;
             &:nth-child(1) {
               left: -210px;
@@ -303,7 +300,7 @@ import "../../styles/base.scss";
             }
           }
 
-          @include media-breakpoint-up(xxxl) {
+          @include b-up(xxxl) {
             position: absolute;
             &:nth-child(1) {
               left: 0px;
@@ -328,7 +325,7 @@ import "../../styles/base.scss";
         row-gap: var(--spacing-m);
         width: 100%;
 
-        @include media-breakpoint-up(xl) {
+        @include b-up(xl) {
           grid-row: 1;
           grid-column: 2/3;
         }
@@ -357,7 +354,7 @@ import "../../styles/base.scss";
       }
 
       &.odd {
-        @include media-breakpoint-up(xl) {
+        @include b-up(xl) {
           & > .content {
             grid-column: 1/2;
           }
@@ -372,7 +369,7 @@ import "../../styles/base.scss";
             }
           }
         }
-        @include media-breakpoint-up(xxxl) {
+        @include b-up(xxxl) {
           & > .cover {
             img {
               &:nth-child(1) {

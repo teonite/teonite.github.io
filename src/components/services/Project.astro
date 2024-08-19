@@ -16,8 +16,6 @@ const { title, content } = Astro.props;
 </div>
 
 <style lang="scss">
-  @use "@/styles/helpers" as *;
-
   .project {
     display: flex;
     flex-direction: column;
@@ -28,20 +26,20 @@ const { title, content } = Astro.props;
     box-sizing: border-box;
     flex-shrink: 0;
     overflow: hidden;
-    border-radius: var(--spacing-s, 20px);
+    border-radius: var(--spacing-s);
     background: var(--secondary-surfaces);
     text-wrap: wrap;
-    padding: var(--spacing-m, 32px);
+    padding: var(--spacing-m);
 
-    h1 {
+    & > h1 {
       @include typography(paragraph);
     }
 
-    p {
+    & > p {
       @include typography(label);
     }
 
-    .links {
+    & > .links {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
