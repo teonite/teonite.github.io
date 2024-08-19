@@ -23,6 +23,9 @@ const { cover } = Astro.props;
     box-sizing: border-box;
     padding-top: calc(200px);
     padding-bottom: var(--spacing-xl);
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
     .content {
       display: flex;
       flex-flow: column;
@@ -35,6 +38,13 @@ const { cover } = Astro.props;
       & > p {
         @include typography(sub-header);
       }
+    }
+    & > img {
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      object-fit: cover;
     }
   }
 </style>
