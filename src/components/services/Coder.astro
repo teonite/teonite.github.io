@@ -10,9 +10,7 @@ const { name, description, photoUrl = "/svg/tntBox.svg", ghUrl } = Astro.props;
 ---
 
 <div class="coder">
-  <div class="photo">
-    <img src={photoUrl} />
-  </div>
+  <img src={photoUrl} />
   <div class="name">{name}</div>
   <div class="description">{description}</div>
   <div class="gh-icon">
@@ -41,13 +39,12 @@ const { name, description, photoUrl = "/svg/tntBox.svg", ghUrl } = Astro.props;
       max-width: none;
     }
 
-    & > .photo {
+    & > img {
       --dimention: 256px;
       width: 100%;
+      min-height: var(--dimention);
       max-width: var(--dimention);
-      img {
-        border-radius: var(--spacing-xs);
-      }
+      border-radius: var(--spacing-xs);
     }
 
     & > .name {
