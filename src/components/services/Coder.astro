@@ -10,12 +10,12 @@ const { name, description, photoUrl = "/svg/tntBox.svg", ghUrl } = Astro.props;
 ---
 
 <div class="coder">
-  <img src={photoUrl} />
+  <img src={photoUrl} alt={name} />
   <div class="name">{name}</div>
   <div class="description">{description}</div>
   <div class="gh-icon">
     <a href={ghUrl}>
-      <img src="/svg/github-icon.svg" alt="github_icon"/>
+      <img src="/svg/github-icon.svg" alt="github" aria-label="github" />
     </a>
   </div>
 </div>

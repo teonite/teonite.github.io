@@ -18,11 +18,11 @@ const { name, role, photoUrl, ghUrl, liUrl } = Astro.props;
       <h2>{role}</h2>
     </div>
     <div class="social">
-      <a href={ghUrl}>
-        <img src="/svg/github-icon-black.svg" alt="github_icon"/>
+      <a href={ghUrl} aria-label="github">
+        <img src="/svg/github-icon-black.svg" alt="github" />
       </a>
-      <a href={liUrl}>
-        <img src="/svg/li-icon.svg" alt="icon"/>
+      <a href={liUrl} aria-label="LinkedIn">
+        <img src="/svg/li-icon.svg" alt="LinkedIn" />
       </a>
     </div>
   </div>

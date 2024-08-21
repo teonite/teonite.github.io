@@ -3,9 +3,10 @@ import Divider from "../Divider.astro";
 
 type Props = {
   cover?: string;
+  alt?: string
 };
 
-const { cover } = Astro.props;
+const { cover, alt } = Astro.props;
 ---
 
 <header class="article-header">
@@ -14,7 +15,7 @@ const { cover } = Astro.props;
     <Divider />
     <!-- TODO: Trusted by here -->
   </div>
-  {cover !== undefined && <img src={cover} />}
+  {cover !== undefined && <img src={cover} alt={alt || ""} />}
 </header>
 
 <style lang="scss">
