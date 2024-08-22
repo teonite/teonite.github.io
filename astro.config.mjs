@@ -5,8 +5,10 @@ import { defineConfig } from "astro/config";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import robotsTxt from 'astro-robots-txt';
+import starlight from "@astrojs/starlight";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,23 +17,23 @@ export default defineConfig({
     plugins: [yaml()],
     resolve: {
       alias: {
-        "@/": `${path.resolve(__dirname, "src")}/`,
-      },
+        "@/": `${path.resolve(__dirname, "src")}/`
+      }
     },
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@use "@/styles/global" as *;`,
-        },
-      },
-    },
+          additionalData: `@use "@/styles/global" as *;`
+        }
+      }
+    }
   },
-  integrations: [mdx(), robotsTxt()],
+  integrations: [mdx(), robotsTxt(), starlight()],
   markdown: {
     rehypePlugins: [rehypeFigure],
     shikiConfig: {
       theme: "github-light",
-      wrap: true,
-    },
-  },
+      wrap: true
+    }
+  }
 });

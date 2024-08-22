@@ -1,4 +1,5 @@
 import { defineCollection, z } from "astro:content";
+import { docsSchema } from '@astrojs/starlight/schema';
 
 const servicesSchema = z.object({
   title: z.string(),
@@ -50,4 +51,5 @@ export const collections = {
   services,
   work,
   blog,
+  docs: defineCollection({ schema: docsSchema() }),
 };
