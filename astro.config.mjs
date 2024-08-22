@@ -25,15 +25,23 @@ export default defineConfig({
         scss: {
           additionalData: `@use "@/styles/global" as *;`,
         },
-      }
-    }
+      },
+    },
   },
-  integrations: [mdx(), robotsTxt(), starlight()],
+  integrations: [ 
+    robotsTxt(), 
+    starlight(
+      {
+        title: 'teonite best practices',
+      }
+    ),
+    mdx()
+  ],
   markdown: {
     rehypePlugins: [rehypeFigure],
     shikiConfig: {
       theme: "github-light",
       wrap: true,
     },
-  }
+  },
 });
