@@ -17,14 +17,14 @@ export default defineConfig({
     plugins: [yaml()],
     resolve: {
       alias: {
-        "@/": `${path.resolve(__dirname, "src")}/`
-      }
+        "@/": `${path.resolve(__dirname, "src")}/`,
+      },
     },
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@use "@/styles/global" as *;`
-        }
+          additionalData: `@use "@/styles/global" as *;`,
+        },
       }
     }
   },
@@ -33,7 +33,7 @@ export default defineConfig({
     rehypePlugins: [rehypeFigure],
     shikiConfig: {
       theme: "github-light",
-      wrap: true
-    }
+      wrap: true,
+    },
   }
 });
