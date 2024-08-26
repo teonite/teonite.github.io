@@ -1,0 +1,33 @@
+@use "../base/fonts";
+
+html {
+  font-family: "PP Neue Machina";
+}
+
+
+main {
+  font-family: "PP Neue Machina", serif;
+}
+
+
+:root {
+  --sl-color-bg-sidebar: #DDD !important;
+  --sl-color-bg-nav: #DDD !important;
+}
+
+.page {
+  &>.header {
+    &>.header {
+      .site-title {
+        span {
+          display: none;
+        }
+      }
+
+      // Hide theme picker
+      :nth-child(3) {
+        display: none;
+      }
+    }
+  }
+}
