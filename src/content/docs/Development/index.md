@@ -1,35 +1,19 @@
 ---
-    title: 'Development'
+    title: 'Software Delivery Process'
     subtitle: 'teonite software development process'
     cover: '/images/services/dd.jpg'
    
 ---
 
-# Teonite Software Delivery Process
 
-**Author:** Michał Gryczka  
-**Email:** [mike@teonite.com](mailto:mike@teonite.com)  
-**Mobile:** +48 509 895 529  
+
+**Author:** Kamil Chudy
+**Email:** [kchudy@teonite.com](mailto:kchudy@teonite.com)  
 **Version:** 2023.01v02  
-**Copyright © Teonite**
+**Copyright © teonite**
 
-## Table of Contents
-1. [Executive Summary](#1-executive-summary)  
-2. [Process Elements](#2-process-elements)  
-    2.1. [Responsibility](#21-responsibility)  
-    2.2. [Discovery Workshops](#22-discovery-workshops)  
-    2.3. [Product Design](#23-product-design)  
-    2.4. [Product Development](#24-product-development)  
-        2.4.1. [Kickoff](#241-kickoff)  
-        2.4.2. [Risk Assumption Test / Proof Of Concept](#242-risk-assumption-test--proof-of-concept)  
-        2.4.3. [Delivering Software Increments](#243-delivering-software-increments)  
-        2.4.5. [Quality Assurance](#245-quality-assurance)  
-        2.4.6. [Process Improvements](#246-process-improvements)  
-        2.4.7. [Roadmap and Cost Management](#247-roadmap-and-cost-management)  
-        2.4.8. [Periodic Product Reviews](#248-periodic-product-reviews)  
-    2.5. [Maintenance or Hand-off](#25-maintenance-or-hand-off)
 
-## 1. Executive Summary
+## Executive Summary
 
 The Teonite Software Delivery Process (the process of building your product) is designed to maximize its value. This document will walk you through the entire product lifecycle.
 
@@ -53,9 +37,9 @@ Teonite handles the full product lifecycle by providing support after the launch
 
 The following document contains a detailed explanation of each phase.
 
-## 2. Process Elements
+## Process Elements
 
-### 2.1. Responsibility
+### Responsibility
 
 Our responsibility is to deliver a quality result—a product that maximizes business value. 
 
@@ -65,7 +49,7 @@ Thus, it is our responsibility to control who, when, and how executes the proces
 
 Your responsibility is to clearly set business expectations, actively engage in requirements elicitation, and provide essential feedback on product increments.
 
-### 2.2. Discovery Workshops
+### Discovery Workshops
 
 > “A problem defined is a problem half solved”  
 > — Albert Einstein
@@ -97,7 +81,7 @@ After this step, you will receive a document with the specified:
 - Do a POC first to see if the risky areas are really a threat
 - Limit the scope of the product to adjust the cost to meet budget expectations
 
-### 2.3. Product Design
+### Product Design
 
 **Purpose**  
 The goal of the design phase is to create a blueprint for the product so the development team has clear guidelines for the product's look and behavior. 
@@ -123,7 +107,7 @@ Series of interviews and refinements with people with the most knowledge about t
 
 Product Design is continued during the development phase on a minor level. In some cases, Product Design and Development are tightly integrated and happen at the same time.
 
-### 2.4. Product Development
+### Product Development
 
 **Purpose/Goal**  
 The goal is always the same: deliver the highest value product.
@@ -145,7 +129,7 @@ After each sprint, you will get:
 
 **Important Elements of the Process:**
 
-#### 2.4.1. Kickoff
+#### Kickoff
 
 During the kickoff meeting, you’ll have a chance to meet the development team members. The meeting is all about figuring out who is responsible for what and how we are going to communicate (when and using what kind of channels). We basically create a “contract“ between the client and the development team that explains what can be expected of us. That means:
 - What kind of results we will deliver
@@ -160,7 +144,7 @@ A significant part of the kickoff meeting is establishing what is our:
 
 Usually, it’s a half-day meeting that should allow the team to start working straight after it.
 
-#### 2.4.2. Risk Assumption Test / Proof Of Concept
+#### Risk Assumption Test / Proof Of Concept
 
 We always advise our clients to test their hypotheses as soon as possible to make sure they don’t waste money on products that are impossible to implement or simply the whole idea is missed.
 
@@ -172,7 +156,7 @@ For any test we pick, it’s always important to think about how we can measure 
 
  not.
 
-#### 2.4.3. Delivering Software Increments
+#### Delivering Software Increments
 
 Teonite development teams work in an Agile (mostly SCRUM) way, following weekly or bi-weekly product increment releases. The goal is to deliver often and validate early, giving you the opportunity to adjust product requirements and build product awareness.
 
@@ -189,7 +173,7 @@ The process guarantees:
 - You are fully aware of what the team is currently working on and what you can expect at the end of the sprint
 - We can quickly adapt to any changes in the scope of the product as we get more knowledge about it every week
 
-#### 2.4.5. Quality Assurance
+#### Quality Assurance
 
 Our development teams always involve a tester. His responsibility is to maintain and execute test scenarios. A test scenario is a list of steps a user needs to take in order to do something about the product. It might be, for example, “Adding a new TODO in the app“. The tester ensures that each scenario is well described.
 
@@ -197,7 +181,7 @@ The scenarios are then implemented as automated tests, so pieces of code simulat
 
 Each sprint, the tester can add more test scenarios covering different use cases or edge cases of a use case to make sure we deliver a quality product.
 
-#### 2.4.6. Process Improvements
+#### Process Improvements
 
 After each sprint, the development team and the client gather for a Sprint retrospective meeting. The goal of the meeting is to figure out if our development process is effective.
 
@@ -205,11 +189,11 @@ Each team member can say what they think we do well and what needs improvement. 
 
 That way the process adapts to project-specific conditions, the product, and the development team and becomes more effective every iteration.
 
-#### 2.4.7. Roadmap and Cost Management
+#### Roadmap and Cost Management
 
 Requirements change over time. As you will have a chance to experience new parts of your product every week, you will get new ideas about it. Some functionalities might get dropped, some added, and some modified. Also, as we move forward with the development, our knowledge about the product increases, and we can make the cost estimation more accurate. All of that affects the project roadmap and the cost. After each sprint, we always update the roadmap and the cost calculation to make sure we are fully transparent about when you can expect your product to be delivered and how much it is going to cost you.
 
-### 2.4.8. Periodic Product Reviews
+### Periodic Product Reviews
 
 Product Reviews are all about ensuring that the project is going in the right direction and is aligned with expectations.
 
@@ -219,7 +203,7 @@ The idea is to take a look at the venture from a high-level perspective because 
 
 Review meetings may include business stakeholders, investors, or other key personnel interested in product progress but not actively engaged in its development.
 
-### 2.5. Maintenance or Hand-off
+### Maintenance or Hand-off
 
 After this step, you will get:
 - Full system documentation
@@ -234,4 +218,3 @@ After we are done with the development phase, you can decide how you want to han
 You might have an in-house maintenance team that will handle the support process. In that case, we can carry out an overtaking workshop to transfer all our knowledge to the new team. We do that by giving them detailed documentation about the project, presenting the development process, presenting the code, and giving access to all the required environments.
 
 If you don’t have your own maintenance team, we can provide you with one. We make sure that the team gets all the knowledge to support you. We also always have at least one member of the development team in the support team. We can also pick all the tools required for the effective maintenance of your product.
-```

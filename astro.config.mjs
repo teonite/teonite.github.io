@@ -31,6 +31,9 @@ export default defineConfig({
     sitemap(),
     starlight({
       title: "teonite best practices",
+      social: {
+        github:'https://github.com/teonite',
+      },
       logo: {
         src: "./src/assets/svg/tntLogo.svg",
       },
