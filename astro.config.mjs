@@ -4,6 +4,7 @@ import starlight from "@astrojs/starlight";
 import rehypeFigure from "@microflash/rehype-figure";
 import yaml from "@rollup/plugin-yaml";
 import { defineConfig } from "astro/config";
+import { link } from "fs";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
@@ -42,6 +43,16 @@ export default defineConfig({
       components: {
         ThemeProvider: "./src/components/starlight/ThemeProvider.astro",
       },
+      sidebar: [
+        { 
+          label : 'Development Process', 
+          autogenerate: {directory: 'Development Process'}
+        },
+        {
+          label: 'Open Source',
+          autogenerate: {directory: 'Open Source'}
+        }
+      ]
     }),
     mdx(),
   ],

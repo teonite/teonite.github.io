@@ -2,7 +2,7 @@
     title: 'Requirements Analysis'
     subtitle: 'Define project objectives, stakeholders expectations and identify risks. After 2-3 daily workshops you will receive Project Brief documenting your solution in a professional way.'
     cover: '/images/services/dd.jpg'
-   
+    order: 2
 ---
 TL;DR
 
