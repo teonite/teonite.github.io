@@ -1,7 +1,10 @@
 /* Dark mode colors. */
 :root {
-  --nav-factor: 1.1;
+  --nav-factor: 2.0;
+  --nav-pad-factor: 2.0;
   --sl-nav-height: calc(4rem * var(--nav-factor));
+  --sl-nav-pad-x: calc(1.5rem * var(--nav-pad-factor));
+  --sl-nav-pad-y: calc(0.75rem * var(--nav-pad-factor));
   --sl-font: "PP Neue Machina", serif;
   --sl-color-accent-low: #FF6400;
   --sl-color-accent: #FF6400;
