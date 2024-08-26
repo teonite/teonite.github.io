@@ -20,7 +20,7 @@ Artifacts created at this stage include:
 - Description of actors and responsibilities
 - Documentation of all identified User Stories (US) in the form of an initial Product Backlog
 - Documentation of mapped processes
-- Data flows (sequence diagrams)
+- Data flows (sequence diagrams)    
 - Algorithms (block diagrams)
 - APIs Specification (optional)
 - Business entities list (optional)
@@ -30,8 +30,9 @@ This stage may involve multiple sprints (weeks) and online or stationary worksho
 
 ---
 
+## Use Case exmaples:
 
-## Use Case #1: Authorized App Access
+### Use Case #1: Authorized App Access
 
 **Purpose:**  
 To allow authorized users to access the web application's features.
@@ -53,31 +54,31 @@ User is successfully logged in and can access authorized features.
 4. The application verifies the credentials against the authentication database.
 5. If credentials are valid, the application redirects the user to the homepage or dashboard.
 
-## Alternative Flows:
+#### Alternative Flows:
 
-### Invalid Credentials:
+##### Invalid Credentials:
 
 - If the entered username or password is incorrect, the application displays an error message indicating invalid credentials.
 - The user is prompted to try again.
 
-### Account Locked:
+##### Account Locked:
 
 - If the user's account is locked due to multiple failed login attempts, the application displays a message informing the user that their account is locked.
 - The user is provided with instructions on how to unlock their account.
 
-## Special Requirements:
+### Special Requirements:
 
 - Login credentials should be stored securely using encryption.
 - The application should implement measures to prevent brute force attacks.
 - The login page should be accessible from all supported devices and browsers.
 
-## Non-Functional Requirements:
+### Non-Functional Requirements:
 
 - Login process should be fast and responsive.
 - The login page should be visually appealing and user-friendly.
 - The application should provide clear error messages and guidance.
 
-## Additional Considerations:
+### Additional Considerations:
 
 - **Remember Me:** The application may provide an option for users to remember their login credentials for future visits.
 - **Forgot Password:** The application should provide a mechanism for users to reset their password if they have forgotten it.
@@ -87,7 +88,7 @@ User is successfully logged in and can access authorized features.
 
 ---
 
-## Use Case #2: User-Initiated Data Import in Web Application
+### Use Case #2: User-Initiated Data Import in Web Application
 
 **Title:**  
 Import Data via User Interaction
@@ -98,24 +99,24 @@ Registered User
 **Goal:**  
 Allow a user to import data from a CSV file into the web application, ensuring that the data is correctly processed and integrated into the system.
 
-### Stakeholders & Interests:
+#### Stakeholders & Interests:
 
 - **Registered User:** Wants to upload and import data quickly and without errors.
 - **Data Administrator:** Monitors data quality and ensures the integrity of imported data.
 - **End Users:** Depend on the accurate and timely availability of the imported data for their tasks.
 
-### Preconditions:
+#### Preconditions:
 
 - The user is logged into the web application.
 - The user has the necessary permissions to import data (e.g., access to specific modules).
 - The web application is configured to accept data imports in the required format (e.g., CSV).
 
-### Postconditions:
+#### Postconditions:
 
 - **Success Postcondition:** The data is successfully imported, validated, and integrated into the application, and the user receives a confirmation message.
 - **Failure Postcondition:** The system rejects invalid data, and the user is notified of the specific errors, with no partial or corrupt data being imported.
 
-### Main Success Scenario:
+#### Main Success Scenario:
 
 1. The user navigates to the "Import Data" section of the web application.
 2. The user clicks on the "Upload File" button to initiate the import process.
