@@ -1,5 +1,6 @@
 ---
 title: Standard Operating Procedures
+draft: true
 ---
 
 - Analysis & Specyfication
