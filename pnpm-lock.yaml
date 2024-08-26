@@ -35,6 +35,9 @@ importers:
       motion:
         specifier: ^10.18.0
         version: 10.18.0
+      starlight:
+        specifier: ^0.3.9
+        version: 0.3.9
       three:
         specifier: ^0.167.1
         version: 0.167.1
@@ -2240,6 +2243,9 @@ packages:
 
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
+
+  starlight@0.3.9:
+    resolution: {integrity: sha512-pOZUSpeLrUi891CI6z6OD0vJrG9Ue0B8CSn4vIl/rKgFV9V9xPBDob1AIaE2baLxxkYtJx+djUOCiXnrekeegg==}
 
   stdin-discarder@0.2.2:
     resolution: {integrity: sha512-UhDfHmA92YAlNnCfhmq0VeNL5bDbiZGg7sZ2IvPsXubGkiNa9EC+tUTsjBRsYUAz87btI6/1wf4XoVvQ3uRnmQ==}
@@ -5344,6 +5350,8 @@ snapshots:
   space-separated-tokens@2.0.2: {}
 
   sprintf-js@1.0.3: {}
+
+  starlight@0.3.9: {}
 
   stdin-discarder@0.2.2: {}
 
