@@ -44,7 +44,7 @@ html {
   }
 
   @include media-breakpoint-down(sm) {
-    --fonts-scale: 0.8;
+    --fonts-scale: 1;
   }
 
   @include b-up(xxl) {
