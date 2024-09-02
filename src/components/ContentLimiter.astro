@@ -29,7 +29,10 @@ const limitedStyle: astroHTML.JSX.CSSProperties = {
     width: 100%;
 
     .limited-content {
-      width: 100%;
+      // width: 100%;
+      display: flex;
+      flex-flow: column;
+      row-gap: var(--spacing-m);
     }
   }
 </style>
