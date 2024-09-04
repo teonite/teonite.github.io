@@ -4,6 +4,10 @@ import BookDemo from "../components/BookDemo.astro";
 import Divider from "../components/Divider.astro";
 import PageLink from "../components/PageLink.astro";
 import Layout from "../layouts/DarkLayout.astro";
+import { Image } from 'astro:assets';
+import EsaLogo from "../../public/images/logos/esa.png";
+import TmobileLogo from "../../public/images/logos/tmobile.png";
+import UVLogo from "../../public/images/logos/uv.png";
 ---
 
 <Layout>
@@ -16,21 +20,21 @@ import Layout from "../layouts/DarkLayout.astro";
       <li>
         <div class="img-wrapper">
           <a class="cover" href="/work/esa/" rel="noopener noreferrer">
-            <img src="/images/logos/esa.png" alt="esa-logo" />
+            <Image src={EsaLogo} alt="esa-logo" />
           </a>
         </div>
       </li>
       <li>
         <div class="img-wrapper">
           <a class="cover" href="/work/tmobile/" rel="noopener noreferrer">
-            <img src="/images/logos/tmobile.png" alt="t-mobile-logo" />
+            <Image src={TmobileLogo} alt="t-mobile-logo" />
           </a>
         </div>
       </li>
       <li>
         <div class="img-wrapper">
           <a class="cover" href="/work/uv/" rel="noopener noreferrer">
-            <img src="/images/logos/uv.png" alt="ultra-violet-logo" />
+            <Image src={UVLogo} alt="ultra-violet-logo" />
           </a>
         </div>
       </li>
@@ -582,7 +586,8 @@ import Layout from "../layouts/DarkLayout.astro";
           }
           & > .cover {
             grid-column: 2/3;
-            img {
+            img,
+            video {
               &:nth-child(1) {
                 top: 0;
                 left: unset;
