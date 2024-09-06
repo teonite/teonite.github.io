@@ -1,14 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import IconXt from '../../public/svg/xt-icon.svg';
+import IconLi from '../../public/svg/li-icon.svg';
+---
+
 <p>Share:</p>
 <a
   href={`https://twitter.com/intent/tweet?url=${Astro.url}`}
   target="_blank"
-  rel="noopener noreferrer"><img src="/svg/xt-icon.svg" /></a
+  rel="noopener noreferrer"><Image src={IconXt} alt="xt icon"/></a
 >
 <!-- <a href={`https://www.facebook.com/sharer/sharer.php?u=${Astro.url}`} target="_blank" rel="noopener noreferrer"><img src="/svg/fb-icon.svg"></a> -->
 <a
   href={`https://www.linkedin.com/shareArticle?mini=true&url=${Astro.url}`}
   target="_blank"
-  rel="noopener noreferrer"><img src="/svg/li-icon.svg" /></a
+  rel="noopener noreferrer"><Image src={IconLi} alt="li icon" /></a
 >
 <style lang="scss">
   a {

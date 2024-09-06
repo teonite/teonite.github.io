@@ -6,9 +6,15 @@ import type { Services } from "../../content/config";
 
 const { frontmatter } = Astro.props;
 const { cover, subtitle, title } = frontmatter as Services;
+// meta open graph tags
+const meta = {
+  title: title,
+  description: subtitle,
+  image: cover,
+};
 ---
 
-<Root theme="dark">
+<Root theme="dark" meta={meta}>
   <div id="main-wrapper">
     <main>
       <div class="cover-wrapper">

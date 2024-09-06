@@ -5,9 +5,15 @@ import WorkDisplayShort from "../../components/WorkDisplayShort.astro";
 import DarkLayout from "../../layouts/DarkLayout.astro";
 
 const workEntries = await getCollection("work");
+// meta open graph tags
+const meta = {
+  title: "teonite - our work",
+  description: "Deeptech studio crafting mission-critical software",
+  image: "github.com/teonite/teonite.github.io/raw/main/public/images/pages/home/teonite.png"
+};
 ---
 
-<DarkLayout>
+<DarkLayout meta={meta}>
   <header>
     <h1>Our Work</h1>
   </header>

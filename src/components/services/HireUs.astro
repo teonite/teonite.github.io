@@ -1,6 +1,8 @@
 ---
 import DarkSection from "../../layouts/DarkSection.astro";
 import Book from "../Book.astro";
+import { Image } from 'astro:assets';
+import PeopleMichalImage from '../../../public/images/people/michal.webp'
 ---
 
 <DarkSection>
@@ -8,7 +10,7 @@ import Book from "../Book.astro";
     <h2>Let's talk.</h2>
     <div class="contact">
       <div class="avatar">
-        <img src="/images/people/michal.webp" alt="Michał Gryczka" />
+        <Image src={PeopleMichalImage} alt="Michał Gryczka" />
       </div>
       <div class="info">
         

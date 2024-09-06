@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import GithubIcon from '../../../public/svg/github-icon.svg';
+
 interface Props {
   name: string;
   description: string;
@@ -15,7 +18,7 @@ const { name, description, photoUrl = "/svg/tntBox.svg", ghUrl } = Astro.props;
   <div class="description">{description}</div>
   <div class="gh-icon">
     <a href={ghUrl}>
-      <img src="/svg/github-icon.svg" alt="github" aria-label="github" />
+      <Image src={GithubIcon} alt="github" aria-label="github" />
     </a>
   </div>
 </div>

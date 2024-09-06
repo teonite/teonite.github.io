@@ -1,5 +1,4 @@
 ---
-import Context from '@astro-utils/context/context.js';
 import Book from "../components/Book.astro";
 import BookDemo from "../components/BookDemo.astro";
 import Divider from "../components/Divider.astro";
@@ -17,339 +16,328 @@ import EsaImg from "../../public/images/products/esa.jpg";
 import UVImage from "../../public/images/products/uv.jpg";
 import DefguardImg from "../../public/images/pages/home/defguard.png";
 import DeepImageImg from "../../public/images/pages/home/deep-image.png";
-
-const meta = {
-  title: "hello",
-  description: "Deeptech studio crafting mission-critical software",
-  image: "/public/images/pages/home/teonite.png",
-  image_alt: "teonite",
-  imageWidth: "1200",
-  imageHeight: "630",
-}
 ---
 
-<Context meta={meta}>
-  <Layout>
-    <h1>
-      We accelerate complex software projects.
-    </h1>
-    <div id="trusted-by">
-      <p>Trusted by:</p>
-      <ul>
-        <li>
-          <div class="img-wrapper">
-            <a class="cover" href="/work/esa/" rel="noopener noreferrer">
-              <Image src={EsaLogo} alt="esa-logo" />
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="img-wrapper">
-            <a class="cover" href="/work/tmobile/" rel="noopener noreferrer">
-              <Image src={TmobileLogo} alt="t-mobile-logo" />
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="img-wrapper">
-            <a class="cover" href="/work/uv/" rel="noopener noreferrer">
-              <Image src={UVLogo} alt="ultra-violet-logo" />
-            </a>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <Divider />
-    <section id="our-work">
-      <header>
-        <h2>Our Work</h2>
-      </header>
-      <article>
-        <div class="cover">
-          <Image src={CasperImg} alt="t-mobile-article-cover" />
-        </div>
-        <div class="content">
-          <a href="/work/article/casper">
-            <h3>Enhancing Casper blockchain security</h3>
+<Layout>
+  <h1>
+    We accelerate complex software projects.
+  </h1>
+  <div id="trusted-by">
+    <p>Trusted by:</p>
+    <ul>
+      <li>
+        <div class="img-wrapper">
+          <a class="cover" href="/work/esa/" rel="noopener noreferrer">
+            <Image src={EsaLogo} alt="esa-logo" />
           </a>
-          <p>
-            teonite receives Casper Grant Award to develop smart contract Source Code
-            Verification Service.
-          </p>
-          <div class="actions">
-            <PageLink href="/work/article/casper/" />
-          </div>
         </div>
-      </article>
-      <article class="odd">
-        <div class="cover">
-          <video
-            class="video-js"
-            data-setup="{}"
-            poster="/images/products/deventiv.jpg"
-            autoplay
-            loop
-            muted
-            preload="auto"
-          >
-            <source src="/videos/deventiv.webm" type="video/webm" />
-          </video>
-        </div>
-        <div class="content">
-          <a href="https://h7pq7oq6nfx.typeform.com/to/l2L4ZusB">
-            <h3>AI 3D model reconstruction</h3>
+      </li>
+      <li>
+        <div class="img-wrapper">
+          <a class="cover" href="/work/tmobile/" rel="noopener noreferrer">
+            <Image src={TmobileLogo} alt="t-mobile-logo" />
           </a>
-          <p>
-            We combined skills in AI, 3D modelling and scientific research to train and fine
-            tune selected Neural Networks to recreate high precision 3D representation based
-            on custom optical setup.
-          </p>
-          <!--<div data-tf-live="01HSH0SZBAD018RNVXKZPP10H2"></div>-->
-          <div class="actions">
-            <PageLink
-              href="https://h7pq7oq6nfx.typeform.com/to/l2L4ZusB"
-              text="Request presentation"
-            />
-          </div>
         </div>
-      </article>
-      <article>
-        <div class="cover">
-          <Image src={TmobileImg} alt="t-mobile-article-cover" />
-        </div>
-        <div class="content">
-          <a href="/work/article/tmobile">
-            <h3>Predictive modelling with Machine Learning</h3>
+      </li>
+      <li>
+        <div class="img-wrapper">
+          <a class="cover" href="/work/uv/" rel="noopener noreferrer">
+            <Image src={UVLogo} alt="ultra-violet-logo" />
           </a>
-          <p>
-            Providing advanced models to <nobr>T-Mobile</nobr> capable of predicting planned
-            store location profitability.
-          </p>
-          <div class="actions">
-            <PageLink href="/work/article/tmobile/" />
-          </div>
         </div>
-      </article>
-      <article class="odd">
-        <div class="cover">
-          <Image src={EsaImg} alt="esa-cover" />
-        </div>
-        <div class="content">
-          <a href="/work/article/esa">
-            <h3>Satellite communication system for European Space Agency.</h3>
-          </a>
-          <p>
-            Implementing NOAA satellite data decoding and visualisaton on mobile devices
-            using open standards. Released as Open Source.
-          </p>
-          <div class="actions">
-            <PageLink href="/work/article/esa/" />
-          </div>
-        </div>
-      </article>
-      <article>
-        <div class="cover">
-          <Image src={UVImage} alt="uv-cover" />
-        </div>
-        <div class="content">
-          <a href="/work/article/uv">
-            <h3>Scalable Digital Rights Management (DRM) platform development</h3>
-          </a>
-          <p>
-            Implementation of UltraViolet platform with over 28 million users with over 250
-            million movies and TV shows in 13 countries. Operated by movie studios inc. Sony
-            Pictures, Universal Studios, Warner Bros.
-          </p>
-          <div class="actions">
-            <PageLink href="/work/article/uv/" />
-          </div>
-        </div>
-      </article>
-    </section>
-  
-    <Divider />
-  
-    <section id="our-services">
-      <header>
-        <h2>Services</h2>
-      </header>
-      <div class="items-grid">
-  
-        <div class="grid-item">
-          <a href="/services/rust/">
-            <h3>Rust Development</h3>
-          </a>
-          <p>
-            We help tech leader to build secure and scalable systems by leveraging our expertise in Rust technology. 
-          </p>
-          <!-- <div class="actions">
-            <PageLink href="/services/rust/" />
-          </div> -->
-          <Divider />
-        </div>
-  
-        <div class="grid-item">
-          <a href="/services/engineering/">
-            <h3>Python Development</h3>
-          </a>
-          <p>We help all sort of organisations to build modern and reliable business applications with Python immense ecosystem capabilities.</p>
-          <!-- <div class="actions">
-            <PageLink href="/services/engineering/" />
-          </div> -->
-          <Divider />
-        </div>
-  
-        <div class="grid-item">
-          <a href="/services/uiux/">
-            <h3>UI/UX & Branding</h3>
-          </a>
-          <p>
-            Combining UI/UX and artistic expertise we craft bespoke experiences that enhance
-            brand identity through compelling visuals. We specialize in creating
-            user-centric solutions that elevate your brand's impact.
-          </p>
-          <div class="actions">
-            <PageLink href="/services/uiux/" />
-          </div>
-          <Divider />
-        </div>
-  
-        <div class="grid-item">
-          
-            <h3>Web Development</h3>
-          
-          <p>
-            We help web comapnies to create fast and bautiful web apps with use of TypeScript, React.js and Angular.js. 
-          </p>
-          <div class="actions">
-            <!-- replace with book a call? -->
-            <Book/>
-            <!-- <PageLink href="/services/webdevelopment/" /> -->
-          </div>
-          <Divider />
-        </div>  
-  
-        <div class="grid-item">
-          <h3>LLM (ChatGPT) Integration</h3>
+      </li>
+    </ul>
+  </div>
+  <Divider />
+  <section id="our-work">
+    <header>
+      <h2>Our Work</h2>
+    </header>
+    <article>
+      <div class="cover">
+        <Image src={CasperImg} alt="t-mobile-article-cover" />
+      </div>
+      <div class="content">
+        <a href="/work/article/casper">
+          <h3>Enhancing Casper blockchain security</h3>
+        </a>
         <p>
-          We help business leaders to leverage LLM technologies (ChatGPT, Groq, Gemini) in order to automate business processes with lower cost and more flexibility.
+          teonite receives Casper Grant Award to develop smart contract Source Code
+          Verification Service.
+        </p>
+        <div class="actions">
+          <PageLink href="/work/article/casper/" />
+        </div>
+      </div>
+    </article>
+    <article class="odd">
+      <div class="cover">
+        <video
+          class="video-js"
+          data-setup="{}"
+          poster="/images/products/deventiv.jpg"
+          autoplay
+          loop
+          muted
+          preload="auto"
+        >
+          <source src="/videos/deventiv.webm" type="video/webm" />
+        </video>
+      </div>
+      <div class="content">
+        <a href="https://h7pq7oq6nfx.typeform.com/to/l2L4ZusB">
+          <h3>AI 3D model reconstruction</h3>
+        </a>
+        <p>
+          We combined skills in AI, 3D modelling and scientific research to train and fine
+          tune selected Neural Networks to recreate high precision 3D representation based
+          on custom optical setup.
+        </p>
+        <!--<div data-tf-live="01HSH0SZBAD018RNVXKZPP10H2"></div>-->
+        <div class="actions">
+          <PageLink
+            href="https://h7pq7oq6nfx.typeform.com/to/l2L4ZusB"
+            text="Request presentation"
+          />
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="cover">
+        <Image src={TmobileImg} alt="t-mobile-article-cover" />
+      </div>
+      <div class="content">
+        <a href="/work/article/tmobile">
+          <h3>Predictive modelling with Machine Learning</h3>
+        </a>
+        <p>
+          Providing advanced models to <nobr>T-Mobile</nobr> capable of predicting planned
+          store location profitability.
+        </p>
+        <div class="actions">
+          <PageLink href="/work/article/tmobile/" />
+        </div>
+      </div>
+    </article>
+    <article class="odd">
+      <div class="cover">
+        <Image src={EsaImg} alt="esa-cover" />
+      </div>
+      <div class="content">
+        <a href="/work/article/esa">
+          <h3>Satellite communication system for European Space Agency.</h3>
+        </a>
+        <p>
+          Implementing NOAA satellite data decoding and visualisaton on mobile devices
+          using open standards. Released as Open Source.
+        </p>
+        <div class="actions">
+          <PageLink href="/work/article/esa/" />
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="cover">
+        <Image src={UVImage} alt="uv-cover" />
+      </div>
+      <div class="content">
+        <a href="/work/article/uv">
+          <h3>Scalable Digital Rights Management (DRM) platform development</h3>
+        </a>
+        <p>
+          Implementation of UltraViolet platform with over 28 million users with over 250
+          million movies and TV shows in 13 countries. Operated by movie studios inc. Sony
+          Pictures, Universal Studios, Warner Bros.
+        </p>
+        <div class="actions">
+          <PageLink href="/work/article/uv/" />
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <Divider />
+
+  <section id="our-services">
+    <header>
+      <h2>Services</h2>
+    </header>
+    <div class="items-grid">
+
+      <div class="grid-item">
+        <a href="/services/rust/">
+          <h3>Rust Development</h3>
+        </a>
+        <p>
+          We help tech leader to build secure and scalable systems by leveraging our expertise in Rust technology. 
+        </p>
+        <!-- <div class="actions">
+          <PageLink href="/services/rust/" />
+        </div> -->
+        <Divider />
+      </div>
+
+      <div class="grid-item">
+        <a href="/services/engineering/">
+          <h3>Python Development</h3>
+        </a>
+        <p>We help all sort of organisations to build modern and reliable business applications with Python immense ecosystem capabilities.</p>
+        <!-- <div class="actions">
+          <PageLink href="/services/engineering/" />
+        </div> -->
+        <Divider />
+      </div>
+
+      <div class="grid-item">
+        <a href="/services/uiux/">
+          <h3>UI/UX & Branding</h3>
+        </a>
+        <p>
+          Combining UI/UX and artistic expertise we craft bespoke experiences that enhance
+          brand identity through compelling visuals. We specialize in creating
+          user-centric solutions that elevate your brand's impact.
+        </p>
+        <div class="actions">
+          <PageLink href="/services/uiux/" />
+        </div>
+        <Divider />
+      </div>
+
+      <div class="grid-item">
+        
+          <h3>Web Development</h3>
+        
+        <p>
+          We help web comapnies to create fast and bautiful web apps with use of TypeScript, React.js and Angular.js. 
         </p>
         <div class="actions">
           <!-- replace with book a call? -->
-          <BookDemo/>
+          <Book/>
           <!-- <PageLink href="/services/webdevelopment/" /> -->
         </div>
         <Divider />
       </div>  
-  
-        <div class="grid-item">
-          <a href="/services/discovery/">
-            <h3>Systems Specyfication & Design</h3>
-          </a>
-          <p>
-            We help product owners to create valuable specyfication for systems and applications through systematic process of Discovery & Design. 
-          </p>
-          <div class="actions">
-            <PageLink href="/services/discovery/" />
-          </div>
-          <Divider />
+
+      <div class="grid-item">
+        <h3>LLM (ChatGPT) Integration</h3>
+      <p>
+        We help business leaders to leverage LLM technologies (ChatGPT, Groq, Gemini) in order to automate business processes with lower cost and more flexibility.
+      </p>
+      <div class="actions">
+        <!-- replace with book a call? -->
+        <BookDemo/>
+        <!-- <PageLink href="/services/webdevelopment/" /> -->
+      </div>
+      <Divider />
+    </div>  
+
+      <div class="grid-item">
+        <a href="/services/discovery/">
+          <h3>Systems Specyfication & Design</h3>
+        </a>
+        <p>
+          We help product owners to create valuable specyfication for systems and applications through systematic process of Discovery & Design. 
+        </p>
+        <div class="actions">
+          <PageLink href="/services/discovery/" />
         </div>
-        
-        
-  
-        <!-- <div class="grid-item">
-          <a href="/services/diligence/">
-            <h3>Due Diligence</h3>
-          </a>
-          <p>
-            Tailored technological due diligence services to maximize the value of your
-            investments with informed decision§s based on thorough assessments.
-          </p>
-          <div class="actions">
-            <PageLink href="/services/diligence/" />
-          </div>
-          <Divider />
-        </div> -->
-  
-        <div class="grid-item">
-          <a href="/services/rd/">
-            <h3>Research & Development</h3>
-          </a>
-          <p>
-            Innovative projects that challenge the status quo require a unique and flexible
-            process that encourages exploration and effectively manages risks.
-          </p>
-          <div class="actions">
-            <PageLink href="/services/rd/" />
-          </div>
+        <Divider />
+      </div>
+      
+      
+
+      <!-- <div class="grid-item">
+        <a href="/services/diligence/">
+          <h3>Due Diligence</h3>
+        </a>
+        <p>
+          Tailored technological due diligence services to maximize the value of your
+          investments with informed decision§s based on thorough assessments.
+        </p>
+        <div class="actions">
+          <PageLink href="/services/diligence/" />
+        </div>
+        <Divider />
+      </div> -->
+
+      <div class="grid-item">
+        <a href="/services/rd/">
+          <h3>Research & Development</h3>
+        </a>
+        <p>
+          Innovative projects that challenge the status quo require a unique and flexible
+          process that encourages exploration and effectively manages risks.
+        </p>
+        <div class="actions">
+          <PageLink href="/services/rd/" />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+
+  <Divider />
   
-    <Divider />
-    
-    <section id="products">
-      <header>
-        <h2>Original Products</h2>
-      </header>
-      <div class="product">
-        <div class="content">
-          <div class="logo">
-            <div class="logo-container">
-              <a href="https://defguard.net"
-                ><Image src={DefguardLogo} alt="defguard logo" aria-label="defguard-logo-image" /></a
-              >
-            </div>
+  <section id="products">
+    <header>
+      <h2>Original Products</h2>
+    </header>
+    <div class="product">
+      <div class="content">
+        <div class="logo">
+          <div class="logo-container">
+            <a href="https://defguard.net"
+              ><Image src={DefguardLogo} alt="defguard logo" aria-label="defguard-logo-image" /></a
+            >
           </div>
-          <h3><a href="https://defguard.net">Open Source SSO & VPN for WireGuard</a></h3>
-          <p>
-            The only open-source solution with real WireGuard MFA/2FA & integrated OpenID
-            Connect SSO.
-          </p>
-        </div>  
-        <div class="cover">
-          <a href="https://defguard.net"
-            ><Image
-              src={DefguardImg}
-              alt="defguard product"
-              aria-label="defguard-product-cover"
-            /></a
-          >
         </div>
+        <h3><a href="https://defguard.net">Open Source SSO & VPN for WireGuard</a></h3>
+        <p>
+          The only open-source solution with real WireGuard MFA/2FA & integrated OpenID
+          Connect SSO.
+        </p>
+      </div>  
+      <div class="cover">
+        <a href="https://defguard.net"
+          ><Image
+            src={DefguardImg}
+            alt="defguard product"
+            aria-label="defguard-product-cover"
+          /></a
+        >
       </div>
-      <div class="product">
-        <div class="content">
-          <div class="logo">
-            <div class="logo-container">
-              <a href="https://deep-image.ai"
-                ><Image
-                  src={DeepImageLogo}
-                  alt="deep image logo"
-                  aria-label="deep-image-logo-image"
-                /></a
-              >
-            </div>
+    </div>
+    <div class="product">
+      <div class="content">
+        <div class="logo">
+          <div class="logo-container">
+            <a href="https://deep-image.ai"
+              ><Image
+                src={DeepImageLogo}
+                alt="deep image logo"
+                aria-label="deep-image-logo-image"
+              /></a
+            >
           </div>
-          <h3><a href="https://deep-image.ai">Our AI-driven Image Generator</a></h3>
-          <p>
-            Easy-to-use app to automatically generate and enhance photos in a few clicks,
-            without the need of manual post-processing.
-          </p>
         </div>
-        <div class="cover">
-          <a href="https://deep-image.ai"
-            ><Image
-              src={DeepImageImg}
-              alt="deep image product"
-              aria-label="deep-image-product-cover"
-            /></a
-          >
-        </div>
+        <h3><a href="https://deep-image.ai">Our AI-driven Image Generator</a></h3>
+        <p>
+          Easy-to-use app to automatically generate and enhance photos in a few clicks,
+          without the need of manual post-processing.
+        </p>
       </div>
-    </section>
-  
-  </Layout>  
-</Context>
+      <div class="cover">
+        <a href="https://deep-image.ai"
+          ><Image
+            src={DeepImageImg}
+            alt="deep image product"
+            aria-label="deep-image-product-cover"
+          /></a
+        >
+      </div>
+    </div>
+  </section>
+
+</Layout>  
 
 <style lang="scss">
   h1 {
