@@ -2,6 +2,7 @@
 import Book from "../components/Book.astro";
 import Divider from "../components/Divider.astro";
 import Root from "../components/Root.astro";
+import { metaOGDefault } from "../types/meta";
 
 interface Props {
   // page title
@@ -15,9 +16,16 @@ interface Props {
 }
 
 const { title, coverUrl, subTitle, book } = Astro.props;
+const imagePath = coverUrl ? "github.com/teonite/teonite.github.io/raw/main/public" + coverUrl : metaOGDefault.image;
+// meta open graph tags
+const meta = {
+  title: title,
+  description: subTitle ? subTitle : metaOGDefault.description,
+  image: imagePath,
+};
 ---
 
-<Root theme="gray">
+<Root theme="gray" meta={meta}>
   <div id="main-wrapper">
     <main>
       <div class="cover-wrapper">

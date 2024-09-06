@@ -3,9 +3,16 @@ import Book from "../../components/Book.astro";
 import Divider from "../../components/Divider.astro";
 import PageLink from "../../components/PageLink.astro";
 import DarkLayout from "../../layouts/DarkLayout.astro";
+
+// meta open graph tags
+const meta = {
+  title: "teonite - services",
+  description: "Deeptech studio crafting mission-critical software",
+  image: "github.com/teonite/teonite.github.io/raw/main/public/images/pages/home/teonite.png"
+};
 ---
 
-<DarkLayout>
+<DarkLayout meta={meta}>
   <header>
     <h1>Our Services</h1>
     <Book />

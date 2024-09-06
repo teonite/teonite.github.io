@@ -1,4 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+import GithubIconBlack from '../../../public/svg/github-icon-black.svg';
+import LinkedinIcon from '../../../public/svg/li-icon.svg';
+
 interface Props {
   name: string;
   role: string;
@@ -19,10 +23,10 @@ const { name, role, photoUrl, ghUrl, liUrl } = Astro.props;
     </div>
     <div class="social">
       <a href={ghUrl} aria-label="github">
-        <img src="/svg/github-icon-black.svg" alt="github" />
+        <Image src={GithubIconBlack} alt="github" />
       </a>
       <a href={liUrl} aria-label="LinkedIn">
-        <img src="/svg/li-icon.svg" alt="LinkedIn" />
+        <Image src={LinkedinIcon} alt="LinkedIn" />
       </a>
     </div>
   </div>

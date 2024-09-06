@@ -1,11 +1,12 @@
 ---
-
+import { Image } from 'astro:assets';
+import tntLogo from "../../public/svg/tntLogo.svg";
 ---
 
 <footer>
   <div class="footer-grid">
     <div class="logo">
-      <img src="/svg/tntLogo.svg" alt="teonite-logo" />
+      <Image src={tntLogo} alt="teonite-logo" />
     </div>
     <ul class="internal">
       <li>

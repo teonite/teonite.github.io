@@ -5,6 +5,7 @@ import Root from "../components/Root.astro";
 import WorkDisplay from "../components/WorkDisplay.astro";
 import type { WorkCategory } from "../content/config";
 import "../styles/base/index.scss";
+import { metaOGDefault } from "../types/meta";
 
 interface Props {
   category: WorkCategory;
@@ -17,9 +18,15 @@ const { category, title, pageCoverPath } = Astro.props;
 const workEntries = await getCollection("work").then((d) =>
   d.filter((v) => v.data.category.includes(category)),
 );
+// meta open graph tags
+const meta = {
+  title: title,
+  description: metaOGDefault.description,
+  image: pageCoverPath ? pageCoverPath : metaOGDefault.image,
+};
 ---
 
-<Root theme="gray">
+<Root theme="gray" meta={meta}>
   <div id="main-background"></div>
   <div id="main-wrapper">
     {

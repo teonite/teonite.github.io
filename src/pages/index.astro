@@ -8,6 +8,14 @@ import { Image } from 'astro:assets';
 import EsaLogo from "../../public/images/logos/esa.png";
 import TmobileLogo from "../../public/images/logos/tmobile.png";
 import UVLogo from "../../public/images/logos/uv.png";
+import DefguardLogo from "../../public/svg/defguard-logo.svg";
+import DeepImageLogo from "../../public/svg/deep-image-logo.svg";
+import CasperImg from "../../public/images/products/casper.jpg";
+import TmobileImg from "../../public/images/products/tmobile.jpg";
+import EsaImg from "../../public/images/products/esa.jpg";
+import UVImage from "../../public/images/products/uv.jpg";
+import DefguardImg from "../../public/images/pages/home/defguard.png";
+import DeepImageImg from "../../public/images/pages/home/deep-image.png";
 ---
 
 <Layout>
@@ -47,7 +55,7 @@ import UVLogo from "../../public/images/logos/uv.png";
     </header>
     <article>
       <div class="cover">
-        <img src="/images/products/casper.jpg" alt="t-mobile-article-cover" />
+        <Image src={CasperImg} alt="t-mobile-article-cover" />
       </div>
       <div class="content">
         <a href="/work/article/casper">
@@ -96,7 +104,7 @@ import UVLogo from "../../public/images/logos/uv.png";
     </article>
     <article>
       <div class="cover">
-        <img src="/images/products/tmobile.jpg" alt="t-mobile-article-cover" />
+        <Image src={TmobileImg} alt="t-mobile-article-cover" />
       </div>
       <div class="content">
         <a href="/work/article/tmobile">
@@ -113,7 +121,7 @@ import UVLogo from "../../public/images/logos/uv.png";
     </article>
     <article class="odd">
       <div class="cover">
-        <img src="/images/products/esa.jpg" alt="esa-cover" />
+        <Image src={EsaImg} alt="esa-cover" />
       </div>
       <div class="content">
         <a href="/work/article/esa">
@@ -130,7 +138,7 @@ import UVLogo from "../../public/images/logos/uv.png";
     </article>
     <article>
       <div class="cover">
-        <img src="/images/products/uv.jpg" alt="uv-cover" />
+        <Image src={UVImage} alt="uv-cover" />
       </div>
       <div class="content">
         <a href="/work/article/uv">
@@ -278,7 +286,7 @@ import UVLogo from "../../public/images/logos/uv.png";
         <div class="logo">
           <div class="logo-container">
             <a href="https://defguard.net"
-              ><img src="/svg/defguard-logo.svg" aria-label="defguard-logo-image" /></a
+              ><Image src={DefguardLogo} alt="defguard logo" aria-label="defguard-logo-image" /></a
             >
           </div>
         </div>
@@ -290,8 +298,9 @@ import UVLogo from "../../public/images/logos/uv.png";
       </div>  
       <div class="cover">
         <a href="https://defguard.net"
-          ><img
-            src="/images/pages/home/defguard.png"
+          ><Image
+            src={DefguardImg}
+            alt="defguard product"
             aria-label="defguard-product-cover"
           /></a
         >
@@ -302,8 +311,9 @@ import UVLogo from "../../public/images/logos/uv.png";
         <div class="logo">
           <div class="logo-container">
             <a href="https://deep-image.ai"
-              ><img
-                src="/svg/deep-image-logo.svg"
+              ><Image
+                src={DeepImageLogo}
+                alt="deep image logo"
                 aria-label="deep-image-logo-image"
               /></a
             >
@@ -317,8 +327,9 @@ import UVLogo from "../../public/images/logos/uv.png";
       </div>
       <div class="cover">
         <a href="https://deep-image.ai"
-          ><img
-            src="/images/pages/home/deep-image.png"
+          ><Image
+            src={DeepImageImg}
+            alt="deep image product"
             aria-label="deep-image-product-cover"
           /></a
         >
@@ -326,7 +337,7 @@ import UVLogo from "../../public/images/logos/uv.png";
     </div>
   </section>
 
-</Layout>
+</Layout>  
 
 <style lang="scss">
   h1 {
@@ -630,6 +641,7 @@ import UVLogo from "../../public/images/logos/uv.png";
         overflow: hidden;
         img {
           width: 100%;
+          height: auto;
         }
       }
       & > .content {

@@ -4,9 +4,14 @@ import type { Services } from "../../content/config";
 
 const { frontmatter } = Astro.props;
 const { cover, subtitle, title } = frontmatter as Services;
+const meta = {
+  title: title,
+  description: subtitle,
+  image: cover,
+};
 ---
 
-<Root theme="gray">
+<Root theme="gray" meta={meta}>
   <div id="main-wrapper" class="services-main">
     <main>
       <article>

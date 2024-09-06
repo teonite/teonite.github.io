@@ -1,11 +1,14 @@
 ---
-
+import { Image } from 'astro:assets';
+import tntLogo from '../../public/svg/tntLogo.svg';
+import BurgerMenuIcon from '../../public/svg/burger-menu.svg';
+import IconX from '../../public/svg/icon-x.svg';
 ---
 
 <nav id="nav-main">
   <div class="nav-wrapper">
     <a href="/" id="logo-main">
-      <img src="/svg/tntLogo.svg" alt="tnt" />
+      <Image src={tntLogo} alt="tnt" />
     </a>
     <ul>
       <li><a href="/">home</a></li>
@@ -15,7 +18,7 @@
       <li><a href="/contact">contact</a></li>
     </ul>
     <button id="mobile-nav-trigger">
-      <img src="/svg/burger-menu.svg" alt="menu" />
+      <Image src={BurgerMenuIcon} alt="menu" />
     </button>
   </div>
 </nav>
@@ -23,10 +26,10 @@
 <dialog id="mobile-nav">
   <div class="top">
     <a href="/" class="logo">
-      <img src="/svg/tntLogo.svg" alt="tnt" />
+      <Image src={tntLogo} alt="tnt" />
     </a>
     <button id="close-mobile-nav">
-      <img src="/svg/icon-x.svg" alt="close-icon" />
+      <Image src={IconX} alt="close-icon" />
     </button>
   </div>
   <ul>
