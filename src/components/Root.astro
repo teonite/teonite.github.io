@@ -5,12 +5,18 @@ import Cookies from "./Cookies.astro";
 import Footer from "./Footer.astro";
 import Navigation from "./Navigation.astro";
 import { SEO } from "astro-seo";
+import getContextProps from '@astro-utils/context';
+import { facebookMeta } from "../types/meta";
 
 interface Props {
   theme: string;
 }
 
 const { theme } = Astro.props;
+const { meta } = getContextProps(Astro);
+console.log(meta);
+// const parseMeta = facebookMeta.parse(meta);
+// console.log(parseMeta);
 ---
 
 <!doctype html>
@@ -18,15 +24,22 @@ const { theme } = Astro.props;
   <head>
     <title>teonite — deeptech studio</title>
     
-    <meta
+    <!-- <meta
       name="description"
-      content="Deeptech studio crafting mission-critical software"
-    />
+      content={parseMeta.description}
+    /> -->
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
+    <!-- <meta property="og:title" content={parseMeta.title} />
+    <meta property="og:description" content={parseMeta.description} />
+    <meta property="og:image" content={"http://" + parseMeta.image} />
+    <meta property="og:image:secure_url" content={"https://" + parseMeta.image} />
+    <meta property="og:image:type" content="image/png" /> 
+    <meta property="og:image:width" content={parseMeta.imageWidth} /> 
+    <meta property="og:image:height" content={parseMeta.imageHeight} /> -->
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
