@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Define the local and remote paths
+LOCAL_PATH="./dist"
+REMOTE_PATH="/sites/teonite.com"
+
 # Check if the LOCAL_PATH exists and has files
 if [ ! -d "$LOCAL_PATH" ] || [ -z "$(ls -A "$LOCAL_PATH")" ]; then
     echo "Error: The directory $LOCAL_PATH does not exist or is empty. Aborting."
@@ -17,17 +21,13 @@ if [ -z "$POD_NAME" ]; then
 fi
 
 # Confirm action with the user
-read -p "You are about to replace the contents of /sites/mysite in pod $POD_NAME. Do you want to proceed? (yes/no): " CONFIRMATION
+read -p "You are about to replace the contents of $REMOTE_PATH in pod $POD_NAME. Do you want to proceed? (yes/no): " CONFIRMATION
 
 # Check if the user typed 'yes'
 if [ "$CONFIRMATION" != "yes" ]; then
     echo "Operation aborted by the user."
     exit 0
 fi
-
-# Define the local and remote paths
-LOCAL_PATH="./dist"
-REMOTE_PATH="/sites/teonite.com"
 
 # Archive the local dist folder
 tar -czf dist.tar.gz -C "$LOCAL_PATH" .
