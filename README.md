@@ -50,3 +50,17 @@ Note that docker will make docker-dist owned by root.
 ```bash
 pnpm dev
 ```
+
+## Deploy
+
+To deploy your changes in production you should configure kubectl.
+After your changes you should run in your repo
+
+```bash
+./build-deploy.sh build
+```
+
+And if you are ready to deploy all your changes run this command
+```bash
+./build-deploy.sh deploy
+```
