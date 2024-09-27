@@ -1,22 +1,24 @@
 ---
-import Dots from "../components/Dots.astro";
+// import Dots from "../components/Dots.astro";
+import WorkerDots from "../components/Dots/WorkerDots.astro";
 import Root from "../components/Root.astro";
 
 interface Props {
   // meta open graph tags
   meta?: {
-      title: string;
-      description: string;
-      image: string;
+    title: string;
+    description: string;
+    image: string;
   };
 }
 
 const { meta } = Astro.props;
 ---
 
-<Root theme="dark" meta={meta} >
+<Root theme="dark" meta={meta}>
   <div id="main-background"></div>
-  <Dots />
+  <!-- <Dots /> -->
+  <WorkerDots />
   <div id="main-wrapper">
     <main>
       <slot />
