@@ -1,0 +1,80 @@
+---
+title: Liquidity Forecasting and Management Solution
+subtitle: A tailored soltution for Liquidity Forecasting and Management
+cover: /images/products/booste.jpg
+category: [fintech]
+display:
+  title: Corporate Liquidity Forecasting and Management Solution
+  description: |
+    Corporate Liquidity Forecasting and Management Solution
+  company:
+    logo: /images/logos/booste.png
+---
+
+## Background
+In today’s economic environment, corporations face increasing pressure to maintain liquidity, manage cash flow, and optimize working capital. The complexity of global operations and diverse financial regulations further challenge finance teams to provide real-time visibility and accurate cash forecasts. Recognizing these challenges, our client sought a solution that would enable comprehensive liquidity forecasting, real-time cash management, and streamlined financial planning.
+
+## Client Profile
+- **Industry**: Chemical synthesis
+- **Annual Revenue**: 80 million - 100 million PLN
+- **Operating Markets**: International
+
+## Objectives and Challenges
+The client aimed to implement a system that could:
+1. **Improve Forecast Accuracy**: Ensure up-to-date forecasts that align with actual cash inflows and outflows.
+2. **Automate Cash Flow Reports**: Reduce manual interventions and reporting time.
+3. **Consolidate Financial Data**: Integrate data from multiple business units, bank accounts, and regions.
+4. **Support Compliance and Risk Management**: Adhere to regional regulatory requirements and mitigate liquidity risks.
+5. **Integrate Key Financial Indicators**:
+   - **Current Company Performance**: Monitor outcomes driven by sales to align liquidity with real-time revenue.
+   - **Progress Towards Goals**: Track the achievement of financial and operational objectives as specified in the financial and operational plans.
+   - **Short-Term Financial Forecasts**: Provide forecasts for the company and its business units, allowing for proactive adjustments in cash management.
+   - **Market Environment Analysis**: Track select external indicators, such as product and raw material prices, to inform liquidity forecasts and adjust strategies as market conditions evolve.
+
+**Challenges**:
+- Fragmented financial data from multiple ERP systems.
+- Limited visibility into cash positions across regions.
+- High reliance on spreadsheets, resulting in errors and inefficiencies.
+
+## Solution Overview
+Based on the FDB Documentation, we developed a custom liquidity forecasting and management solution that integrates seamlessly with the client's existing systems and supports end-to-end cash management processes.
+
+### Core Functional Layers
+1. **Transaction Layer (Elixir)**: Automates the daily import of transaction histories across company accounts. This replaces the manual entry and classification of transaction data from bank statements, reducing error rates and improving data accuracy. A consolidated transaction database now enables real-time reporting, validation, and enhanced historical analysis.
+
+2. **Funding Sources Layer**: Facilitates the entry, update, and monitoring of information on various funding sources, including operational credits, credit lines, loans, and earmarked grants. This layer enables seamless tracking of balances and provides insights into funding utilization.
+
+3. **Receivables and Payables Layer**: Supports the automated classification of receivables and payables with data sourced from SAP and the planning layer. The system now automates data preprocessing and aggregation for liquidity reporting, requiring minimal manual intervention. This ensures that reports on receivables and payables are generated efficiently and accurately.
+
+4. **Configuration Layer**: Provides necessary context for reports by managing configuration data, including customer and vendor information, planning group configurations, and exchange rate setups (USD/EUR/PLN).
+
+5. **Planning Layer**: Supports data gathering for planned receivables and payables from business units, replacing manual Excel-based submissions. The system offers options for direct data entry through a web panel or importing XLS files, automatically validating and categorizing entries.
+
+6. **Dashboard and Reporting Layer**: Aggregates and visualizes essential financial information on liquidity, receivables, and payables. The dashboard features time series and tree-map visualizations, allowing deep analysis of financial data and tracking of key liquidity metrics in real time.
+
+7. **Analytical Layer (Future Scope)**: Planned for the later phases of the project, this layer will enable the definition of advanced metrics and analytical functions on accumulated transaction, receivable, payable, and plan data.
+
+### Technology Stack
+- **Frontend**: React.js for an interactive, user-friendly interface.
+- **Backend**: Python/Django to ensure robust business logic and secure handling of financial data.
+- **Database**: PostgreSQL for efficient data storage and querying.
+- **Data Integration Layer**: Supports RESTful API connections with encryption, ensuring secure data transfers.
+- **Advanced Forecasting**: Uses machine learning libraries (e.g., Scikit-learn, TensorFlow) to analyze historical data and produce predictive models.
+
+## Implementation Process
+1. **Requirement Analysis**: Collaborated with the client’s finance and IT teams to define key workflows, reporting needs, and integration points.
+2. **Data Mapping and Cleansing**: Structured data feeds from ERP, banking, and planning systems, ensuring consistent and high-quality inputs.
+3. **Module Development**: Built out each functional layer, including transaction import, funding source tracking, and automated receivables and payables classifications.
+4. **Integration Testing**: Validated integrations with ERP, SAP, and treasury systems, ensuring data consistency.
+5. **Training and Deployment**: Provided training for finance teams on the system’s functionality and dashboards.
+
+## Results
+- **Accuracy in Forecasting**: Forecasting accuracy improved by 20%, enabling the finance team to make informed decisions on capital allocation.
+- **Reduction in Manual Work**: Automation of cash flow reports, transaction classifications, and planning data entries reduced time spent on reporting by 40%.
+- **Improved Compliance**: Automated monitoring and flagging ensured the client adhered to regulatory standards, reducing risk exposure.
+- **Enhanced Decision-Making**: Real-time dashboards provided executive teams with insights to optimize working capital and liquidity management.
+
+## Future Outlook
+The solution's modular structure allows for future enhancements, such as advanced analytics in the analytical layer, AI-driven insights for liquidity risks, and further automation for multi-currency transactions.
+
+---
